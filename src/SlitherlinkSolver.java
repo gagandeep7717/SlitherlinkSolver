@@ -44,6 +44,13 @@ public class SlitherlinkSolver {
         printHorEdgeMatrix(horEdgeMatrix);
         printVerEdgeMatrix(verEdgeMatrix);
 
+        AConRightTop(readMatrix);
+        printHorEdgeMatrix(horEdgeMatrix);
+        printVerEdgeMatrix(verEdgeMatrix);
+
+        AConRightBottom(readMatrix);
+        printHorEdgeMatrix(horEdgeMatrix);
+        printVerEdgeMatrix(verEdgeMatrix);
     }
 
     public static int[][] readPuzzle() throws IOException {
@@ -164,6 +171,7 @@ public class SlitherlinkSolver {
         }
 
     }
+
     //Function to Generate Horizontal and Vertical edge values before applying Arc Consistency
     public static void generateInitialEdgeMatrix(int [][] matrix){
         for(int i=0; i<rowCount; i++){
@@ -226,8 +234,11 @@ public class SlitherlinkSolver {
         int leftBottom = matrix[rowCount-1][0];
         int rightTop = matrix[0][colCount-1];
         int rightBottom = matrix[rowCount-1][colCount-1];
-        System.out.println("LT=" + leftTop + "LB=" + leftBottom + "RT=" + rightTop + "RB=" + rightBottom );
-
+        System.out.println("\tLT=" + leftTop + "\tLB=" + leftBottom + "\tRT=" + rightTop + "\tRB=" + rightBottom );
+        AConLeftTop(matrix);
+        AConLeftBottom(matrix);
+        AConRightTop(matrix);
+        AConRightBottom(matrix);
 
     }
 
@@ -297,18 +308,30 @@ public class SlitherlinkSolver {
     }
 
     public static void AConRightTop(int [][] matrix){
-        int leftTop = matrix[0][0];
-        switch(leftTop){
+        int rightTop = matrix[0][colCount-1];
+        switch(rightTop){
             case 0:
+                //If Right top is 0, all four edges of cell are already -1 by zeroAC
+                horEdgeMatrix[0][colCount-2] = -1;
+                verEdgeMatrix[1][colCount] = -1;
                 break;
 
             case 1:
+                //if Right top is 1
+                horEdgeMatrix[0][colCount-1] = -1;
+                verEdgeMatrix[0][colCount] = -1;
                 break;
 
             case 2:
+                //If Right top is 2
+                horEdgeMatrix[0][colCount-2] = 1;
+                verEdgeMatrix[1][colCount] = 1;
                 break;
 
             case 3:
+                //if Right top is 3
+                horEdgeMatrix[0][colCount-1] = 1;
+                verEdgeMatrix[0][colCount] = 1;
                 break;
 
             default:
@@ -317,18 +340,30 @@ public class SlitherlinkSolver {
     }
 
     public static void AConRightBottom(int [][] matrix){
-        int leftTop = matrix[0][0];
-        switch(leftTop){
+        int rightBottom = matrix[rowCount-1][colCount-1];
+        switch(rightBottom){
             case 0:
+                //If Right Bottom is 0, all four edges of cell are already -1 by zeroAC
+                horEdgeMatrix[rowCount][colCount-2] = -1;
+                verEdgeMatrix[rowCount-2][colCount] = -1;
                 break;
 
             case 1:
+                //if Right bottom is 1
+                horEdgeMatrix[rowCount][colCount-1] = -1;
+                verEdgeMatrix[rowCount-1][colCount] = -1;
                 break;
 
             case 2:
+                //If Right Bottom is 2
+                horEdgeMatrix[rowCount][colCount-2] = 1;
+                verEdgeMatrix[rowCount-2][colCount] = 1;
                 break;
 
             case 3:
+                //if Right bottom is 3
+                horEdgeMatrix[rowCount][colCount-1] = 1;
+                verEdgeMatrix[rowCount-1][colCount] = 1;
                 break;
 
             default:
