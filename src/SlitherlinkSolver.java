@@ -33,22 +33,26 @@ public class SlitherlinkSolver {
         printVerEdgeMatrix(verEdgeMatrix);
 
         applyZeroAC(readMatrix);
-        printHorEdgeMatrix(horEdgeMatrix);
-        printVerEdgeMatrix(verEdgeMatrix);
+        //printHorEdgeMatrix(horEdgeMatrix);
+        //printVerEdgeMatrix(verEdgeMatrix);
 
         AConLeftTop(readMatrix);
-        printHorEdgeMatrix(horEdgeMatrix);
-        printVerEdgeMatrix(verEdgeMatrix);
+        //printHorEdgeMatrix(horEdgeMatrix);
+        //printVerEdgeMatrix(verEdgeMatrix);
 
         AConLeftBottom(readMatrix);
-        printHorEdgeMatrix(horEdgeMatrix);
-        printVerEdgeMatrix(verEdgeMatrix);
+        //printHorEdgeMatrix(horEdgeMatrix);
+        //printVerEdgeMatrix(verEdgeMatrix);
 
         AConRightTop(readMatrix);
-        printHorEdgeMatrix(horEdgeMatrix);
-        printVerEdgeMatrix(verEdgeMatrix);
+        //printHorEdgeMatrix(horEdgeMatrix);
+        //printVerEdgeMatrix(verEdgeMatrix);
 
         AConRightBottom(readMatrix);
+        //printHorEdgeMatrix(horEdgeMatrix);
+        //printVerEdgeMatrix(verEdgeMatrix);
+
+        applyACon3Adjto0(readMatrix);
         printHorEdgeMatrix(horEdgeMatrix);
         printVerEdgeMatrix(verEdgeMatrix);
     }
@@ -222,7 +226,6 @@ public class SlitherlinkSolver {
                     //System.out.print(", V" + (i+1) + j + "=" + 0);
                     verEdgeMatrix[i][j+1] = -1;
                     //System.out.println("");
-
                 }
             }
         }
@@ -368,6 +371,59 @@ public class SlitherlinkSolver {
 
             default:
                 break;
+        }
+    }
+
+    public static void applyACon3Adjto0(int [][] matrix){
+        for(int i=0; i<rowCount; i++){
+            for(int j=0; j<colCount; j++){
+                if(matrix[i][j] == 0){
+                    // Diagonal Top Left Cell value to the Cell value 0
+                    if((i-1)>= 0 && (j-1) >= 0 && matrix[i-1][j-1] == 3){
+                        horEdgeMatrix[i][j-1] = (horEdgeMatrix[i][j-1] == -1) ? -1 : 1;
+                        verEdgeMatrix[i-1][j] = (verEdgeMatrix[i-1][j] == -1) ? -1 : 1;
+                    }
+                    // Diagonal Top Right Cell value to the Cell value 0
+                    if((i-1)>= 0 && (j+1) < colCount && matrix[i-1][j+1] == 3){
+                        horEdgeMatrix[i][j+1] = (horEdgeMatrix[i][j+1] == -1) ? -1 : 1;
+                        verEdgeMatrix[i-1][j+1] = (verEdgeMatrix[i-1][j+1] == -1) ? -1 : 1;
+                    }
+                    // Diagonal Bottom Right Cell value to the Cell value 0
+                    if((i+1)<rowCount && (j+1)< colCount && matrix[i+1][j+1] == 3){
+                        horEdgeMatrix[i+1][j+1] = (horEdgeMatrix[i+1][j+1] == -1) ? -1 : 1;
+                        verEdgeMatrix[i+1][j+1] = (verEdgeMatrix[i+1][j+1] == -1) ? -1 : 1;
+                    }
+                    // Diagonal Bottom Left Cell value to the Cell value 0
+                    if((i+1)< rowCount && (j-1) >= 0 && matrix[i+1][j-1] == 3){
+                        horEdgeMatrix[i+1][j-1] = (horEdgeMatrix[i+1][j-1] == -1) ? -1 : 1;
+                        verEdgeMatrix[i+1][j] = (verEdgeMatrix[i+1][j] == -1) ? -1 : 1;
+                    }
+                    // ADJACENT UP Cell value to the Cell value 0
+                    if((i-1)>= 0 && matrix[i-1][j] == 3){
+                        verEdgeMatrix[i-1][j] = (verEdgeMatrix[i-1][j] == -1) ? -1 : 1;
+                        horEdgeMatrix[i-1][j] = (horEdgeMatrix[i-1][j] == -1) ? -1 : 1;
+                        verEdgeMatrix[i-1][j+1] = (verEdgeMatrix[i-1][j+1] == -1) ? -1 : 1;
+                    }
+                    // ADJACENT RIGHT Cell value to the Cell value 0
+                    if((j+1)<colCount && matrix[i][j+1] == 3){
+                        horEdgeMatrix[i][j+1] = (horEdgeMatrix[i][j+1] == -1) ? -1 : 1;
+                        verEdgeMatrix[i][j+1+1] = (verEdgeMatrix[i][j+1+1] == -1) ? -1 : 1;
+                        horEdgeMatrix[i+1][j+1] = (horEdgeMatrix[i+1][j+1] == -1) ? -1 : 1;
+                    }
+                    // ADJACENT BOTTOM Cell value to the Cell value 0
+                    if((i+1)< rowCount && matrix[i+1][j] == 3){
+                        verEdgeMatrix[i+1][j] = (verEdgeMatrix[i+1][j] == -1) ? -1 : 1;
+                        horEdgeMatrix[i+1+1][j] = (horEdgeMatrix[i+1+1][j] == -1) ? -1 : 1;
+                        verEdgeMatrix[i+1][j+1] = (verEdgeMatrix[i+1][j+1] == -1) ? -1 : 1;
+                    }
+                    // ADJACENT LEFT Cell value to the Cell value 0
+                    if((j-1) >= 0 && matrix[i][j-1] == 3){
+                        horEdgeMatrix[i][j-1] = (horEdgeMatrix[i][j-1] == -1) ? -1 : 1;
+                        verEdgeMatrix[i][j-1] = (verEdgeMatrix[i][j-1] == -1) ? -1 : 1;
+                        horEdgeMatrix[i+1][j-1] = (horEdgeMatrix[i+1][j-1] == -1) ? -1 : 1;
+                    }
+                }
+            }
         }
     }
 }
