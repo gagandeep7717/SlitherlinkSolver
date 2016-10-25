@@ -195,4 +195,14 @@ public class SlitherlinkSolver {
         }
     }
 
+    //Apply arc consistency on Cell with Values equal to three (3) and adjacent to Cell with Values zero (0)
+    public static void applyACto3adjto0(int [][] matrix){
+        for(int i=0; i<rowCount; i++){
+            for(int j=0; j<colCount; j++){
+
+            }
+        }
+    }
+
+
 }
