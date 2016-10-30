@@ -1,9 +1,7 @@
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.*;
 
 /**
  * Authors: Gagandeep Randhawa.
@@ -11,50 +9,43 @@ import java.nio.file.Paths;
  * File Created on on 10/22/2016
  */
 public class SlitherlinkSolver {
+
     //row and col count static to allow dynamic size of puzzle
     static int rowCount = 0;
     static int colCount = 0;
 
-    // Static Horizontal and Vertical Edge Matrix to apply Arc Consistencies
-    static int[][] horEdgeMatrix;
-    static int[][] verEdgeMatrix;
+    static ArrayList<String> nonEssEdges = null;    //Arraylist for NonEssential Edges wit reduced domain to be used for reduction
+
+    static HashMap<String, ArrayList<String>> edgeHM = new HashMap<String, ArrayList<String>>();    //Hashmap storing Key: Edges and Value: Domain
+    static HashMap<String, ArrayList<String>> nodeHM = new HashMap<String, ArrayList<String>>();    //Hashmap for Key: Nodes and Value: Satisfying Assignments (Node Degree either 0 or 2)
+
 
     public static void main(String args[]) throws IOException {
-        int[][] readMatrix = readPuzzle();
-        horEdgeMatrix = new int[rowCount+1][colCount];
-        verEdgeMatrix = new int[rowCount][colCount+1];
-        System.out.println("Printing Read Matrix");
-        printMatrix(readMatrix);
-        System.out.println("Initial Cell Values and Corresponding H and V Edges");
-        //printCellEdgesValue(readMatrix);
-        System.out.println("Initial Edge Matrix without Arc Consistency");
-        generateInitialEdgeMatrix(readMatrix);
-        printHorEdgeMatrix(horEdgeMatrix);
-        printVerEdgeMatrix(verEdgeMatrix);
 
-        applyZeroAC(readMatrix);
-        //printHorEdgeMatrix(horEdgeMatrix);
-        //printVerEdgeMatrix(verEdgeMatrix);
+        Path path = Paths.get(System.getProperty("user.dir") + "\\src\\output.txt");
+        PrintStream out = new PrintStream(new FileOutputStream(path.toFile()));
+        System.setOut(out);
 
-        AConLeftTop(readMatrix);
-        //printHorEdgeMatrix(horEdgeMatrix);
-        //printVerEdgeMatrix(verEdgeMatrix);
+        int[][] readMatrix = readPuzzle();  //readPuzzle - reads puzzle from text file
 
-        AConLeftBottom(readMatrix);
-        //printHorEdgeMatrix(horEdgeMatrix);
-        //printVerEdgeMatrix(verEdgeMatrix);
 
-        AConRightTop(readMatrix);
-        //printHorEdgeMatrix(horEdgeMatrix);
-        //printVerEdgeMatrix(verEdgeMatrix);
+        //Generating Initial Edge Domain Hashmap
+        generateInitialEdgeHashMap(readMatrix);
+        System.out.println("Initial Edge Domain:\n");
+        Map<String, ArrayList<String>> treeMapEdge = new TreeMap<String, ArrayList<String>>(edgeHM); //to print sorted Edge HashMap
+        printHM(treeMapEdge);
 
-        AConRightBottom(readMatrix);
-        //printHorEdgeMatrix(horEdgeMatrix);
-        //printVerEdgeMatrix(verEdgeMatrix);
+        //Generating Initial Node Assignments Hashmap
+        System.out.println("Initial Node Assignments:\n");
+        generateInitialNodeHashMap(readMatrix);
+        findNodeonWallsandCorners(readMatrix);
+        Map<String, ArrayList<String>> treeMapNode = new TreeMap<String, ArrayList<String>>(nodeHM); //to print sorted Node hashmap
+        printHM(treeMapNode);
 
-        applyACon3Adjto0(readMatrix);
-        printHorEdgeMatrix(horEdgeMatrix);
-        printVerEdgeMatrix(verEdgeMatrix);
+
+        //applyZeroAC(readMatrix);
+
+
     }
 
     public static int[][] readPuzzle() throws IOException {
@@ -97,11 +88,13 @@ public class SlitherlinkSolver {
             }
         }
 
-        //printMatrix(matrix);
-
         //Final Row and Column count to be provided to the solver
         System.out.println("Rows = " + rowCount );
         System.out.println("Columns = " + colCount);
+
+        //Print puzzle matrix
+        System.out.println("*********Puzzle Matrix**********");
+        printMatrix(matrix);
         return matrix;
     }
 
@@ -114,101 +107,191 @@ public class SlitherlinkSolver {
         for(int i=0; i<rowCount; i++){
             System.out.printf("\t" + i);
             for(int j=0; j<colCount; j++){
-                System.out.print("\t" + matrix[i][j]);
+                if(matrix[i][j] != 7)
+                    System.out.print("\t" + matrix[i][j]);
+                else
+                    System.out.print("\t" + '\u221e');
+
             }
             System.out.println();
         }
     }
-    public static void printHorEdgeMatrix(int[][] matrix){
-        System.out.println("Horizontal Edge Matrix:");
-        System.out.print("\t" + "H");
-        for(int i=0; i<colCount; i++){
-            System.out.print("\t" + i);
+
+
+
+    public static void generateInitialEdgeHashMap(int [][] matrix){
+        for(int i=0; i<rowCount; i++){
+            for(int j=0; j<colCount; j++){
+                String Hij = "H" + i + j;
+                String Vij = "V" + i + j;
+                String Hi1j = "H" + (i+1) + j;
+                String Vij1 = "V" + i + (j+1);
+
+                ArrayList<String>  initDomain = new ArrayList<String>();
+                initDomain.add("0");
+                initDomain.add("1");
+
+                edgeHM.put(Hij, initDomain);
+                edgeHM.put(Vij, initDomain);
+                edgeHM.put(Hi1j, initDomain);
+                edgeHM.put(Vij1, initDomain);
+                //System.out.println("Cell: " + matrix[i][j] + "\t Edges: " + Hij + "=" + printArraylist(initDomain) + "\t" + Vij + "=" + printArraylist(initDomain) + "\t" + Hi1j + "=" + printArraylist(initDomain) + "\t" + Vij1 + "=" + printArraylist(initDomain) );
+            }
         }
-        System.out.println("");
+    }
+
+    public static void generateInitialNodeHashMap(int [][] matrix){
         for(int i=0; i<rowCount+1; i++){
-            System.out.printf("\t" + i);
-            for(int j=0; j<colCount; j++){
-                System.out.print("\t" + matrix[i][j]);
-            }
-            System.out.println();
-        }
-    }
-    public static void printVerEdgeMatrix(int[][] matrix){
-        System.out.println("Vertical Edge Matrix:");
-        System.out.print("\t" + "V");
-        for(int i=0; i<colCount+1; i++){
-            System.out.print("\t" + i);
-        }
-        System.out.println("");
-        for(int i=0; i<rowCount; i++){
-            System.out.printf("\t" + i);
             for(int j=0; j<colCount+1; j++){
-                System.out.print("\t" + matrix[i][j]);
+                String Nij = "N" + i + j;
+
+
+                ArrayList<String>  initAssignment = new ArrayList<String>();
+                String[] assignments = new String[] {"0000", "0011", "0110", "1100", "0101", "1010", "1001"};
+                initAssignment.addAll(Arrays.asList(assignments));
+                nodeHM.put(Nij, initAssignment);
             }
-            System.out.println();
         }
     }
 
-    public static void printCellEdgesValue(int [][] matrix){
-        for(int i=0; i<rowCount; i++){
-            for(int j=0; j<colCount; j++){
-                if(matrix[i][j] != 7){
-                    System.out.print("C" + i + j + "=" + matrix[i][j]);
-                    System.out.print("\t Edges = H" + i + j + "=" + 0);
-                    System.out.print(", V" + i + j + "=" + 0);
-                    System.out.print(", H" + (i+1) + j + "=" + 0);
-                    System.out.print(", V" + i + (j+1) + "=" + 0);
-                    System.out.println("");
-
-                }
-                else {
-                    System.out.print("C" + i + j + "=" + '\u221e');
-                    System.out.print("\t Edges = H" + i + j + "=" + 0);
-                    System.out.print(", V" + i + j + "=" + 0);
-                    System.out.print(", H" + (i+1) + j + "=" + 0);
-                    System.out.print(", V" + i + (j+1) + "=" + 0);
-                    System.out.println("");
-                }
-            }
-            System.out.println();
-        }
-
+    public static void removeDuplicates(ArrayList<String> nonEssEdges){
+        Set<String> hs = new HashSet<>();
+        hs.addAll(nonEssEdges);
+        nonEssEdges.clear();
+        nonEssEdges.addAll(hs);
     }
 
-    //Function to Generate Horizontal and Vertical edge values before applying Arc Consistency
-    public static void generateInitialEdgeMatrix(int [][] matrix){
-        for(int i=0; i<rowCount; i++){
-            for(int j=0; j<colCount; j++){
-                if(matrix[i][j] != 7){
-                    System.out.print("C" + i + j + "=" + matrix[i][j]);
-                    System.out.print("\t Edges = H" + i + j + "=" + 0);
-                    horEdgeMatrix[i][j] = 0;
-                    System.out.print(", V" + i + j + "=" + 0);
-                    verEdgeMatrix[i][j] = 0;
-                    System.out.print(", H" + (i+1) + j + "=" + 0);
-                    horEdgeMatrix[i+1][j] = 0;
-                    System.out.print(", V" + i + (j+1) + "=" + 0);
-                    verEdgeMatrix[i][j+1] = 0;
-                    System.out.println("");
+    public static void printArraylist(ArrayList<String> al){
+        for(String str:al){
+            System.out.print("\t" + str);
+        }
+    }
 
+    public static <K, V> void printHM(Map<K, V> edgeHM){
+        Set set = edgeHM.entrySet();
+        int edgeCount=0;
+        Iterator i = set.iterator();
+        while(i.hasNext()){
+            edgeCount++;
+            Map.Entry me = (Map.Entry) i.next();
+            System.out.print(edgeCount + "\t" + me.getKey() + ":");
+            ArrayList<String> alDomain= (ArrayList<String>) me.getValue();
+            printArraylist(alDomain);
+            System.out.println("");
+        }
+    }
+
+    public static void findNodeonWallsandCorners(int[][] matrix){
+        ArrayList<String> TopWall = new ArrayList<String>();
+        ArrayList<String> RightWall = new ArrayList<String>();
+        ArrayList<String> BottomWall = new ArrayList<String>();
+        ArrayList<String> LeftWall = new ArrayList<String>();
+        ArrayList<String> TopLeftCorner = new ArrayList<String>();
+        ArrayList<String> TopRightCorner = new ArrayList<String>();
+        ArrayList<String> BottomRightCorner = new ArrayList<String>();
+        ArrayList<String> BottomLeftCorner = new ArrayList<String>();
+
+        for(int i=0; i<=rowCount; i++){
+            for(int j=0; j<=colCount; j++){
+                if(i == 0 && j == 0){
+                    TopLeftCorner.add("N" + i + j);
                 }
-                else {
-                    System.out.print("C" + i + j + "=" + '\u221e');
-                    System.out.print("\t Edges = H" + i + j + "=" + 0);
-                    horEdgeMatrix[i][j] = 0;
-                    System.out.print(", V" + i + j + "=" + 0);
-                    verEdgeMatrix[i][j] = 0;
-                    System.out.print(", H" + (i+1) + j + "=" + 0);
-                    horEdgeMatrix[i+1][j] = 0;
-                    System.out.print(", V" + i + (j+1) + "=" + 0);
-                    verEdgeMatrix[i][j+1] = 0;
-                    System.out.println("");
+                else if(i == 0 && j == colCount){
+                    TopRightCorner.add("N" + i + j);
+                }
+                else if(i == rowCount && j == colCount){
+                    BottomRightCorner.add("N" + i + j);
+                }
+                else if(i == rowCount && j == 0){
+                    BottomLeftCorner.add("N" + i + j);
+                }
+                else if(i == 0 && (j != 0 || j == colCount)){
+                    TopWall.add("N" + i + j);
+                }
+                else if(j == colCount && (i!=0 || i != rowCount)){
+                    RightWall.add("N" + i + j);
+                }
+                else if(i == rowCount && (j != 0 || j != colCount)) {
+                    BottomWall.add("N" + i + j);
+                }
+                else if(j == 0 && (i != 0 || i == rowCount)) {
+                    LeftWall.add("N" + i + j);
                 }
             }
-            System.out.println();
+        }
+        System.out.println("LeftTop node: " + TopLeftCorner);
+        System.out.println("RightTop node: " + TopRightCorner);
+        System.out.println("RightBottom node: " + BottomRightCorner);
+        System.out.println("LeftBottom node: " + BottomLeftCorner);
+        System.out.println("Top Wall: " + TopWall);
+        System.out.println("Right Wall: " + RightWall);
+        System.out.println("Bottom Wall: " + BottomWall);
+        System.out.println("Left Wall: " + LeftWall);
+
+
+        ArrayList<String> alTopLeftCorner = new ArrayList<String>();
+        String[] assignmentsTopLeftCorner = new String[]{"0000","0011"};
+        alTopLeftCorner.addAll(Arrays.asList(assignmentsTopLeftCorner));
+
+        ArrayList<String> alTopRightCorner = new ArrayList<String>();
+        String[] assignmentsTopRightCorner = new String[]{"0000","1001"};
+        alTopRightCorner.addAll(Arrays.asList(assignmentsTopRightCorner));
+
+        ArrayList<String> alBottomRightCorner = new ArrayList<String>();
+        String[] assignmentsBottomRightCorner = new String[]{"0000","1100"};
+        alBottomRightCorner.addAll(Arrays.asList(assignmentsBottomRightCorner));
+
+        ArrayList<String> alBottomLeftCorner = new ArrayList<String>();
+        String[] assignmentsBottomLeftCorner = new String[]{"0000","0110"};
+        alBottomLeftCorner.addAll(Arrays.asList(assignmentsBottomLeftCorner));
+
+        ArrayList<String> alTopWall = new ArrayList<String>();
+        String[] assignmentsTopWall = new String[]{"0000","1010","1001","0011"};
+        alTopWall.addAll(Arrays.asList(assignmentsTopWall));
+
+        ArrayList<String> alRightWall = new ArrayList<String>();
+        String[] assignmentsRightWall = new String[]{"0000","0110","0101","0011"};
+        alRightWall.addAll(Arrays.asList(assignmentsRightWall));
+
+        ArrayList<String> alBottomWall = new ArrayList<String>();
+        String[] assignmentsBottomWall = new String[]{"0000","1100","0110","1010"};
+        alBottomWall.addAll(Arrays.asList(assignmentsBottomWall));
+
+        ArrayList<String> alLeftWall = new ArrayList<String>();
+        String[] assignmentsLeftWall = new String[]{"0000","0110","0101","0011"};
+        alLeftWall.addAll(Arrays.asList(assignmentsLeftWall));
+
+        for(String str: TopLeftCorner){
+            nodeHM.put(str, alTopLeftCorner);
         }
 
+        for(String str: TopRightCorner){
+            nodeHM.put(str, alTopRightCorner);
+        }
+
+        for(String str: BottomRightCorner){
+            nodeHM.put(str, alBottomRightCorner);
+        }
+
+        for(String str: BottomLeftCorner){
+            nodeHM.put(str, alBottomLeftCorner);
+        }
+
+        for(String str: TopWall){
+            nodeHM.put(str, alTopWall);
+        }
+
+        for(String str: RightWall){
+            nodeHM.put(str, alRightWall);
+        }
+
+        for(String str: BottomWall){
+            nodeHM.put(str, alBottomWall);
+        }
+
+        for(String str: LeftWall){
+            nodeHM.put(str, alLeftWall);
+        }
     }
 
     //Apply arc consistency on Cell with Values equal to zero (0)
@@ -216,214 +299,11 @@ public class SlitherlinkSolver {
         for(int i=0; i<rowCount; i++){
             for(int j=0; j<colCount; j++){
                 if(matrix[i][j] == 0){
-                    //System.out.print("C" + i + j + "=" + matrix[i][j]);
-                    //System.out.print("\t Edges = H" + i + j + "=" + 0);
-                    horEdgeMatrix[i][j] = -1;
-                    //System.out.print(", V" + i + j + "=" + 0);
-                    verEdgeMatrix[i][j] = -1;
-                    //System.out.print(", H" + i + (j+1) + "=" + 0);
-                    horEdgeMatrix[i+1][j] = -1;
-                    //System.out.print(", V" + (i+1) + j + "=" + 0);
-                    verEdgeMatrix[i][j+1] = -1;
-                    //System.out.println("");
+
+
                 }
             }
         }
     }
 
-    //Apply Arc Consistency on corners
-    public static void applyAConCorners(int [][] matrix){
-        int leftTop = matrix[0][0];
-        int leftBottom = matrix[rowCount-1][0];
-        int rightTop = matrix[0][colCount-1];
-        int rightBottom = matrix[rowCount-1][colCount-1];
-        System.out.println("\tLT=" + leftTop + "\tLB=" + leftBottom + "\tRT=" + rightTop + "\tRB=" + rightBottom );
-        AConLeftTop(matrix);
-        AConLeftBottom(matrix);
-        AConRightTop(matrix);
-        AConRightBottom(matrix);
-
-    }
-
-    public static void AConLeftTop(int [][] matrix){
-        int leftTop = matrix[0][0];
-        switch(leftTop){
-            case 0:
-                //If left top is 0, all four edges of cell are already -1 by zeroAC
-                //set H01 of C01 and V10 of C10 to -1
-                horEdgeMatrix[0][1] = -1;
-                verEdgeMatrix[1][0] = -1;
-                break;
-
-            case 1:
-                //if Left top is 1, set H00 and V00 to -1
-                horEdgeMatrix[0][0] = -1;
-                verEdgeMatrix[0][0] = -1;
-                break;
-
-            case 2:
-                //if left top is 2, set H01 of C01 and V10 of C10 to 1
-                horEdgeMatrix[0][1] = 1;
-                verEdgeMatrix[1][0] = 1;
-                break;
-
-            case 3:
-                //if Left top is 3, set H00 and V00 to 1
-                horEdgeMatrix[0][0] = 1;
-                verEdgeMatrix[0][0] = 1;
-                break;
-
-            default:
-                break;
-        }
-    }
-
-    public static void AConLeftBottom(int [][] matrix){
-        int leftBottom = matrix[rowCount-1][0];
-        switch(leftBottom){
-            case 0:
-                //If left Bottom is 0, all four edges of cell are already -1 by zeroAC
-                horEdgeMatrix[rowCount][1] = -1;
-                verEdgeMatrix[rowCount-2][0] = -1;
-                break;
-
-            case 1:
-                //if left bottom is 1
-                horEdgeMatrix[rowCount][0] = -1;
-                verEdgeMatrix[rowCount-1][0] = -1;
-                break;
-
-            case 2:
-                //If left Bottom is 2
-                horEdgeMatrix[rowCount][1] = 1;
-                verEdgeMatrix[rowCount-2][0] = 1;
-                break;
-
-            case 3:
-                //if left bottom is 3
-                horEdgeMatrix[rowCount][0] = 1;
-                verEdgeMatrix[rowCount-1][0] = 1;
-                break;
-
-            default:
-                break;
-        }
-    }
-
-    public static void AConRightTop(int [][] matrix){
-        int rightTop = matrix[0][colCount-1];
-        switch(rightTop){
-            case 0:
-                //If Right top is 0, all four edges of cell are already -1 by zeroAC
-                horEdgeMatrix[0][colCount-2] = -1;
-                verEdgeMatrix[1][colCount] = -1;
-                break;
-
-            case 1:
-                //if Right top is 1
-                horEdgeMatrix[0][colCount-1] = -1;
-                verEdgeMatrix[0][colCount] = -1;
-                break;
-
-            case 2:
-                //If Right top is 2
-                horEdgeMatrix[0][colCount-2] = 1;
-                verEdgeMatrix[1][colCount] = 1;
-                break;
-
-            case 3:
-                //if Right top is 3
-                horEdgeMatrix[0][colCount-1] = 1;
-                verEdgeMatrix[0][colCount] = 1;
-                break;
-
-            default:
-                break;
-        }
-    }
-
-    public static void AConRightBottom(int [][] matrix){
-        int rightBottom = matrix[rowCount-1][colCount-1];
-        switch(rightBottom){
-            case 0:
-                //If Right Bottom is 0, all four edges of cell are already -1 by zeroAC
-                horEdgeMatrix[rowCount][colCount-2] = -1;
-                verEdgeMatrix[rowCount-2][colCount] = -1;
-                break;
-
-            case 1:
-                //if Right bottom is 1
-                horEdgeMatrix[rowCount][colCount-1] = -1;
-                verEdgeMatrix[rowCount-1][colCount] = -1;
-                break;
-
-            case 2:
-                //If Right Bottom is 2
-                horEdgeMatrix[rowCount][colCount-2] = 1;
-                verEdgeMatrix[rowCount-2][colCount] = 1;
-                break;
-
-            case 3:
-                //if Right bottom is 3
-                horEdgeMatrix[rowCount][colCount-1] = 1;
-                verEdgeMatrix[rowCount-1][colCount] = 1;
-                break;
-
-            default:
-                break;
-        }
-    }
-
-    public static void applyACon3Adjto0(int [][] matrix){
-        for(int i=0; i<rowCount; i++){
-            for(int j=0; j<colCount; j++){
-                if(matrix[i][j] == 0){
-                    // Diagonal Top Left Cell value to the Cell value 0
-                    if((i-1)>= 0 && (j-1) >= 0 && matrix[i-1][j-1] == 3){
-                        horEdgeMatrix[i][j-1] = (horEdgeMatrix[i][j-1] == -1) ? -1 : 1;
-                        verEdgeMatrix[i-1][j] = (verEdgeMatrix[i-1][j] == -1) ? -1 : 1;
-                    }
-                    // Diagonal Top Right Cell value to the Cell value 0
-                    if((i-1)>= 0 && (j+1) < colCount && matrix[i-1][j+1] == 3){
-                        horEdgeMatrix[i][j+1] = (horEdgeMatrix[i][j+1] == -1) ? -1 : 1;
-                        verEdgeMatrix[i-1][j+1] = (verEdgeMatrix[i-1][j+1] == -1) ? -1 : 1;
-                    }
-                    // Diagonal Bottom Right Cell value to the Cell value 0
-                    if((i+1)<rowCount && (j+1)< colCount && matrix[i+1][j+1] == 3){
-                        horEdgeMatrix[i+1][j+1] = (horEdgeMatrix[i+1][j+1] == -1) ? -1 : 1;
-                        verEdgeMatrix[i+1][j+1] = (verEdgeMatrix[i+1][j+1] == -1) ? -1 : 1;
-                    }
-                    // Diagonal Bottom Left Cell value to the Cell value 0
-                    if((i+1)< rowCount && (j-1) >= 0 && matrix[i+1][j-1] == 3){
-                        horEdgeMatrix[i+1][j-1] = (horEdgeMatrix[i+1][j-1] == -1) ? -1 : 1;
-                        verEdgeMatrix[i+1][j] = (verEdgeMatrix[i+1][j] == -1) ? -1 : 1;
-                    }
-                    // ADJACENT UP Cell value to the Cell value 0
-                    if((i-1)>= 0 && matrix[i-1][j] == 3){
-                        verEdgeMatrix[i-1][j] = (verEdgeMatrix[i-1][j] == -1) ? -1 : 1;
-                        horEdgeMatrix[i-1][j] = (horEdgeMatrix[i-1][j] == -1) ? -1 : 1;
-                        verEdgeMatrix[i-1][j+1] = (verEdgeMatrix[i-1][j+1] == -1) ? -1 : 1;
-                    }
-                    // ADJACENT RIGHT Cell value to the Cell value 0
-                    if((j+1)<colCount && matrix[i][j+1] == 3){
-                        horEdgeMatrix[i][j+1] = (horEdgeMatrix[i][j+1] == -1) ? -1 : 1;
-                        verEdgeMatrix[i][j+1+1] = (verEdgeMatrix[i][j+1+1] == -1) ? -1 : 1;
-                        horEdgeMatrix[i+1][j+1] = (horEdgeMatrix[i+1][j+1] == -1) ? -1 : 1;
-                    }
-                    // ADJACENT BOTTOM Cell value to the Cell value 0
-                    if((i+1)< rowCount && matrix[i+1][j] == 3){
-                        verEdgeMatrix[i+1][j] = (verEdgeMatrix[i+1][j] == -1) ? -1 : 1;
-                        horEdgeMatrix[i+1+1][j] = (horEdgeMatrix[i+1+1][j] == -1) ? -1 : 1;
-                        verEdgeMatrix[i+1][j+1] = (verEdgeMatrix[i+1][j+1] == -1) ? -1 : 1;
-                    }
-                    // ADJACENT LEFT Cell value to the Cell value 0
-                    if((j-1) >= 0 && matrix[i][j-1] == 3){
-                        horEdgeMatrix[i][j-1] = (horEdgeMatrix[i][j-1] == -1) ? -1 : 1;
-                        verEdgeMatrix[i][j-1] = (verEdgeMatrix[i][j-1] == -1) ? -1 : 1;
-                        horEdgeMatrix[i+1][j-1] = (horEdgeMatrix[i+1][j-1] == -1) ? -1 : 1;
-                    }
-                }
-            }
-        }
-    }
 }
