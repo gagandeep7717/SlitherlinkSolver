@@ -2,7 +2,6 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.channels.InterruptedByTimeoutException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -34,9 +33,28 @@ public class SlitherlinkSolver {
         printVerEdgeMatrix(verEdgeMatrix);
 
         applyZeroAC(readMatrix);
+        //printHorEdgeMatrix(horEdgeMatrix);
+        //printVerEdgeMatrix(verEdgeMatrix);
+
+        AConLeftTop(readMatrix);
+        //printHorEdgeMatrix(horEdgeMatrix);
+        //printVerEdgeMatrix(verEdgeMatrix);
+
+        AConLeftBottom(readMatrix);
+        //printHorEdgeMatrix(horEdgeMatrix);
+        //printVerEdgeMatrix(verEdgeMatrix);
+
+        AConRightTop(readMatrix);
+        //printHorEdgeMatrix(horEdgeMatrix);
+        //printVerEdgeMatrix(verEdgeMatrix);
+
+        AConRightBottom(readMatrix);
+        //printHorEdgeMatrix(horEdgeMatrix);
+        //printVerEdgeMatrix(verEdgeMatrix);
+
+        applyACon3Adjto0(readMatrix);
         printHorEdgeMatrix(horEdgeMatrix);
         printVerEdgeMatrix(verEdgeMatrix);
-
     }
 
     public static int[][] readPuzzle() throws IOException {
@@ -88,27 +106,45 @@ public class SlitherlinkSolver {
     }
 
     public static void printMatrix(int[][] matrix){
+        System.out.print("\t" + "");
+        for(int i=0; i<colCount; i++){
+            System.out.print("\t" + i);
+        }
+        System.out.println("");
         for(int i=0; i<rowCount; i++){
+            System.out.printf("\t" + i);
             for(int j=0; j<colCount; j++){
-                System.out.print(matrix[i][j]);
+                System.out.print("\t" + matrix[i][j]);
             }
             System.out.println();
         }
     }
     public static void printHorEdgeMatrix(int[][] matrix){
         System.out.println("Horizontal Edge Matrix:");
+        System.out.print("\t" + "H");
+        for(int i=0; i<colCount; i++){
+            System.out.print("\t" + i);
+        }
+        System.out.println("");
         for(int i=0; i<rowCount+1; i++){
+            System.out.printf("\t" + i);
             for(int j=0; j<colCount; j++){
-                System.out.print(matrix[i][j]);
+                System.out.print("\t" + matrix[i][j]);
             }
             System.out.println();
         }
     }
     public static void printVerEdgeMatrix(int[][] matrix){
         System.out.println("Vertical Edge Matrix:");
+        System.out.print("\t" + "V");
+        for(int i=0; i<colCount+1; i++){
+            System.out.print("\t" + i);
+        }
+        System.out.println("");
         for(int i=0; i<rowCount; i++){
+            System.out.printf("\t" + i);
             for(int j=0; j<colCount+1; j++){
-                System.out.print(matrix[i][j]);
+                System.out.print("\t" + matrix[i][j]);
             }
             System.out.println();
         }
@@ -139,6 +175,7 @@ public class SlitherlinkSolver {
         }
 
     }
+
     //Function to Generate Horizontal and Vertical edge values before applying Arc Consistency
     public static void generateInitialEdgeMatrix(int [][] matrix){
         for(int i=0; i<rowCount; i++){
@@ -189,7 +226,202 @@ public class SlitherlinkSolver {
                     //System.out.print(", V" + (i+1) + j + "=" + 0);
                     verEdgeMatrix[i][j+1] = -1;
                     //System.out.println("");
+                }
+            }
+        }
+    }
 
+    //Apply Arc Consistency on corners
+    public static void applyAConCorners(int [][] matrix){
+        int leftTop = matrix[0][0];
+        int leftBottom = matrix[rowCount-1][0];
+        int rightTop = matrix[0][colCount-1];
+        int rightBottom = matrix[rowCount-1][colCount-1];
+        System.out.println("\tLT=" + leftTop + "\tLB=" + leftBottom + "\tRT=" + rightTop + "\tRB=" + rightBottom );
+        AConLeftTop(matrix);
+        AConLeftBottom(matrix);
+        AConRightTop(matrix);
+        AConRightBottom(matrix);
+
+    }
+
+    public static void AConLeftTop(int [][] matrix){
+        int leftTop = matrix[0][0];
+        switch(leftTop){
+            case 0:
+                //If left top is 0, all four edges of cell are already -1 by zeroAC
+                //set H01 of C01 and V10 of C10 to -1
+                horEdgeMatrix[0][1] = -1;
+                verEdgeMatrix[1][0] = -1;
+                break;
+
+            case 1:
+                //if Left top is 1, set H00 and V00 to -1
+                horEdgeMatrix[0][0] = -1;
+                verEdgeMatrix[0][0] = -1;
+                break;
+
+            case 2:
+                //if left top is 2, set H01 of C01 and V10 of C10 to 1
+                horEdgeMatrix[0][1] = 1;
+                verEdgeMatrix[1][0] = 1;
+                break;
+
+            case 3:
+                //if Left top is 3, set H00 and V00 to 1
+                horEdgeMatrix[0][0] = 1;
+                verEdgeMatrix[0][0] = 1;
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    public static void AConLeftBottom(int [][] matrix){
+        int leftBottom = matrix[rowCount-1][0];
+        switch(leftBottom){
+            case 0:
+                //If left Bottom is 0, all four edges of cell are already -1 by zeroAC
+                horEdgeMatrix[rowCount][1] = -1;
+                verEdgeMatrix[rowCount-2][0] = -1;
+                break;
+
+            case 1:
+                //if left bottom is 1
+                horEdgeMatrix[rowCount][0] = -1;
+                verEdgeMatrix[rowCount-1][0] = -1;
+                break;
+
+            case 2:
+                //If left Bottom is 2
+                horEdgeMatrix[rowCount][1] = 1;
+                verEdgeMatrix[rowCount-2][0] = 1;
+                break;
+
+            case 3:
+                //if left bottom is 3
+                horEdgeMatrix[rowCount][0] = 1;
+                verEdgeMatrix[rowCount-1][0] = 1;
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    public static void AConRightTop(int [][] matrix){
+        int rightTop = matrix[0][colCount-1];
+        switch(rightTop){
+            case 0:
+                //If Right top is 0, all four edges of cell are already -1 by zeroAC
+                horEdgeMatrix[0][colCount-2] = -1;
+                verEdgeMatrix[1][colCount] = -1;
+                break;
+
+            case 1:
+                //if Right top is 1
+                horEdgeMatrix[0][colCount-1] = -1;
+                verEdgeMatrix[0][colCount] = -1;
+                break;
+
+            case 2:
+                //If Right top is 2
+                horEdgeMatrix[0][colCount-2] = 1;
+                verEdgeMatrix[1][colCount] = 1;
+                break;
+
+            case 3:
+                //if Right top is 3
+                horEdgeMatrix[0][colCount-1] = 1;
+                verEdgeMatrix[0][colCount] = 1;
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    public static void AConRightBottom(int [][] matrix){
+        int rightBottom = matrix[rowCount-1][colCount-1];
+        switch(rightBottom){
+            case 0:
+                //If Right Bottom is 0, all four edges of cell are already -1 by zeroAC
+                horEdgeMatrix[rowCount][colCount-2] = -1;
+                verEdgeMatrix[rowCount-2][colCount] = -1;
+                break;
+
+            case 1:
+                //if Right bottom is 1
+                horEdgeMatrix[rowCount][colCount-1] = -1;
+                verEdgeMatrix[rowCount-1][colCount] = -1;
+                break;
+
+            case 2:
+                //If Right Bottom is 2
+                horEdgeMatrix[rowCount][colCount-2] = 1;
+                verEdgeMatrix[rowCount-2][colCount] = 1;
+                break;
+
+            case 3:
+                //if Right bottom is 3
+                horEdgeMatrix[rowCount][colCount-1] = 1;
+                verEdgeMatrix[rowCount-1][colCount] = 1;
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    public static void applyACon3Adjto0(int [][] matrix){
+        for(int i=0; i<rowCount; i++){
+            for(int j=0; j<colCount; j++){
+                if(matrix[i][j] == 0){
+                    // Diagonal Top Left Cell value to the Cell value 0
+                    if((i-1)>= 0 && (j-1) >= 0 && matrix[i-1][j-1] == 3){
+                        horEdgeMatrix[i][j-1] = (horEdgeMatrix[i][j-1] == -1) ? -1 : 1;
+                        verEdgeMatrix[i-1][j] = (verEdgeMatrix[i-1][j] == -1) ? -1 : 1;
+                    }
+                    // Diagonal Top Right Cell value to the Cell value 0
+                    if((i-1)>= 0 && (j+1) < colCount && matrix[i-1][j+1] == 3){
+                        horEdgeMatrix[i][j+1] = (horEdgeMatrix[i][j+1] == -1) ? -1 : 1;
+                        verEdgeMatrix[i-1][j+1] = (verEdgeMatrix[i-1][j+1] == -1) ? -1 : 1;
+                    }
+                    // Diagonal Bottom Right Cell value to the Cell value 0
+                    if((i+1)<rowCount && (j+1)< colCount && matrix[i+1][j+1] == 3){
+                        horEdgeMatrix[i+1][j+1] = (horEdgeMatrix[i+1][j+1] == -1) ? -1 : 1;
+                        verEdgeMatrix[i+1][j+1] = (verEdgeMatrix[i+1][j+1] == -1) ? -1 : 1;
+                    }
+                    // Diagonal Bottom Left Cell value to the Cell value 0
+                    if((i+1)< rowCount && (j-1) >= 0 && matrix[i+1][j-1] == 3){
+                        horEdgeMatrix[i+1][j-1] = (horEdgeMatrix[i+1][j-1] == -1) ? -1 : 1;
+                        verEdgeMatrix[i+1][j] = (verEdgeMatrix[i+1][j] == -1) ? -1 : 1;
+                    }
+                    // ADJACENT UP Cell value to the Cell value 0
+                    if((i-1)>= 0 && matrix[i-1][j] == 3){
+                        verEdgeMatrix[i-1][j] = (verEdgeMatrix[i-1][j] == -1) ? -1 : 1;
+                        horEdgeMatrix[i-1][j] = (horEdgeMatrix[i-1][j] == -1) ? -1 : 1;
+                        verEdgeMatrix[i-1][j+1] = (verEdgeMatrix[i-1][j+1] == -1) ? -1 : 1;
+                    }
+                    // ADJACENT RIGHT Cell value to the Cell value 0
+                    if((j+1)<colCount && matrix[i][j+1] == 3){
+                        horEdgeMatrix[i][j+1] = (horEdgeMatrix[i][j+1] == -1) ? -1 : 1;
+                        verEdgeMatrix[i][j+1+1] = (verEdgeMatrix[i][j+1+1] == -1) ? -1 : 1;
+                        horEdgeMatrix[i+1][j+1] = (horEdgeMatrix[i+1][j+1] == -1) ? -1 : 1;
+                    }
+                    // ADJACENT BOTTOM Cell value to the Cell value 0
+                    if((i+1)< rowCount && matrix[i+1][j] == 3){
+                        verEdgeMatrix[i+1][j] = (verEdgeMatrix[i+1][j] == -1) ? -1 : 1;
+                        horEdgeMatrix[i+1+1][j] = (horEdgeMatrix[i+1+1][j] == -1) ? -1 : 1;
+                        verEdgeMatrix[i+1][j+1] = (verEdgeMatrix[i+1][j+1] == -1) ? -1 : 1;
+                    }
+                    // ADJACENT LEFT Cell value to the Cell value 0
+                    if((j-1) >= 0 && matrix[i][j-1] == 3){
+                        horEdgeMatrix[i][j-1] = (horEdgeMatrix[i][j-1] == -1) ? -1 : 1;
+                        verEdgeMatrix[i][j-1] = (verEdgeMatrix[i][j-1] == -1) ? -1 : 1;
+                        horEdgeMatrix[i+1][j-1] = (horEdgeMatrix[i+1][j-1] == -1) ? -1 : 1;
+                    }
                 }
             }
         }
