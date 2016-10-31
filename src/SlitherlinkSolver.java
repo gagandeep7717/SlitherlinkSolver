@@ -14,7 +14,7 @@ public class SlitherlinkSolver {
     static int rowCount = 0;
     static int colCount = 0;
 
-    static ArrayList<String> nonEssEdges = null;    //Arraylist for NonEssential Edges wit reduced domain to be used for reduction
+    static ArrayList<String> nonEssEdges = new ArrayList<String>();    //Arraylist for NonEssential Edges wit reduced domain to be used for reduction
 
     static HashMap<String, ArrayList<String>> edgeHM = new HashMap<String, ArrayList<String>>();    //Hashmap storing Key: Edges and Value: Domain
     static HashMap<String, ArrayList<String>> nodeHM = new HashMap<String, ArrayList<String>>();    //Hashmap for Key: Nodes and Value: Satisfying Assignments (Node Degree either 0 or 2)
@@ -32,18 +32,17 @@ public class SlitherlinkSolver {
         //Generating Initial Edge Domain Hashmap
         generateInitialEdgeHashMap(readMatrix);
         System.out.println("Initial Edge Domain:\n");
-        Map<String, ArrayList<String>> treeMapEdge = new TreeMap<String, ArrayList<String>>(edgeHM); //to print sorted Edge HashMap
-        printHM(treeMapEdge);
+        printHM(edgeHM);
 
         //Generating Initial Node Assignments Hashmap
         System.out.println("Initial Node Assignments:\n");
         generateInitialNodeHashMap(readMatrix);
         findNodeonWallsandCorners(readMatrix);
-        Map<String, ArrayList<String>> treeMapNode = new TreeMap<String, ArrayList<String>>(nodeHM); //to print sorted Node hashmap
-        printHM(treeMapNode);
+        printHM(nodeHM);
 
 
-        //applyZeroAC(readMatrix);
+        applyZeroAC(readMatrix);
+        printHM(edgeHM);
 
 
     }
@@ -167,7 +166,12 @@ public class SlitherlinkSolver {
         }
     }
 
-    public static <K, V> void printHM(Map<K, V> edgeHM){
+    public static void printHM(HashMap<String, ArrayList<String>> hashMap){
+        Map<String, ArrayList<String>> treeMapEdge = new TreeMap<String, ArrayList<String>>(edgeHM); //to print sorted Edge HashMap
+        printSortedHM(treeMapEdge);
+    }
+
+    public static <K, V> void printSortedHM(Map<K, V> edgeHM){
         Set set = edgeHM.entrySet();
         int edgeCount=0;
         Iterator i = set.iterator();
@@ -182,6 +186,7 @@ public class SlitherlinkSolver {
     }
 
     public static void findNodeonWallsandCorners(int[][] matrix){
+        System.out.println("Reducing satisfying assignments for Nodes on corners and walls");
         ArrayList<String> TopWall = new ArrayList<String>();
         ArrayList<String> RightWall = new ArrayList<String>();
         ArrayList<String> BottomWall = new ArrayList<String>();
@@ -227,6 +232,7 @@ public class SlitherlinkSolver {
         System.out.println("Right Wall: " + RightWall);
         System.out.println("Bottom Wall: " + BottomWall);
         System.out.println("Left Wall: " + LeftWall);
+        System.out.println("");
 
 
         ArrayList<String> alTopLeftCorner = new ArrayList<String>();
@@ -299,9 +305,32 @@ public class SlitherlinkSolver {
         for(int i=0; i<rowCount; i++){
             for(int j=0; j<colCount; j++){
                 if(matrix[i][j] == 0){
+                    String Hij = "H" + i + j;
+                    String Vij = "V" + i + j;
+                    String Hi1j = "H" + (i+1) + j;
+                    String Vij1 = "V" + i + (j+1);
 
-
+                    nonEssEdges.add(Hij);
+                    nonEssEdges.add(Vij);
+                    nonEssEdges.add(Hi1j);
+                    nonEssEdges.add(Vij1);
                 }
+            }
+        }
+        System.out.println("");
+        System.out.println("Printing Non Essential Edges - removal of Cell Value CV=0");
+        removeDuplicates(nonEssEdges);
+        printArraylist(nonEssEdges);
+        System.out.println("");
+        ArrayList<String> tempAL = new ArrayList<String>();
+        for(int i=0; i<nonEssEdges.size(); i++)
+        {
+            String str = nonEssEdges.get(i);
+            if(edgeHM.containsKey(str)){
+                tempAL = edgeHM.get(str);
+                edgeHM.remove(str);
+                tempAL.remove("1");
+                edgeHM.put(str, tempAL);
             }
         }
     }
