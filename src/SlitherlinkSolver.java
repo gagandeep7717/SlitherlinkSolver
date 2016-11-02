@@ -1,3 +1,5 @@
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -14,10 +16,10 @@ public class SlitherlinkSolver {
     static int rowCount = 0;
     static int colCount = 0;
 
-    static ArrayList<String> nonEssEdges = new ArrayList<String>();    //Arraylist for NonEssential Edges wit reduced domain to be used for reduction
+    static ArrayList<edge> nonEssEdges = new ArrayList<edge>();    //Arraylist for NonEssential Edges wit reduced domain to be used for reduction
 
-    static HashMap<String, ArrayList<String>> edgeHM = new HashMap<String, ArrayList<String>>();    //Hashmap storing Key: Edges and Value: Domain
-    static HashMap<String, ArrayList<String>> nodeHM = new HashMap<String, ArrayList<String>>();    //Hashmap for Key: Nodes and Value: Satisfying Assignments (Node Degree either 0 or 2)
+    static HashMap<edge, ArrayList<String>> edgeHM = new HashMap<edge, ArrayList<String>>();    //Hashmap storing Key: Edges and Value: Domain
+    static HashMap<node, ArrayList<String>> nodeHM = new HashMap<node, ArrayList<String>>();    //Hashmap for Key: Nodes and Value: Satisfying Assignments (Node Degree either 0 or 2)
 
 
     public static void main(String args[]) throws IOException {
@@ -26,30 +28,29 @@ public class SlitherlinkSolver {
         PrintStream out = new PrintStream(new FileOutputStream(path.toFile()));
         System.setOut(out);
 
-        int[][] readMatrix = readPuzzle();  //readPuzzle - reads puzzle from text file
+        int[][] readMatrix = readPuzzle();  //readPuzzle - reads puzzle from text file and prints to console
 
 
         //Generating Initial Edge Domain Hashmap
         generateInitialEdgeHashMap(readMatrix);
-        System.out.println("Initial Edge Domain:\n");
-        printHM(edgeHM);
+        System.out.println("\nInitial Edge Domain:\n");
+        printEdgeHM(edgeHM);
 
         //Generating Initial Node Assignments Hashmap
-        System.out.println("Initial Node Assignments:\n");
+        System.out.println("\nInitial Node Assignments:\n");
         generateInitialNodeHashMap(readMatrix);
         findNodeonWallsandCorners(readMatrix);
-        printHM(nodeHM);
+        printNodeHM(nodeHM);
 
 
+        //Applying Domain Reduction on where cell value is zero.
         applyZeroAC(readMatrix);
-        printHM(edgeHM);
-
+        printEdgeHM(edgeHM);
+        printEdgeArraylist(nonEssEdges);
 
     }
 
     public static int[][] readPuzzle() throws IOException {
-
-
         //Read File and Add to String Buffer
         StringBuilder sb = null;
         Path path = Paths.get(System.getProperty("user.dir") + "\\src\\puzzle.txt");
@@ -94,6 +95,7 @@ public class SlitherlinkSolver {
         //Print puzzle matrix
         System.out.println("*********Puzzle Matrix**********");
         printMatrix(matrix);
+        System.out.println("");
         return matrix;
     }
 
@@ -119,184 +121,250 @@ public class SlitherlinkSolver {
 
 
     public static void generateInitialEdgeHashMap(int [][] matrix){
+        LinkedHashMap<edge, ArrayList<String>> orderedEdgeHM = new LinkedHashMap<edge, ArrayList<String>>();
         for(int i=0; i<rowCount; i++){
             for(int j=0; j<colCount; j++){
-                String Hij = "H" + i + j;
-                String Vij = "V" + i + j;
-                String Hi1j = "H" + (i+1) + j;
-                String Vij1 = "V" + i + (j+1);
+                orderedEdgeHM.put(new edge("H", i, j), new ArrayList<String>(Arrays.asList("0","1")));
+                orderedEdgeHM.put(new edge("V", i, j), new ArrayList<String>(Arrays.asList("0","1")));
+                orderedEdgeHM.put(new edge("H", i+1, j), new ArrayList<String>(Arrays.asList("0","1")));
+                orderedEdgeHM.put(new edge("V", i, j+1), new ArrayList<String>(Arrays.asList("0","1")));
 
-                ArrayList<String>  initDomain = new ArrayList<String>();
-                initDomain.add("0");
-                initDomain.add("1");
-
-                edgeHM.put(Hij, initDomain);
-                edgeHM.put(Vij, initDomain);
-                edgeHM.put(Hi1j, initDomain);
-                edgeHM.put(Vij1, initDomain);
-                //System.out.println("Cell: " + matrix[i][j] + "\t Edges: " + Hij + "=" + printArraylist(initDomain) + "\t" + Vij + "=" + printArraylist(initDomain) + "\t" + Hi1j + "=" + printArraylist(initDomain) + "\t" + Vij1 + "=" + printArraylist(initDomain) );
+                edgeHM = orderedEdgeHM;
             }
         }
     }
 
     public static void generateInitialNodeHashMap(int [][] matrix){
+        LinkedHashMap<node, ArrayList<String>> orderedNodeHM = new LinkedHashMap<node, ArrayList<String>>();
         for(int i=0; i<rowCount+1; i++){
             for(int j=0; j<colCount+1; j++){
-                String Nij = "N" + i + j;
-
-
-                ArrayList<String>  initAssignment = new ArrayList<String>();
                 String[] assignments = new String[] {"0000", "0011", "0110", "1100", "0101", "1010", "1001"};
-                initAssignment.addAll(Arrays.asList(assignments));
-                nodeHM.put(Nij, initAssignment);
+                orderedNodeHM.put(new node("N", i, j), new ArrayList<String>(Arrays.asList(assignments)));
+
+                nodeHM = orderedNodeHM;
             }
         }
     }
 
-    public static void removeDuplicates(ArrayList<String> nonEssEdges){
-        Set<String> hs = new HashSet<>();
+    public static void removeDuplicates(ArrayList<edge> nonEssEdges){
+        Set<edge> hs = new HashSet<>();
         hs.addAll(nonEssEdges);
         nonEssEdges.clear();
         nonEssEdges.addAll(hs);
     }
 
-    public static void printArraylist(ArrayList<String> al){
+    public static void printStringArraylist(ArrayList<String> al){
         for(String str:al){
             System.out.print("\t" + str);
         }
     }
 
-    public static void printHM(HashMap<String, ArrayList<String>> hashMap){
-        Map<String, ArrayList<String>> treeMapEdge = new TreeMap<String, ArrayList<String>>(edgeHM); //to print sorted Edge HashMap
-        printSortedHM(treeMapEdge);
+    public static void printEdgeArraylist(ArrayList<edge> al){
+        if(al.isEmpty()){
+            System.out.println("No - Non Essential Edge Present!");
+        }
+        else {
+            for (edge str : al) {
+                str.printEdge();
+            }
+        }
     }
 
-    public static <K, V> void printSortedHM(Map<K, V> edgeHM){
+    public static void printNodeArraylist(ArrayList<node> al){
+        for(node str:al){
+            str.printNode();
+        }
+    }
+
+    public static void printSortedHM(HashMap<edge, ArrayList<String>> edgeHM){
         Set set = edgeHM.entrySet();
         int edgeCount=0;
         Iterator i = set.iterator();
         while(i.hasNext()){
             edgeCount++;
             Map.Entry me = (Map.Entry) i.next();
-            System.out.print(edgeCount + "\t" + me.getKey() + ":");
+            System.out.print(edgeCount + "\t" + ":");
+            edge edge = (edge) me.getKey();
+            edge.printEdge();
             ArrayList<String> alDomain= (ArrayList<String>) me.getValue();
-            printArraylist(alDomain);
+            printStringArraylist(alDomain);
+            System.out.println("");
+        }
+    }
+
+    public static void printEdgeHM(HashMap<edge,ArrayList<String>> unsortedHashMap){
+        List<Map.Entry<edge, ArrayList<String>>> entries =
+                new ArrayList<Map.Entry<edge, ArrayList<String>>>(unsortedHashMap.entrySet());
+
+        Collections.sort(entries, new Comparator<Map.Entry<edge, ArrayList<String>>>() {
+            public int compare(Map.Entry<edge, ArrayList<String>> a, Map.Entry<edge, ArrayList<String>> b){
+                edge edgeA = a.getKey();
+                edge edgeB = b.getKey();
+                int asciiA = (int) edgeA.edgeType.charAt(0);
+                int asciiB = (int) edgeB.edgeType.charAt(0);
+                int sortbyI = (asciiA - asciiB) + edgeA.i - edgeB.i;
+                return sortbyI;
+            }
+        });
+
+        HashMap<edge, ArrayList<String>> sortedMap = new LinkedHashMap<edge, ArrayList<String>>();
+
+        for (Map.Entry<edge, ArrayList<String>> entry : entries) {
+            sortedMap.put(entry.getKey(), entry.getValue());
+        }
+
+        Map map = Collections.synchronizedMap(sortedMap);
+        Set set = map.entrySet();
+        int edgeCount=0;
+        synchronized (map){
+            Iterator i = set.iterator();
+            while(i.hasNext()){
+                edgeCount++;
+                Map.Entry me = (Map.Entry) i.next();
+                edge printEdge = (edge) me.getKey();
+                System.out.print(edgeCount + ":" + "\t");
+                printEdge.printEdge();
+                ArrayList<String> alDomain= (ArrayList<String>) me.getValue();
+                printStringArraylist(alDomain);
+                System.out.println("");
+            }
+        }
+
+    }
+
+    public static void printNodeHM(HashMap<node, ArrayList<String>> hashMap){
+
+        List<Map.Entry<node, ArrayList<String>>> entries =
+                new ArrayList<Map.Entry<node, ArrayList<String>>>(hashMap.entrySet());
+
+        Collections.sort(entries, new Comparator<Map.Entry<node, ArrayList<String>>>() {
+            public int compare(Map.Entry<node, ArrayList<String>> a, Map.Entry<node, ArrayList<String>> b){
+                node nodeA = a.getKey();
+                node nodeB = b.getKey();
+                int asciiA = (int) nodeA.nodeType.charAt(0);
+                int asciiB = (int) nodeB.nodeType.charAt(0);
+                int sortbyI = (asciiA - asciiB) + nodeA.i - nodeB.i;
+                return sortbyI;
+            }
+        });
+
+        HashMap<node, ArrayList<String>> sortedMap = new LinkedHashMap<node, ArrayList<String>>();
+
+        for (Map.Entry<node, ArrayList<String>> entry : entries) {
+            sortedMap.put(entry.getKey(), entry.getValue());
+        }
+
+        Set set = sortedMap.entrySet();
+        int nodeCount=0;
+        Iterator i = set.iterator();
+        while(i.hasNext()){
+            nodeCount++;
+            Map.Entry me = (Map.Entry) i.next();
+            node printNode = (node) me.getKey();
+            System.out.print(nodeCount + ":" + "\t" );
+            printNode.printNode();
+            ArrayList<String> alDomain= (ArrayList<String>) me.getValue();
+            printStringArraylist(alDomain);
             System.out.println("");
         }
     }
 
     public static void findNodeonWallsandCorners(int[][] matrix){
         System.out.println("Reducing satisfying assignments for Nodes on corners and walls");
-        ArrayList<String> TopWall = new ArrayList<String>();
-        ArrayList<String> RightWall = new ArrayList<String>();
-        ArrayList<String> BottomWall = new ArrayList<String>();
-        ArrayList<String> LeftWall = new ArrayList<String>();
-        ArrayList<String> TopLeftCorner = new ArrayList<String>();
-        ArrayList<String> TopRightCorner = new ArrayList<String>();
-        ArrayList<String> BottomRightCorner = new ArrayList<String>();
-        ArrayList<String> BottomLeftCorner = new ArrayList<String>();
+        ArrayList<node> TopWall = new ArrayList<node>();
+        ArrayList<node> RightWall = new ArrayList<node>();
+        ArrayList<node> BottomWall = new ArrayList<node>();
+        ArrayList<node> LeftWall = new ArrayList<node>();
+        ArrayList<node> TopLeftCorner = new ArrayList<node>();
+        ArrayList<node> TopRightCorner = new ArrayList<node>();
+        ArrayList<node> BottomRightCorner = new ArrayList<node>();
+        ArrayList<node> BottomLeftCorner = new ArrayList<node>();
 
         for(int i=0; i<=rowCount; i++){
             for(int j=0; j<=colCount; j++){
                 if(i == 0 && j == 0){
-                    TopLeftCorner.add("N" + i + j);
+                    TopLeftCorner.add(new node("N", i, j));
                 }
                 else if(i == 0 && j == colCount){
-                    TopRightCorner.add("N" + i + j);
+                    TopRightCorner.add(new node("N", i, j));
                 }
                 else if(i == rowCount && j == colCount){
-                    BottomRightCorner.add("N" + i + j);
+                    BottomRightCorner.add(new node("N", i, j));
                 }
                 else if(i == rowCount && j == 0){
-                    BottomLeftCorner.add("N" + i + j);
+                    BottomLeftCorner.add(new node("N", i, j));
                 }
                 else if(i == 0 && (j != 0 || j == colCount)){
-                    TopWall.add("N" + i + j);
+                    TopWall.add(new node("N", i, j));
                 }
                 else if(j == colCount && (i!=0 || i != rowCount)){
-                    RightWall.add("N" + i + j);
+                    RightWall.add(new node("N", i, j));
                 }
                 else if(i == rowCount && (j != 0 || j != colCount)) {
-                    BottomWall.add("N" + i + j);
+                    BottomWall.add(new node("N", i, j));
                 }
                 else if(j == 0 && (i != 0 || i == rowCount)) {
-                    LeftWall.add("N" + i + j);
+                    LeftWall.add(new node("N", i, j));
                 }
             }
         }
-        System.out.println("LeftTop node: " + TopLeftCorner);
-        System.out.println("RightTop node: " + TopRightCorner);
-        System.out.println("RightBottom node: " + BottomRightCorner);
-        System.out.println("LeftBottom node: " + BottomLeftCorner);
-        System.out.println("Top Wall: " + TopWall);
-        System.out.println("Right Wall: " + RightWall);
-        System.out.println("Bottom Wall: " + BottomWall);
-        System.out.println("Left Wall: " + LeftWall);
-        System.out.println("");
 
+        System.out.print("\nLeftTopCorner node: "); printNodeArraylist(TopLeftCorner);
+        System.out.print("\nRightTopCorner node: "); printNodeArraylist(TopRightCorner);
+        System.out.print("\nRightBottomCorner node: "); printNodeArraylist(BottomRightCorner);
+        System.out.print("\nLeftBottomCorner node: "); printNodeArraylist(BottomLeftCorner);
+        System.out.print("\nTop Wall: "); printNodeArraylist(TopWall);
+        System.out.print("\nRight Wall: "); printNodeArraylist(RightWall);
+        System.out.print("\nBottom Wall: "); printNodeArraylist(BottomWall);
+        System.out.print("\nLeft Wall: "); printNodeArraylist(LeftWall);
+        System.out.println("\n");
 
-        ArrayList<String> alTopLeftCorner = new ArrayList<String>();
         String[] assignmentsTopLeftCorner = new String[]{"0000","0011"};
-        alTopLeftCorner.addAll(Arrays.asList(assignmentsTopLeftCorner));
 
-        ArrayList<String> alTopRightCorner = new ArrayList<String>();
         String[] assignmentsTopRightCorner = new String[]{"0000","1001"};
-        alTopRightCorner.addAll(Arrays.asList(assignmentsTopRightCorner));
 
-        ArrayList<String> alBottomRightCorner = new ArrayList<String>();
         String[] assignmentsBottomRightCorner = new String[]{"0000","1100"};
-        alBottomRightCorner.addAll(Arrays.asList(assignmentsBottomRightCorner));
 
-        ArrayList<String> alBottomLeftCorner = new ArrayList<String>();
         String[] assignmentsBottomLeftCorner = new String[]{"0000","0110"};
-        alBottomLeftCorner.addAll(Arrays.asList(assignmentsBottomLeftCorner));
 
-        ArrayList<String> alTopWall = new ArrayList<String>();
         String[] assignmentsTopWall = new String[]{"0000","1010","1001","0011"};
-        alTopWall.addAll(Arrays.asList(assignmentsTopWall));
 
-        ArrayList<String> alRightWall = new ArrayList<String>();
         String[] assignmentsRightWall = new String[]{"0000","0110","0101","0011"};
-        alRightWall.addAll(Arrays.asList(assignmentsRightWall));
 
-        ArrayList<String> alBottomWall = new ArrayList<String>();
         String[] assignmentsBottomWall = new String[]{"0000","1100","0110","1010"};
-        alBottomWall.addAll(Arrays.asList(assignmentsBottomWall));
 
-        ArrayList<String> alLeftWall = new ArrayList<String>();
         String[] assignmentsLeftWall = new String[]{"0000","0110","0101","0011"};
-        alLeftWall.addAll(Arrays.asList(assignmentsLeftWall));
 
-        for(String str: TopLeftCorner){
-            nodeHM.put(str, alTopLeftCorner);
+        for(node str: TopLeftCorner){
+            nodeHM.put(str, new ArrayList<String>(Arrays.asList(assignmentsTopLeftCorner)));
         }
 
-        for(String str: TopRightCorner){
-            nodeHM.put(str, alTopRightCorner);
+        for(node str: TopRightCorner){
+            nodeHM.put(str, new ArrayList<String>(Arrays.asList(assignmentsTopRightCorner)));
         }
 
-        for(String str: BottomRightCorner){
-            nodeHM.put(str, alBottomRightCorner);
+        for(node str: BottomRightCorner){
+            nodeHM.put(str, new ArrayList<String>(Arrays.asList(assignmentsBottomRightCorner)));
         }
 
-        for(String str: BottomLeftCorner){
-            nodeHM.put(str, alBottomLeftCorner);
+        for(node str: BottomLeftCorner){
+            nodeHM.put(str, new ArrayList<String>(Arrays.asList(assignmentsBottomLeftCorner)));
         }
 
-        for(String str: TopWall){
-            nodeHM.put(str, alTopWall);
+        for(node str: TopWall){
+            nodeHM.put(str, new ArrayList<String>(Arrays.asList(assignmentsTopWall)));
         }
 
-        for(String str: RightWall){
-            nodeHM.put(str, alRightWall);
+        for(node str: RightWall){
+            nodeHM.put(str, new ArrayList<String>(Arrays.asList(assignmentsRightWall)));
         }
 
-        for(String str: BottomWall){
-            nodeHM.put(str, alBottomWall);
+        for(node str: BottomWall){
+            nodeHM.put(str, new ArrayList<String>(Arrays.asList(assignmentsBottomWall)));
         }
 
-        for(String str: LeftWall){
-            nodeHM.put(str, alLeftWall);
+        for(node str: LeftWall){
+            nodeHM.put(str, new ArrayList<String>(Arrays.asList(assignmentsLeftWall)));
         }
     }
 
@@ -305,34 +373,31 @@ public class SlitherlinkSolver {
         for(int i=0; i<rowCount; i++){
             for(int j=0; j<colCount; j++){
                 if(matrix[i][j] == 0){
-                    String Hij = "H" + i + j;
-                    String Vij = "V" + i + j;
-                    String Hi1j = "H" + (i+1) + j;
-                    String Vij1 = "V" + i + (j+1);
-
-                    nonEssEdges.add(Hij);
-                    nonEssEdges.add(Vij);
-                    nonEssEdges.add(Hi1j);
-                    nonEssEdges.add(Vij1);
+                    nonEssEdges.add(new edge("H", i, j));   // H[i][j]
+                    nonEssEdges.add(new edge("V", i, j));   // V[i][j]
+                    nonEssEdges.add(new edge("H", i+1, j)); // H[i+1][j]
+                    nonEssEdges.add(new edge("V", i, j+1)); // H[i][j+1]
                 }
             }
         }
         System.out.println("");
         System.out.println("Printing Non Essential Edges - removal of Cell Value CV=0");
         removeDuplicates(nonEssEdges);
-        printArraylist(nonEssEdges);
+        printEdgeArraylist(nonEssEdges);
+        reduceEdgeDomain(edgeHM, nonEssEdges);
         System.out.println("");
-        ArrayList<String> tempAL = new ArrayList<String>();
-        for(int i=0; i<nonEssEdges.size(); i++)
-        {
-            String str = nonEssEdges.get(i);
-            if(edgeHM.containsKey(str)){
-                tempAL = edgeHM.get(str);
-                edgeHM.remove(str);
-                tempAL.remove("1");
-                edgeHM.put(str, tempAL);
-            }
-        }
+        System.out.println("");
+
     }
 
+    public static void reduceEdgeDomain(HashMap<edge, ArrayList<String>> edgeHM, ArrayList<edge> nonEssEdges){
+        for(edge edge : nonEssEdges)
+        {
+            if(edgeHM.containsKey(edge)){
+                edgeHM.remove(edge);
+                edgeHM.put(edge, new ArrayList<String>(Arrays.asList("0")));
+            }
+        }
+
+    }
 }
