@@ -30,7 +30,7 @@ public class node {
 
     @Override
     public int hashCode() {
-        return Objects.hash(nodeType, i, j);
+        return Objects.hash(nodeType+i+j, i*17, j*31);
     }
 
 

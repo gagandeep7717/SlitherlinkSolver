@@ -1,13 +1,14 @@
-Rows = 6
-Columns = 5
+Rows = 7
+Columns = 7
 *********Puzzle Matrix**********
-		0	1	2	3	4
-	0	1	∞	3	∞	3
-	1	∞	∞	∞	2	∞
-	2	3	0	∞	∞	2
-	3	∞	∞	1	3	∞
-	4	1	∞	∞	3	∞
-	5	0	∞	∞	0	∞
+		0	1	2	3	4	5	6
+	0	0	0	0	0	0	0	0
+	1	0	0	1	1	1	0	0
+	2	0	1	2	1	2	1	0
+	3	0	1	1	0	1	1	0
+	4	0	1	2	1	2	1	0
+	5	0	0	1	1	1	0	0
+	6	0	0	0	0	0	0	0
 
 
 Initial Edge Domain:
@@ -17,201 +18,1243 @@ Initial Edge Domain:
 3:	H02		0	1
 4:	H03		0	1
 5:	H04		0	1
-6:	H10		0	1
-7:	H11		0	1
-8:	H12		0	1
-9:	H13		0	1
-10:	H14		0	1
-11:	H20		0	1
-12:	H21		0	1
-13:	H22		0	1
-14:	H23		0	1
-15:	H24		0	1
-16:	H30		0	1
-17:	H31		0	1
-18:	H32		0	1
-19:	H33		0	1
-20:	H34		0	1
-21:	H40		0	1
-22:	H41		0	1
-23:	H42		0	1
-24:	H43		0	1
-25:	H44		0	1
-26:	H50		0	1
-27:	H51		0	1
-28:	H52		0	1
-29:	H53		0	1
-30:	H54		0	1
-31:	H60		0	1
-32:	H61		0	1
-33:	H62		0	1
-34:	H63		0	1
-35:	H64		0	1
-36:	V00		0	1
-37:	V01		0	1
-38:	V02		0	1
-39:	V03		0	1
-40:	V04		0	1
-41:	V05		0	1
-42:	V10		0	1
-43:	V11		0	1
-44:	V12		0	1
-45:	V13		0	1
-46:	V14		0	1
-47:	V15		0	1
-48:	V20		0	1
-49:	V21		0	1
-50:	V22		0	1
-51:	V23		0	1
-52:	V24		0	1
-53:	V25		0	1
-54:	V30		0	1
-55:	V31		0	1
-56:	V32		0	1
-57:	V33		0	1
-58:	V34		0	1
-59:	V35		0	1
-60:	V40		0	1
-61:	V41		0	1
-62:	V42		0	1
-63:	V43		0	1
-64:	V44		0	1
-65:	V45		0	1
-66:	V50		0	1
-67:	V51		0	1
-68:	V52		0	1
-69:	V53		0	1
-70:	V54		0	1
-71:	V55		0	1
+6:	H05		0	1
+7:	H06		0	1
+8:	H10		0	1
+9:	H11		0	1
+10:	H12		0	1
+11:	H13		0	1
+12:	H14		0	1
+13:	H15		0	1
+14:	H16		0	1
+15:	H20		0	1
+16:	H21		0	1
+17:	H22		0	1
+18:	H23		0	1
+19:	H24		0	1
+20:	H25		0	1
+21:	H26		0	1
+22:	H30		0	1
+23:	H31		0	1
+24:	H32		0	1
+25:	H33		0	1
+26:	H34		0	1
+27:	H35		0	1
+28:	H36		0	1
+29:	H40		0	1
+30:	H41		0	1
+31:	H42		0	1
+32:	H43		0	1
+33:	H44		0	1
+34:	H45		0	1
+35:	H46		0	1
+36:	H50		0	1
+37:	H51		0	1
+38:	H52		0	1
+39:	H53		0	1
+40:	H54		0	1
+41:	H55		0	1
+42:	H56		0	1
+43:	H60		0	1
+44:	H61		0	1
+45:	H62		0	1
+46:	H63		0	1
+47:	H64		0	1
+48:	H65		0	1
+49:	H66		0	1
+50:	H70		0	1
+51:	H71		0	1
+52:	H72		0	1
+53:	H73		0	1
+54:	H74		0	1
+55:	H75		0	1
+56:	H76		0	1
+57:	V00		0	1
+58:	V01		0	1
+59:	V02		0	1
+60:	V03		0	1
+61:	V04		0	1
+62:	V05		0	1
+63:	V06		0	1
+64:	V07		0	1
+65:	V10		0	1
+66:	V11		0	1
+67:	V12		0	1
+68:	V13		0	1
+69:	V14		0	1
+70:	V15		0	1
+71:	V16		0	1
+72:	V17		0	1
+73:	V20		0	1
+74:	V21		0	1
+75:	V22		0	1
+76:	V23		0	1
+77:	V24		0	1
+78:	V25		0	1
+79:	V26		0	1
+80:	V27		0	1
+81:	V30		0	1
+82:	V31		0	1
+83:	V32		0	1
+84:	V33		0	1
+85:	V34		0	1
+86:	V35		0	1
+87:	V36		0	1
+88:	V37		0	1
+89:	V40		0	1
+90:	V41		0	1
+91:	V42		0	1
+92:	V43		0	1
+93:	V44		0	1
+94:	V45		0	1
+95:	V46		0	1
+96:	V47		0	1
+97:	V50		0	1
+98:	V51		0	1
+99:	V52		0	1
+100:	V53		0	1
+101:	V54		0	1
+102:	V55		0	1
+103:	V56		0	1
+104:	V57		0	1
+105:	V60		0	1
+106:	V61		0	1
+107:	V62		0	1
+108:	V63		0	1
+109:	V64		0	1
+110:	V65		0	1
+111:	V66		0	1
+112:	V67		0	1
 
 Initial Node Assignments:
 
 Reducing satisfying assignments for Nodes on corners and walls
 
 LeftTopCorner node: N00	
-RightTopCorner node: N05	
-RightBottomCorner node: N65	
-LeftBottomCorner node: N60	
-Top Wall: N01	N02	N03	N04	
-Right Wall: N15	N25	N35	N45	N55	
-Bottom Wall: N61	N62	N63	N64	
-Left Wall: N10	N20	N30	N40	N50	
+RightTopCorner node: N07	
+RightBottomCorner node: N77	
+LeftBottomCorner node: N70	
+Top Wall: N01	N02	N03	N04	N05	N06	
+Right Wall: N17	N27	N37	N47	N57	N67	
+Bottom Wall: N71	N72	N73	N74	N75	N76	
+Left Wall: N10	N20	N30	N40	N50	N60	
 
 1:	N00		0000	0011
 2:	N01		0000	1010	1001	0011
 3:	N02		0000	1010	1001	0011
 4:	N03		0000	1010	1001	0011
 5:	N04		0000	1010	1001	0011
-6:	N05		0000	1001
-7:	N10		0000	0110	0101	0011
-8:	N11		0000	0011	0110	1100	0101	1010	1001
-9:	N12		0000	0011	0110	1100	0101	1010	1001
-10:	N13		0000	0011	0110	1100	0101	1010	1001
-11:	N14		0000	0011	0110	1100	0101	1010	1001
-12:	N15		0000	0110	0101	0011
-13:	N20		0000	0110	0101	0011
-14:	N21		0000	0011	0110	1100	0101	1010	1001
-15:	N22		0000	0011	0110	1100	0101	1010	1001
-16:	N23		0000	0011	0110	1100	0101	1010	1001
-17:	N24		0000	0011	0110	1100	0101	1010	1001
-18:	N25		0000	0110	0101	0011
-19:	N30		0000	0110	0101	0011
-20:	N31		0000	0011	0110	1100	0101	1010	1001
-21:	N32		0000	0011	0110	1100	0101	1010	1001
-22:	N33		0000	0011	0110	1100	0101	1010	1001
-23:	N34		0000	0011	0110	1100	0101	1010	1001
-24:	N35		0000	0110	0101	0011
-25:	N40		0000	0110	0101	0011
-26:	N41		0000	0011	0110	1100	0101	1010	1001
-27:	N42		0000	0011	0110	1100	0101	1010	1001
-28:	N43		0000	0011	0110	1100	0101	1010	1001
-29:	N44		0000	0011	0110	1100	0101	1010	1001
-30:	N45		0000	0110	0101	0011
-31:	N50		0000	0110	0101	0011
-32:	N51		0000	0011	0110	1100	0101	1010	1001
-33:	N52		0000	0011	0110	1100	0101	1010	1001
-34:	N53		0000	0011	0110	1100	0101	1010	1001
-35:	N54		0000	0011	0110	1100	0101	1010	1001
-36:	N55		0000	0110	0101	0011
-37:	N60		0000	0110
-38:	N61		0000	1100	0110	1010
-39:	N62		0000	1100	0110	1010
-40:	N63		0000	1100	0110	1010
-41:	N64		0000	1100	0110	1010
-42:	N65		0000	1100
+6:	N05		0000	1010	1001	0011
+7:	N06		0000	1010	1001	0011
+8:	N07		0000	1001
+9:	N10		0000	0110	0101	0011
+10:	N11		0000	0011	0110	1100	0101	1010	1001
+11:	N12		0000	0011	0110	1100	0101	1010	1001
+12:	N13		0000	0011	0110	1100	0101	1010	1001
+13:	N14		0000	0011	0110	1100	0101	1010	1001
+14:	N15		0000	0011	0110	1100	0101	1010	1001
+15:	N16		0000	0011	0110	1100	0101	1010	1001
+16:	N17		0000	0110	0101	0011
+17:	N20		0000	0110	0101	0011
+18:	N21		0000	0011	0110	1100	0101	1010	1001
+19:	N22		0000	0011	0110	1100	0101	1010	1001
+20:	N23		0000	0011	0110	1100	0101	1010	1001
+21:	N24		0000	0011	0110	1100	0101	1010	1001
+22:	N25		0000	0011	0110	1100	0101	1010	1001
+23:	N26		0000	0011	0110	1100	0101	1010	1001
+24:	N27		0000	0110	0101	0011
+25:	N30		0000	0110	0101	0011
+26:	N31		0000	0011	0110	1100	0101	1010	1001
+27:	N32		0000	0011	0110	1100	0101	1010	1001
+28:	N33		0000	0011	0110	1100	0101	1010	1001
+29:	N34		0000	0011	0110	1100	0101	1010	1001
+30:	N35		0000	0011	0110	1100	0101	1010	1001
+31:	N36		0000	0011	0110	1100	0101	1010	1001
+32:	N37		0000	0110	0101	0011
+33:	N40		0000	0110	0101	0011
+34:	N41		0000	0011	0110	1100	0101	1010	1001
+35:	N42		0000	0011	0110	1100	0101	1010	1001
+36:	N43		0000	0011	0110	1100	0101	1010	1001
+37:	N44		0000	0011	0110	1100	0101	1010	1001
+38:	N45		0000	0011	0110	1100	0101	1010	1001
+39:	N46		0000	0011	0110	1100	0101	1010	1001
+40:	N47		0000	0110	0101	0011
+41:	N50		0000	0110	0101	0011
+42:	N51		0000	0011	0110	1100	0101	1010	1001
+43:	N52		0000	0011	0110	1100	0101	1010	1001
+44:	N53		0000	0011	0110	1100	0101	1010	1001
+45:	N54		0000	0011	0110	1100	0101	1010	1001
+46:	N55		0000	0011	0110	1100	0101	1010	1001
+47:	N56		0000	0011	0110	1100	0101	1010	1001
+48:	N57		0000	0110	0101	0011
+49:	N60		0000	0110	0101	0011
+50:	N61		0000	0011	0110	1100	0101	1010	1001
+51:	N62		0000	0011	0110	1100	0101	1010	1001
+52:	N63		0000	0011	0110	1100	0101	1010	1001
+53:	N64		0000	0011	0110	1100	0101	1010	1001
+54:	N65		0000	0011	0110	1100	0101	1010	1001
+55:	N66		0000	0011	0110	1100	0101	1010	1001
+56:	N67		0000	0110	0101	0011
+57:	N70		0000	0110
+58:	N71		0000	1100	0110	1010
+59:	N72		0000	1100	0110	1010
+60:	N73		0000	1100	0110	1010
+61:	N74		0000	1100	0110	1010
+62:	N75		0000	1100	0110	1010
+63:	N76		0000	1100	0110	1010
+64:	N77		0000	1100
 
 Printing Non Essential Edges - removal of Cell Value CV=0
-H60	V51	V50	V53	H50	H31	V22	H53	V21	H63	V54	H21	
+H71	H70	H73	H72	H75	H30	H74	H33	H76	H36	V31	V30	V33	V34	V37	V36	H40	H00	H43	H02	H46	H01	H04	H03	H06	H05	V40	V41	V00	V02	V46	V01	V04	V03	V47	V06	V05	V07	H51	H50	H11	H55	H10	H13	H12	H56	H15	H14	H16	V51	V50	V52	V11	V55	V10	V57	V12	V56	V15	V17	V16	H60	H62	H61	H20	H64	H63	H66	H21	H65	H26	H25	V60	V62	V61	V20	V64	V63	V66	V21	V65	V67	V26	V27	
 
-1:	H00		0	1
-2:	H01		0	1
-3:	H02		0	1
-4:	H03		0	1
-5:	H04		0	1
-6:	H10		0	1
-7:	H11		0	1
-8:	H12		0	1
-9:	H13		0	1
-10:	H14		0	1
-11:	H20		0	1
-12:	H22		0	1
-13:	H23		0	1
-14:	H24		0	1
-15:	H21		0
-16:	H30		0	1
-17:	H32		0	1
-18:	H33		0	1
-19:	H34		0	1
-20:	H31		0
-21:	H40		0	1
-22:	H41		0	1
-23:	H42		0	1
-24:	H43		0	1
-25:	H44		0	1
-26:	H51		0	1
-27:	H52		0	1
-28:	H54		0	1
-29:	H50		0
-30:	H53		0
-31:	H61		0	1
-32:	H62		0	1
-33:	H64		0	1
-34:	H60		0
-35:	H63		0
-36:	V00		0	1
-37:	V01		0	1
-38:	V02		0	1
-39:	V03		0	1
-40:	V04		0	1
-41:	V05		0	1
-42:	V10		0	1
-43:	V11		0	1
-44:	V12		0	1
-45:	V13		0	1
-46:	V14		0	1
-47:	V15		0	1
-48:	V20		0	1
-49:	V23		0	1
-50:	V24		0	1
-51:	V25		0	1
-52:	V22		0
-53:	V21		0
-54:	V30		0	1
-55:	V31		0	1
-56:	V32		0	1
-57:	V33		0	1
-58:	V34		0	1
-59:	V35		0	1
-60:	V40		0	1
-61:	V41		0	1
-62:	V42		0	1
-63:	V43		0	1
-64:	V44		0	1
-65:	V45		0	1
-66:	V52		0	1
-67:	V55		0	1
-68:	V51		0
-69:	V50		0
-70:	V53		0
-71:	V54		0
-H60	V51	V50	V53	H50	H31	V22	H53	V21	H63	V54	H21	
+1:	H00		0
+2:	H02		0
+3:	H01		0
+4:	H04		0
+5:	H03		0
+6:	H06		0
+7:	H05		0
+8:	H11		0
+9:	H10		0
+10:	H13		0
+11:	H12		0
+12:	H15		0
+13:	H14		0
+14:	H16		0
+15:	H22		0	1
+16:	H23		0	1
+17:	H24		0	1
+18:	H20		0
+19:	H21		0
+20:	H26		0
+21:	H25		0
+22:	H31		0	1
+23:	H32		0	1
+24:	H34		0	1
+25:	H35		0	1
+26:	H30		0
+27:	H33		0
+28:	H36		0
+29:	H41		0	1
+30:	H42		0	1
+31:	H44		0	1
+32:	H45		0	1
+33:	H40		0
+34:	H43		0
+35:	H46		0
+36:	H52		0	1
+37:	H53		0	1
+38:	H54		0	1
+39:	H51		0
+40:	H50		0
+41:	H55		0
+42:	H56		0
+43:	H60		0
+44:	H62		0
+45:	H61		0
+46:	H64		0
+47:	H63		0
+48:	H66		0
+49:	H65		0
+50:	H71		0
+51:	H70		0
+52:	H73		0
+53:	H72		0
+54:	H75		0
+55:	H74		0
+56:	H76		0
+57:	V00		0
+58:	V02		0
+59:	V01		0
+60:	V04		0
+61:	V03		0
+62:	V06		0
+63:	V05		0
+64:	V07		0
+65:	V13		0	1
+66:	V14		0	1
+67:	V11		0
+68:	V10		0
+69:	V12		0
+70:	V15		0
+71:	V17		0
+72:	V16		0
+73:	V22		0	1
+74:	V23		0	1
+75:	V24		0	1
+76:	V25		0	1
+77:	V20		0
+78:	V21		0
+79:	V26		0
+80:	V27		0
+81:	V32		0	1
+82:	V35		0	1
+83:	V31		0
+84:	V30		0
+85:	V33		0
+86:	V34		0
+87:	V37		0
+88:	V36		0
+89:	V42		0	1
+90:	V43		0	1
+91:	V44		0	1
+92:	V45		0	1
+93:	V40		0
+94:	V41		0
+95:	V46		0
+96:	V47		0
+97:	V53		0	1
+98:	V54		0	1
+99:	V51		0
+100:	V50		0
+101:	V52		0
+102:	V55		0
+103:	V57		0
+104:	V56		0
+105:	V60		0
+106:	V62		0
+107:	V61		0
+108:	V64		0
+109:	V63		0
+110:	V66		0
+111:	V65		0
+112:	V67		0
+H71	H70	H73	H72	H75	H30	H74	H33	H76	H36	V31	V30	V33	V34	V37	V36	H40	H00	H43	H02	H46	H01	H04	H03	H06	H05	V40	V41	V00	V02	V46	V01	V04	V03	V47	V06	V05	V07	H51	H50	H11	H55	H10	H13	H12	H56	H15	H14	H16	V51	V50	V52	V11	V55	V10	V57	V12	V56	V15	V17	V16	H60	H62	H61	H20	H64	H63	H66	H21	H65	H26	H25	V60	V62	V61	V20	V64	V63	V66	V21	V65	V67	V26	V27	
+
+Reducing Node on Left: N71	
+Checking for: 0000	
+Checking for: 1100	
+Checking for: 0110	Removed: 0110
+
+Reducing Node on Right: N72	
+Checking for: 0000	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Left: N70	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Reducing Node on Right: N71	
+Checking for: 0000	
+Checking for: 1100	Removed: 1100
+
+Reducing Node on Left: N73	
+Checking for: 0000	
+Checking for: 1100	
+Checking for: 0110	Removed: 0110
+
+Reducing Node on Right: N74	
+Checking for: 0000	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Left: N72	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Reducing Node on Right: N73	
+Checking for: 0000	
+Checking for: 1100	Removed: 1100
+
+Reducing Node on Left: N75	
+Checking for: 0000	
+Checking for: 1100	
+Checking for: 0110	Removed: 0110
+
+Reducing Node on Right: N76	
+Checking for: 0000	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Left: N30	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Checking for: 0011	Removed: 0011
+
+Reducing Node on Right: N31	
+Checking for: 0000	
+Checking for: 0011	
+Checking for: 0110	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Left: N74	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Reducing Node on Right: N75	
+Checking for: 0000	
+Checking for: 1100	Removed: 1100
+
+Reducing Node on Left: N33	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 1100	
+Checking for: 0101	
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Right: N34	
+Checking for: 0000	
+Checking for: 0011	
+Checking for: 0110	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Left: N76	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Reducing Node on Right: N77	
+Checking for: 0000	
+Checking for: 1100	Removed: 1100
+
+Reducing Node on Left: N36	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 1100	
+Checking for: 0101	
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Right: N37	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 0101	
+Checking for: 0011	
+Reducing Node on Left: N31	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N32	
+Checking for: 0000	
+Checking for: 0011	
+Checking for: 0110	Removed: 0110
+
+Checking for: 0101	Removed: 0101
+
+Checking for: 1001	
+Reducing Node on Left: N30	
+Checking for: 0000	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N31	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Reducing Node on Left: N33	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 1100	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N34	
+Checking for: 0000	
+Checking for: 0011	
+Checking for: 0110	Removed: 0110
+
+Checking for: 1001	
+Reducing Node on Left: N34	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 1001	Removed: 1001
+
+Reducing Node on Right: N35	
+Checking for: 0000	
+Checking for: 0011	
+Checking for: 0110	Removed: 0110
+
+Checking for: 0101	Removed: 0101
+
+Checking for: 1001	
+Reducing Node on Left: N37	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Left: N36	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 1100	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N37	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Reducing Node on Left: N40	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Checking for: 0011	Removed: 0011
+
+Reducing Node on Right: N41	
+Checking for: 0000	
+Checking for: 0011	
+Checking for: 0110	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Left: N00	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Reducing Node on Right: N01	
+Checking for: 0000	
+Checking for: 1010	Removed: 1010
+
+Checking for: 0011	
+Reducing Node on Left: N43	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 1100	
+Checking for: 0101	
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Right: N44	
+Checking for: 0000	
+Checking for: 0011	
+Checking for: 0110	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Left: N02	
+Checking for: 0000	
+Checking for: 1010	Removed: 1010
+
+Checking for: 0011	Removed: 0011
+
+Reducing Node on Right: N03	
+Checking for: 0000	
+Checking for: 1010	Removed: 1010
+
+Checking for: 0011	
+Reducing Node on Left: N46	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 1100	
+Checking for: 0101	
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Right: N47	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 0101	
+Checking for: 0011	
+Reducing Node on Left: N01	
+Checking for: 0000	
+Checking for: 1001	
+Checking for: 0011	Removed: 0011
+
+Reducing Node on Right: N02	
+Checking for: 0000	
+Checking for: 1001	Removed: 1001
+
+Reducing Node on Left: N04	
+Checking for: 0000	
+Checking for: 1010	Removed: 1010
+
+Checking for: 0011	Removed: 0011
+
+Reducing Node on Right: N05	
+Checking for: 0000	
+Checking for: 1010	Removed: 1010
+
+Checking for: 0011	
+Reducing Node on Left: N03	
+Checking for: 0000	
+Checking for: 1001	
+Checking for: 0011	Removed: 0011
+
+Reducing Node on Right: N04	
+Checking for: 0000	
+Checking for: 1001	Removed: 1001
+
+Reducing Node on Left: N06	
+Checking for: 0000	
+Checking for: 1010	Removed: 1010
+
+Checking for: 0011	Removed: 0011
+
+Reducing Node on Right: N07	
+Checking for: 0000	
+Checking for: 1001	Removed: 1001
+
+Reducing Node on Left: N05	
+Checking for: 0000	
+Checking for: 1001	
+Checking for: 0011	Removed: 0011
+
+Reducing Node on Right: N06	
+Checking for: 0000	
+Checking for: 1001	Removed: 1001
+
+Reducing Node on Left: N40	
+Checking for: 0000	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N41	
+Checking for: 0000	
+Checking for: 0011	
+Checking for: 0110	Removed: 0110
+
+Checking for: 1001	
+Reducing Node on Left: N41	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 1001	Removed: 1001
+
+Reducing Node on Right: N42	
+Checking for: 0000	
+Checking for: 0011	
+Checking for: 0110	Removed: 0110
+
+Checking for: 0101	Removed: 0101
+
+Checking for: 1001	
+Reducing Node on Left: N00	
+Checking for: 0000	
+Reducing Node on Right: N01	
+Checking for: 0000	
+Checking for: 1001	
+Reducing Node on Left: N02	
+Checking for: 0000	
+Reducing Node on Right: N03	
+Checking for: 0000	
+Checking for: 1001	
+Reducing Node on Left: N46	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 1100	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N47	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Checking for: 0011	
+Reducing Node on Left: N01	
+Checking for: 0000	
+Checking for: 1001	Removed: 1001
+
+Reducing Node on Right: N02	
+Checking for: 0000	
+Reducing Node on Left: N04	
+Checking for: 0000	
+Reducing Node on Right: N05	
+Checking for: 0000	
+Checking for: 1001	
+Reducing Node on Left: N03	
+Checking for: 0000	
+Checking for: 1001	Removed: 1001
+
+Reducing Node on Right: N04	
+Checking for: 0000	
+Reducing Node on Left: N47	
+Checking for: 0000	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Left: N06	
+Checking for: 0000	
+Reducing Node on Right: N07	
+Checking for: 0000	
+Reducing Node on Left: N05	
+Checking for: 0000	
+Checking for: 1001	Removed: 1001
+
+Reducing Node on Right: N06	
+Checking for: 0000	
+Reducing Node on Left: N07	
+Checking for: 0000	
+Reducing Node on Left: N51	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 1100	
+Checking for: 0101	
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Right: N52	
+Checking for: 0000	
+Checking for: 0011	
+Checking for: 0110	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Left: N50	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Checking for: 0011	Removed: 0011
+
+Reducing Node on Right: N51	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1001	Removed: 1001
+
+Reducing Node on Left: N11	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 1100	
+Checking for: 0101	
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Right: N12	
+Checking for: 0000	
+Checking for: 0011	
+Checking for: 0110	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Left: N55	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 1100	
+Checking for: 0101	
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Right: N56	
+Checking for: 0000	
+Checking for: 0011	
+Checking for: 0110	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Left: N10	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Checking for: 0011	Removed: 0011
+
+Reducing Node on Right: N11	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1001	Removed: 1001
+
+Reducing Node on Left: N13	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 1100	
+Checking for: 0101	
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Right: N14	
+Checking for: 0000	
+Checking for: 0011	
+Checking for: 0110	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Left: N12	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 0101	
+Checking for: 1001	
+Reducing Node on Right: N13	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1001	Removed: 1001
+
+Reducing Node on Left: N56	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 0101	
+Checking for: 1001	
+Reducing Node on Right: N57	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 0101	
+Checking for: 0011	
+Reducing Node on Left: N15	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 1100	
+Checking for: 0101	
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Right: N16	
+Checking for: 0000	
+Checking for: 0011	
+Checking for: 0110	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Left: N14	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 0101	
+Checking for: 1001	
+Reducing Node on Right: N15	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1001	Removed: 1001
+
+Reducing Node on Left: N16	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 0101	
+Checking for: 1001	
+Reducing Node on Right: N17	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 0101	
+Checking for: 0011	
+Reducing Node on Left: N51	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N52	
+Checking for: 0000	
+Checking for: 0011	
+Checking for: 0110	Removed: 0110
+
+Checking for: 1001	
+Reducing Node on Left: N50	
+Checking for: 0000	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N51	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Reducing Node on Left: N52	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 1001	Removed: 1001
+
+Reducing Node on Right: N53	
+Checking for: 0000	
+Checking for: 0011	
+Checking for: 0110	Removed: 0110
+
+Checking for: 0101	Removed: 0101
+
+Checking for: 1001	
+Reducing Node on Left: N11	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N12	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Checking for: 1001	
+Reducing Node on Left: N55	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 1100	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N56	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Checking for: 1001	
+Reducing Node on Left: N10	
+Checking for: 0000	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N11	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Reducing Node on Left: N57	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Left: N12	
+Checking for: 0000	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N13	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Reducing Node on Left: N56	
+Checking for: 0000	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N57	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Reducing Node on Left: N15	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N16	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Checking for: 1001	
+Reducing Node on Left: N17	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Left: N16	
+Checking for: 0000	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N17	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Reducing Node on Left: N60	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Checking for: 0011	Removed: 0011
+
+Reducing Node on Right: N61	
+Checking for: 0000	
+Checking for: 0011	
+Checking for: 0110	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Left: N62	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 1100	
+Checking for: 0101	
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Right: N63	
+Checking for: 0000	
+Checking for: 0011	
+Checking for: 0110	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Left: N61	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 0101	
+Checking for: 1001	
+Reducing Node on Right: N62	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1001	Removed: 1001
+
+Reducing Node on Left: N20	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Checking for: 0011	Removed: 0011
+
+Reducing Node on Right: N21	
+Checking for: 0000	
+Checking for: 0011	
+Checking for: 0110	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Left: N64	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 1100	
+Checking for: 0101	
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Right: N65	
+Checking for: 0000	
+Checking for: 0011	
+Checking for: 0110	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Left: N63	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 0101	
+Checking for: 1001	
+Reducing Node on Right: N64	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1001	Removed: 1001
+
+Reducing Node on Left: N66	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 1100	
+Checking for: 0101	
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Right: N67	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 0101	
+Checking for: 0011	
+Reducing Node on Left: N21	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 0101	
+Checking for: 1001	
+Reducing Node on Right: N22	
+Checking for: 0000	
+Checking for: 0011	
+Checking for: 0110	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Left: N65	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 0101	
+Checking for: 1001	
+Reducing Node on Right: N66	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1001	Removed: 1001
+
+Reducing Node on Left: N26	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 1100	
+Checking for: 0101	
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Right: N27	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 0101	
+Checking for: 0011	
+Reducing Node on Left: N25	
+Checking for: 0000	
+Checking for: 0011	Removed: 0011
+
+Checking for: 1100	
+Checking for: 0101	
+Checking for: 1010	Removed: 1010
+
+Reducing Node on Right: N26	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 1100	Removed: 1100
+
+Checking for: 1001	Removed: 1001
+
+Reducing Node on Left: N60	
+Checking for: 0000	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N61	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Checking for: 1001	
+Reducing Node on Left: N62	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N63	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Checking for: 1001	
+Reducing Node on Left: N61	
+Checking for: 0000	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N62	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Reducing Node on Left: N20	
+Checking for: 0000	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N21	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Checking for: 1001	
+Reducing Node on Left: N64	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N65	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Checking for: 1001	
+Reducing Node on Left: N63	
+Checking for: 0000	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N64	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Reducing Node on Left: N66	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N67	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Checking for: 0011	
+Reducing Node on Left: N21	
+Checking for: 0000	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N22	
+Checking for: 0000	
+Checking for: 0011	
+Checking for: 0110	Removed: 0110
+
+Checking for: 1001	
+Reducing Node on Left: N65	
+Checking for: 0000	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N66	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Reducing Node on Left: N67	
+Checking for: 0000	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Left: N26	
+Checking for: 0000	
+Checking for: 0110	
+Checking for: 0101	Removed: 0101
+
+Reducing Node on Right: N27	
+Checking for: 0000	
+Checking for: 0110	Removed: 0110
+
+Checking for: 0011	
+Reducing Node on Left: N27	
+Checking for: 0000	
+Checking for: 0101	Removed: 0101
+1:	N00		0000
+2:	N01		0000
+3:	N02		0000
+4:	N03		0000
+5:	N04		0000
+6:	N05		0000
+7:	N06		0000
+8:	N07		0000
+9:	N10		0000
+10:	N11		0000
+11:	N12		0000	1001
+12:	N13		0000	0101
+13:	N14		0000	0110	0101	1001
+14:	N15		0000	0110
+15:	N16		0000	1001
+16:	N17		0000	0011
+17:	N20		0000
+18:	N21		0000	1001
+19:	N22		0000	0011	0101	1001
+20:	N23		0000	0011	0110	1100	0101	1010	1001
+21:	N24		0000	0011	0110	1100	0101	1010	1001
+22:	N25		0000	0110	1100	0101	1001
+23:	N26		0000	0110
+24:	N27		0000	0011
+25:	N30		0000
+26:	N31		0000	1001
+27:	N32		0000	0011	1100	1010	1001
+28:	N33		0000	0110	1100	1001
+29:	N34		0000	0101
+30:	N35		0000	0011	1100	1010	1001
+31:	N36		0000	0110	1100	1001
+32:	N37		0000	0011
+33:	N40		0000
+34:	N41		0000	0101
+35:	N42		0000	0011	1100	1010	1001
+36:	N43		0000	0110	1100	0101	1001
+37:	N44		0000	0011	0110	0101	1001
+38:	N45		0000	0011	0110	1100	0101	1010	1001
+39:	N46		0000	0110	1100	1001
+40:	N47		0000	0011
+41:	N50		0000
+42:	N51		0000
+43:	N52		0000	0101
+44:	N53		0000	0011	1100	1010	1001
+45:	N54		0000	0011	0110	1100	0101	1010	1001
+46:	N55		0000	0110	1100	1001
+47:	N56		0000	1001
+48:	N57		0000	0011
+49:	N60		0000
+50:	N61		0000	1001
+51:	N62		0000
+52:	N63		0000	1001
+53:	N64		0000
+54:	N65		0000	1001
+55:	N66		0000
+56:	N67		0000	0011
+57:	N70		0000
+58:	N71		0000	1010
+59:	N72		0000
+60:	N73		0000	1010
+61:	N74		0000
+62:	N75		0000	1010
+63:	N76		0000
+64:	N77		0000
