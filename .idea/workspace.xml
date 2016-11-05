@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b2a72a9-16a0-411b-9b33-4554e15da2b3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SlitherLinkSolver/SlitherlinkSolver$1.class" afterPath="$PROJECT_DIR$/out/production/SlitherLinkSolver/SlitherlinkSolver$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SlitherLinkSolver/SlitherlinkSolver$2.class" afterPath="$PROJECT_DIR$/out/production/SlitherLinkSolver/SlitherlinkSolver$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SlitherLinkSolver/SlitherlinkSolver.class" afterPath="$PROJECT_DIR$/out/production/SlitherLinkSolver/SlitherlinkSolver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SlitherLinkSolver/output.txt" afterPath="$PROJECT_DIR$/out/production/SlitherLinkSolver/output.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SlitherlinkSolver.java" afterPath="$PROJECT_DIR$/src/SlitherlinkSolver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node.java" afterPath="$PROJECT_DIR$/src/node.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/output.txt" afterPath="$PROJECT_DIR$/src/output.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/puzzle.txt" afterPath="$PROJECT_DIR$/src/puzzle.txt" />
     </list>
     <ignored path="SlitherlinkSolver.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,11 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="SlitherlinkSolver.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SlitherlinkSolver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SlitherlinkSolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2783">
-              <caret line="514" column="0" selection-start-line="514" selection-start-column="0" selection-end-line="514" selection-end-column="0" />
+            <state relative-caret-position="406">
+              <caret line="505" column="25" selection-start-line="505" selection-start-column="25" selection-end-line="505" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#555#561#0" expanded="true" />
@@ -55,8 +48,8 @@
                 <element signature="method#printNodeArraylist#0;class#SlitherlinkSolver#0" expanded="false" />
                 <element signature="method#printSortedHM#0;class#SlitherlinkSolver#0" expanded="false" />
                 <element signature="method#printEdgeHM#0;class#SlitherlinkSolver#0" expanded="false" />
-                <element signature="method#applyZeroAC#0;class#SlitherlinkSolver#0" expanded="false" />
                 <element signature="method#reduceNonEssEdgeDomain#0;class#SlitherlinkSolver#0" expanded="false" />
+                <marker date="1478380467219" expanded="false" signature="14791:15582" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -65,9 +58,13 @@
       <file leaf-file-name="edge.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="972">
+            <state relative-caret-position="347">
               <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#823#824#0" expanded="true" />
+                <element signature="e#874#875#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="output.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="output.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/output.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1917">
-              <caret line="1150" column="0" selection-start-line="1150" selection-start-column="0" selection-end-line="1150" selection-end-column="0" />
+            <state relative-caret-position="7539">
+              <caret line="541" column="16" selection-start-line="541" selection-start-column="16" selection-end-line="541" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -497,7 +494,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -507,7 +504,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21881838" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21881838" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -536,7 +533,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/SlitherlinkSolver.java</url>
-          <line>417</line>
+          <line>415</line>
           <properties />
           <option name="timeStamp" value="20" />
         </line-breakpoint>
@@ -567,8 +564,8 @@
             <element signature="method#printNodeArraylist#0;class#SlitherlinkSolver#0" expanded="false" />
             <element signature="method#printSortedHM#0;class#SlitherlinkSolver#0" expanded="false" />
             <element signature="method#printEdgeHM#0;class#SlitherlinkSolver#0" expanded="false" />
-            <element signature="method#applyZeroAC#0;class#SlitherlinkSolver#0" expanded="false" />
             <element signature="method#reduceNonEssEdgeDomain#0;class#SlitherlinkSolver#0" expanded="false" />
+            <marker date="1478380467219" expanded="false" signature="14791:15582" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -577,7 +574,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="972">
           <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#823#824#0" expanded="true" />
+            <element signature="e#874#875#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -625,8 +626,8 @@
             <element signature="method#printNodeArraylist#0;class#SlitherlinkSolver#0" expanded="false" />
             <element signature="method#printSortedHM#0;class#SlitherlinkSolver#0" expanded="false" />
             <element signature="method#printEdgeHM#0;class#SlitherlinkSolver#0" expanded="false" />
-            <element signature="method#applyZeroAC#0;class#SlitherlinkSolver#0" expanded="false" />
             <element signature="method#reduceNonEssEdgeDomain#0;class#SlitherlinkSolver#0" expanded="false" />
+            <marker date="1478380467219" expanded="false" signature="14791:15582" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -635,7 +636,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1107">
           <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#823#824#0" expanded="true" />
+            <element signature="e#874#875#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -683,8 +688,8 @@
             <element signature="method#printNodeArraylist#0;class#SlitherlinkSolver#0" expanded="false" />
             <element signature="method#printSortedHM#0;class#SlitherlinkSolver#0" expanded="false" />
             <element signature="method#printEdgeHM#0;class#SlitherlinkSolver#0" expanded="false" />
-            <element signature="method#applyZeroAC#0;class#SlitherlinkSolver#0" expanded="false" />
             <element signature="method#reduceNonEssEdgeDomain#0;class#SlitherlinkSolver#0" expanded="false" />
+            <marker date="1478380467219" expanded="false" signature="14791:15582" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -706,8 +711,8 @@
             <element signature="method#printNodeArraylist#0;class#SlitherlinkSolver#0" expanded="false" />
             <element signature="method#printSortedHM#0;class#SlitherlinkSolver#0" expanded="false" />
             <element signature="method#printEdgeHM#0;class#SlitherlinkSolver#0" expanded="false" />
-            <element signature="method#applyZeroAC#0;class#SlitherlinkSolver#0" expanded="false" />
             <element signature="method#reduceNonEssEdgeDomain#0;class#SlitherlinkSolver#0" expanded="false" />
+            <marker date="1478380467219" expanded="false" signature="14791:15582" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -729,8 +734,8 @@
             <element signature="method#printNodeArraylist#0;class#SlitherlinkSolver#0" expanded="false" />
             <element signature="method#printSortedHM#0;class#SlitherlinkSolver#0" expanded="false" />
             <element signature="method#printEdgeHM#0;class#SlitherlinkSolver#0" expanded="false" />
-            <element signature="method#applyZeroAC#0;class#SlitherlinkSolver#0" expanded="false" />
             <element signature="method#reduceNonEssEdgeDomain#0;class#SlitherlinkSolver#0" expanded="false" />
+            <marker date="1478380467219" expanded="false" signature="14791:15582" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -749,14 +754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -779,10 +776,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/edge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#823#824#0" expanded="true" />
+            <element signature="e#874#875#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/output.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7539">
+          <caret line="541" column="16" selection-start-line="541" selection-start-column="16" selection-end-line="541" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SlitherlinkSolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2783">
-          <caret line="514" column="0" selection-start-line="514" selection-start-column="0" selection-end-line="514" selection-end-column="0" />
+        <state relative-caret-position="406">
+          <caret line="505" column="25" selection-start-line="505" selection-start-column="25" selection-end-line="505" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#555#561#0" expanded="true" />
@@ -796,17 +813,9 @@
             <element signature="method#printNodeArraylist#0;class#SlitherlinkSolver#0" expanded="false" />
             <element signature="method#printSortedHM#0;class#SlitherlinkSolver#0" expanded="false" />
             <element signature="method#printEdgeHM#0;class#SlitherlinkSolver#0" expanded="false" />
-            <element signature="method#applyZeroAC#0;class#SlitherlinkSolver#0" expanded="false" />
             <element signature="method#reduceNonEssEdgeDomain#0;class#SlitherlinkSolver#0" expanded="false" />
+            <marker date="1478380467219" expanded="false" signature="14791:15582" ph="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/output.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1917">
-          <caret line="1150" column="0" selection-start-line="1150" selection-start-column="0" selection-end-line="1150" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

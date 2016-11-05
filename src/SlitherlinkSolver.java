@@ -412,8 +412,6 @@ public class SlitherlinkSolver {
 
     public void reduceNodeAssignments(HashMap<node, ArrayList<String>> nodeHashMap, ArrayList<edge>nonEssEdges1){
         int initSizeofAL = nonEssEdges1.size();
-        String nodeLeftNonEss = "..1.";
-        String nodeRightNonEss = "1...";
         try{
             for(int i=0; i<initSizeofAL; i++){
                 edge edge = nonEssEdges1.get(i);
@@ -426,99 +424,87 @@ public class SlitherlinkSolver {
                         System.out.print("\nReducing Node on Left: ");
                         nodeLeft.printNode();
                         ArrayList<String> al = nodeHashMap.get(nodeLeft);
-                        ArrayList<String> alTemp = nodeHashMap.get(nodeLeft);
-                        for(int j=0; j<al.size(); j++){
-                            String str = al.get(j);
-                            System.out.print("\nChecking for: " + str + "\t");
+                        for (Iterator<String> it = al.iterator(); it.hasNext(); ) {
+                            String str = it.next();
+                            System.out.print("\tChecking for: " + str + "\t");
                             if(str.matches("..1.")){
-                                System.out.print("Removed: " + str + "\n");
-                                nodeHashMap.get(nodeLeft).remove(str);
+                                System.out.print("Removed: " + str + "\t");
+                                it.remove();
                             }
                         }
-                        nodeHM.put(nodeLeft, alTemp);
+                        nodeHM.put(nodeLeft, al);
                     }
 
                     if(nodeHashMap.containsKey(nodeRight)){
                         System.out.print("\nReducing Node on Right: ");
                         nodeRight.printNode();
                         ArrayList<String> al = nodeHashMap.get(nodeRight);
-                        ArrayList<String> alTemp = nodeHashMap.get(nodeRight);
-                        for(int j=0; j<al.size(); j++){
-                            String str = al.get(j);
-                            System.out.print("\nChecking for: " + str + "\t");
+                        for (Iterator<String> it = al.iterator(); it.hasNext(); ) {
+                            String str = it.next();
+                            System.out.print("\tChecking for: " + str + "\t");
                             if(str.matches("1...")){
-                                System.out.print("Removed: " + str + "\n");
-                                nodeHashMap.get(nodeRight).remove(str);
+                                System.out.print("Removed: " + str + "\t");
+                                it.remove();
                             }
                         }
-                        nodeHM.put(nodeRight, alTemp);
+                        nodeHM.put(nodeRight, al);
                     }
-
-                    /*//Reduce Left Node Assignments
-                    ArrayList<String> al = nodeHashMap.get(nodeLeft);
-                    for(int j=0; j<al.size(); j++){
-                        if(al.get(j).matches("..1")){
-                            nodeHashMap.get(nodeLeft).remove(al.get(j));
-                        }
-                    }*/
-
-                    /*al.clear();
-                    //Reduce Right Node Assignments
-                    al = nodeHashMap.get(nodeRight);
-                    for(int j=0; j<al.size(); j++){
-                        if(al.get(j).matches("1*")){
-                            nodeHashMap.get(nodeRight).remove(al.get(j));
-                        }
-                    }*/
-
                 }
 
                 //if Vertical edge - reduce satisfying assignment for nodes on top and bottom of the edge
                 if(edge.edgeType.equals("V")){
                     node nodeTop = new node("N", edge.i, edge.j);
-                    node nodeBottom = new node("N", edge.i, edge.j+1);
+                    node nodeBottom = new node("N", edge.i+1, edge.j);
 
                     if(nodeHashMap.containsKey(nodeTop)){
                         System.out.print("\nReducing Node on Left: ");
                         nodeTop.printNode();
                         ArrayList<String> al = nodeHashMap.get(nodeTop);
-                        ArrayList<String> alTemp = nodeHashMap.get(nodeTop);
-                        for(int j=0; j<al.size(); j++){
-                            String str = al.get(j);
-                            System.out.print("\nChecking for: " + str + "\t");
+                        for (Iterator<String> it = al.iterator(); it.hasNext(); ) {
+                            String str = it.next();
+                            System.out.print("\tChecking for: " + str + "\t");
                             if(str.matches("...1")){
-                                System.out.print("Removed: " + str + "\n");
-                                nodeHashMap.get(nodeTop).remove(str);
+                                System.out.print("Removed: " + str + "\t");
+                                it.remove();
                             }
                         }
-                        nodeHM.put(nodeTop, alTemp);
+                        nodeHM.put(nodeTop, al);
                     }
 
                     if(nodeHashMap.containsKey(nodeBottom)){
                         System.out.print("\nReducing Node on Right: ");
                         nodeBottom.printNode();
                         ArrayList<String> al = nodeHashMap.get(nodeBottom);
-                        ArrayList<String> alTemp = nodeHashMap.get(nodeBottom);
-                        for(int j=0; j<al.size(); j++){
-                            String str = al.get(j);
-                            System.out.print("\nChecking for: " + str + "\t");
+                        for (Iterator<String> it = al.iterator(); it.hasNext(); ) {
+                            String str = it.next();
+                            System.out.print("\tChecking for: " + str + "\t");
                             if(str.matches(".1..")){
-                                System.out.print("Removed: " + str + "\n");
-                                nodeHashMap.get(nodeBottom).remove(str);
+                                System.out.print("Removed: " + str + "\t");
+                                it.remove();
                             }
                         }
-                        nodeHM.put(nodeBottom, alTemp);
+                        nodeHM.put(nodeBottom, al);
                     }
-
                 }
-
-
             }
-
         }
         catch (ConcurrentModificationException e){
             System.err.println("Caught Concurrent Modifications: " + e.getMessage());
         }
+    }
 
+    public void forRemovedAssignmentsReduceEdgeDomains(node node, ArrayList<String> al){
+        ArrayList<String> Hij_1 = new ArrayList<>();
+        ArrayList<String> Vi_1j = new ArrayList<>();
+        ArrayList<String> Hij = new ArrayList<>();
+        ArrayList<String> Vij = new ArrayList<>();
+
+        for (Iterator<String> it = al.iterator(); it.hasNext(); ) {
+            String str = it.next();
+            Hij_1.add(String.valueOf(str.charAt(0)));
+            Vi_1j.add(String.valueOf(str.charAt(1)));
+            Hij.add(String.valueOf(str.charAt(2)));
+            Vij.add(String.valueOf(str.charAt(3)));
+        }
     }
 }
