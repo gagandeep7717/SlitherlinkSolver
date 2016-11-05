@@ -321,880 +321,174 @@ H71	H70	H73	H72	H75	H30	H74	H33	H76	H36	V31	V30	V33	V34	V37	V36	H40	H00	H43	H02	
 112:	V67		0
 H71	H70	H73	H72	H75	H30	H74	H33	H76	H36	V31	V30	V33	V34	V37	V36	H40	H00	H43	H02	H46	H01	H04	H03	H06	H05	V40	V41	V00	V02	V46	V01	V04	V03	V47	V06	V05	V07	H51	H50	H11	H55	H10	H13	H12	H56	H15	H14	H16	V51	V50	V52	V11	V55	V10	V57	V12	V56	V15	V17	V16	H60	H62	H61	H20	H64	H63	H66	H21	H65	H26	H25	V60	V62	V61	V20	V64	V63	V66	V21	V65	V67	V26	V27	
 
-Reducing Node on Left: N71	
-Checking for: 0000	
-Checking for: 1100	
-Checking for: 0110	Removed: 0110
-
-Reducing Node on Right: N72	
-Checking for: 0000	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Left: N70	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Reducing Node on Right: N71	
-Checking for: 0000	
-Checking for: 1100	Removed: 1100
-
-Reducing Node on Left: N73	
-Checking for: 0000	
-Checking for: 1100	
-Checking for: 0110	Removed: 0110
-
-Reducing Node on Right: N74	
-Checking for: 0000	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Left: N72	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Reducing Node on Right: N73	
-Checking for: 0000	
-Checking for: 1100	Removed: 1100
-
-Reducing Node on Left: N75	
-Checking for: 0000	
-Checking for: 1100	
-Checking for: 0110	Removed: 0110
-
-Reducing Node on Right: N76	
-Checking for: 0000	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Left: N30	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Checking for: 0011	Removed: 0011
-
-Reducing Node on Right: N31	
-Checking for: 0000	
-Checking for: 0011	
-Checking for: 0110	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Left: N74	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Reducing Node on Right: N75	
-Checking for: 0000	
-Checking for: 1100	Removed: 1100
-
-Reducing Node on Left: N33	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 1100	
-Checking for: 0101	
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Right: N34	
-Checking for: 0000	
-Checking for: 0011	
-Checking for: 0110	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Left: N76	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Reducing Node on Right: N77	
-Checking for: 0000	
-Checking for: 1100	Removed: 1100
-
-Reducing Node on Left: N36	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 1100	
-Checking for: 0101	
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Right: N37	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 0101	
-Checking for: 0011	
-Reducing Node on Left: N31	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N32	
-Checking for: 0000	
-Checking for: 0011	
-Checking for: 0110	Removed: 0110
-
-Checking for: 0101	Removed: 0101
-
-Checking for: 1001	
-Reducing Node on Left: N30	
-Checking for: 0000	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N31	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Reducing Node on Left: N33	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 1100	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N34	
-Checking for: 0000	
-Checking for: 0011	
-Checking for: 0110	Removed: 0110
-
-Checking for: 1001	
-Reducing Node on Left: N34	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 1001	Removed: 1001
-
-Reducing Node on Right: N35	
-Checking for: 0000	
-Checking for: 0011	
-Checking for: 0110	Removed: 0110
-
-Checking for: 0101	Removed: 0101
-
-Checking for: 1001	
-Reducing Node on Left: N37	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Left: N36	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 1100	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N37	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Reducing Node on Left: N40	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Checking for: 0011	Removed: 0011
-
-Reducing Node on Right: N41	
-Checking for: 0000	
-Checking for: 0011	
-Checking for: 0110	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Left: N00	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Reducing Node on Right: N01	
-Checking for: 0000	
-Checking for: 1010	Removed: 1010
-
-Checking for: 0011	
-Reducing Node on Left: N43	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 1100	
-Checking for: 0101	
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Right: N44	
-Checking for: 0000	
-Checking for: 0011	
-Checking for: 0110	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Left: N02	
-Checking for: 0000	
-Checking for: 1010	Removed: 1010
-
-Checking for: 0011	Removed: 0011
-
-Reducing Node on Right: N03	
-Checking for: 0000	
-Checking for: 1010	Removed: 1010
-
-Checking for: 0011	
-Reducing Node on Left: N46	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 1100	
-Checking for: 0101	
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Right: N47	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 0101	
-Checking for: 0011	
-Reducing Node on Left: N01	
-Checking for: 0000	
-Checking for: 1001	
-Checking for: 0011	Removed: 0011
-
-Reducing Node on Right: N02	
-Checking for: 0000	
-Checking for: 1001	Removed: 1001
-
-Reducing Node on Left: N04	
-Checking for: 0000	
-Checking for: 1010	Removed: 1010
-
-Checking for: 0011	Removed: 0011
-
-Reducing Node on Right: N05	
-Checking for: 0000	
-Checking for: 1010	Removed: 1010
-
-Checking for: 0011	
-Reducing Node on Left: N03	
-Checking for: 0000	
-Checking for: 1001	
-Checking for: 0011	Removed: 0011
-
-Reducing Node on Right: N04	
-Checking for: 0000	
-Checking for: 1001	Removed: 1001
-
-Reducing Node on Left: N06	
-Checking for: 0000	
-Checking for: 1010	Removed: 1010
-
-Checking for: 0011	Removed: 0011
-
-Reducing Node on Right: N07	
-Checking for: 0000	
-Checking for: 1001	Removed: 1001
-
-Reducing Node on Left: N05	
-Checking for: 0000	
-Checking for: 1001	
-Checking for: 0011	Removed: 0011
-
-Reducing Node on Right: N06	
-Checking for: 0000	
-Checking for: 1001	Removed: 1001
-
-Reducing Node on Left: N40	
-Checking for: 0000	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N41	
-Checking for: 0000	
-Checking for: 0011	
-Checking for: 0110	Removed: 0110
-
-Checking for: 1001	
-Reducing Node on Left: N41	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 1001	Removed: 1001
-
-Reducing Node on Right: N42	
-Checking for: 0000	
-Checking for: 0011	
-Checking for: 0110	Removed: 0110
-
-Checking for: 0101	Removed: 0101
-
-Checking for: 1001	
-Reducing Node on Left: N00	
-Checking for: 0000	
-Reducing Node on Right: N01	
-Checking for: 0000	
-Checking for: 1001	
-Reducing Node on Left: N02	
-Checking for: 0000	
-Reducing Node on Right: N03	
-Checking for: 0000	
-Checking for: 1001	
-Reducing Node on Left: N46	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 1100	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N47	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Checking for: 0011	
-Reducing Node on Left: N01	
-Checking for: 0000	
-Checking for: 1001	Removed: 1001
-
-Reducing Node on Right: N02	
-Checking for: 0000	
-Reducing Node on Left: N04	
-Checking for: 0000	
-Reducing Node on Right: N05	
-Checking for: 0000	
-Checking for: 1001	
-Reducing Node on Left: N03	
-Checking for: 0000	
-Checking for: 1001	Removed: 1001
-
-Reducing Node on Right: N04	
-Checking for: 0000	
-Reducing Node on Left: N47	
-Checking for: 0000	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Left: N06	
-Checking for: 0000	
-Reducing Node on Right: N07	
-Checking for: 0000	
-Reducing Node on Left: N05	
-Checking for: 0000	
-Checking for: 1001	Removed: 1001
-
-Reducing Node on Right: N06	
-Checking for: 0000	
-Reducing Node on Left: N07	
-Checking for: 0000	
-Reducing Node on Left: N51	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 1100	
-Checking for: 0101	
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Right: N52	
-Checking for: 0000	
-Checking for: 0011	
-Checking for: 0110	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Left: N50	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Checking for: 0011	Removed: 0011
-
-Reducing Node on Right: N51	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1001	Removed: 1001
-
-Reducing Node on Left: N11	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 1100	
-Checking for: 0101	
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Right: N12	
-Checking for: 0000	
-Checking for: 0011	
-Checking for: 0110	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Left: N55	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 1100	
-Checking for: 0101	
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Right: N56	
-Checking for: 0000	
-Checking for: 0011	
-Checking for: 0110	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Left: N10	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Checking for: 0011	Removed: 0011
-
-Reducing Node on Right: N11	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1001	Removed: 1001
-
-Reducing Node on Left: N13	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 1100	
-Checking for: 0101	
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Right: N14	
-Checking for: 0000	
-Checking for: 0011	
-Checking for: 0110	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Left: N12	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 0101	
-Checking for: 1001	
-Reducing Node on Right: N13	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1001	Removed: 1001
-
-Reducing Node on Left: N56	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 0101	
-Checking for: 1001	
-Reducing Node on Right: N57	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 0101	
-Checking for: 0011	
-Reducing Node on Left: N15	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 1100	
-Checking for: 0101	
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Right: N16	
-Checking for: 0000	
-Checking for: 0011	
-Checking for: 0110	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Left: N14	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 0101	
-Checking for: 1001	
-Reducing Node on Right: N15	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1001	Removed: 1001
-
-Reducing Node on Left: N16	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 0101	
-Checking for: 1001	
-Reducing Node on Right: N17	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 0101	
-Checking for: 0011	
-Reducing Node on Left: N51	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N52	
-Checking for: 0000	
-Checking for: 0011	
-Checking for: 0110	Removed: 0110
-
-Checking for: 1001	
-Reducing Node on Left: N50	
-Checking for: 0000	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N51	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Reducing Node on Left: N52	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 1001	Removed: 1001
-
-Reducing Node on Right: N53	
-Checking for: 0000	
-Checking for: 0011	
-Checking for: 0110	Removed: 0110
-
-Checking for: 0101	Removed: 0101
-
-Checking for: 1001	
-Reducing Node on Left: N11	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N12	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Checking for: 1001	
-Reducing Node on Left: N55	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 1100	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N56	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Checking for: 1001	
-Reducing Node on Left: N10	
-Checking for: 0000	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N11	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Reducing Node on Left: N57	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Left: N12	
-Checking for: 0000	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N13	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Reducing Node on Left: N56	
-Checking for: 0000	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N57	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Reducing Node on Left: N15	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N16	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Checking for: 1001	
-Reducing Node on Left: N17	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Left: N16	
-Checking for: 0000	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N17	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Reducing Node on Left: N60	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Checking for: 0011	Removed: 0011
-
-Reducing Node on Right: N61	
-Checking for: 0000	
-Checking for: 0011	
-Checking for: 0110	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Left: N62	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 1100	
-Checking for: 0101	
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Right: N63	
-Checking for: 0000	
-Checking for: 0011	
-Checking for: 0110	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Left: N61	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 0101	
-Checking for: 1001	
-Reducing Node on Right: N62	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1001	Removed: 1001
-
-Reducing Node on Left: N20	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Checking for: 0011	Removed: 0011
-
-Reducing Node on Right: N21	
-Checking for: 0000	
-Checking for: 0011	
-Checking for: 0110	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Left: N64	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 1100	
-Checking for: 0101	
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Right: N65	
-Checking for: 0000	
-Checking for: 0011	
-Checking for: 0110	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Left: N63	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 0101	
-Checking for: 1001	
-Reducing Node on Right: N64	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1001	Removed: 1001
-
-Reducing Node on Left: N66	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 1100	
-Checking for: 0101	
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Right: N67	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 0101	
-Checking for: 0011	
-Reducing Node on Left: N21	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 0101	
-Checking for: 1001	
-Reducing Node on Right: N22	
-Checking for: 0000	
-Checking for: 0011	
-Checking for: 0110	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Left: N65	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 0101	
-Checking for: 1001	
-Reducing Node on Right: N66	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1001	Removed: 1001
-
-Reducing Node on Left: N26	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 1100	
-Checking for: 0101	
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Right: N27	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 0101	
-Checking for: 0011	
-Reducing Node on Left: N25	
-Checking for: 0000	
-Checking for: 0011	Removed: 0011
-
-Checking for: 1100	
-Checking for: 0101	
-Checking for: 1010	Removed: 1010
-
-Reducing Node on Right: N26	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 1100	Removed: 1100
-
-Checking for: 1001	Removed: 1001
-
-Reducing Node on Left: N60	
-Checking for: 0000	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N61	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Checking for: 1001	
-Reducing Node on Left: N62	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N63	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Checking for: 1001	
-Reducing Node on Left: N61	
-Checking for: 0000	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N62	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Reducing Node on Left: N20	
-Checking for: 0000	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N21	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Checking for: 1001	
-Reducing Node on Left: N64	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N65	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Checking for: 1001	
-Reducing Node on Left: N63	
-Checking for: 0000	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N64	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Reducing Node on Left: N66	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N67	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Checking for: 0011	
-Reducing Node on Left: N21	
-Checking for: 0000	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N22	
-Checking for: 0000	
-Checking for: 0011	
-Checking for: 0110	Removed: 0110
-
-Checking for: 1001	
-Reducing Node on Left: N65	
-Checking for: 0000	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N66	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Reducing Node on Left: N67	
-Checking for: 0000	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Left: N26	
-Checking for: 0000	
-Checking for: 0110	
-Checking for: 0101	Removed: 0101
-
-Reducing Node on Right: N27	
-Checking for: 0000	
-Checking for: 0110	Removed: 0110
-
-Checking for: 0011	
-Reducing Node on Left: N27	
-Checking for: 0000	
-Checking for: 0101	Removed: 0101
-1:	N00		0000
+Reducing Node on Left: N71		Checking for: 0000		Checking for: 1100		Checking for: 0110	Removed: 0110		Checking for: 1010	Removed: 1010	
+Reducing Node on Right: N72		Checking for: 0000		Checking for: 1100	Removed: 1100		Checking for: 0110		Checking for: 1010	Removed: 1010	
+Reducing Node on Left: N70		Checking for: 0000		Checking for: 0110	Removed: 0110	
+Reducing Node on Right: N71		Checking for: 0000		Checking for: 1100	Removed: 1100	
+Reducing Node on Left: N73		Checking for: 0000		Checking for: 1100		Checking for: 0110	Removed: 0110		Checking for: 1010	Removed: 1010	
+Reducing Node on Right: N74		Checking for: 0000		Checking for: 1100	Removed: 1100		Checking for: 0110		Checking for: 1010	Removed: 1010	
+Reducing Node on Left: N72		Checking for: 0000		Checking for: 0110	Removed: 0110	
+Reducing Node on Right: N73		Checking for: 0000		Checking for: 1100	Removed: 1100	
+Reducing Node on Left: N75		Checking for: 0000		Checking for: 1100		Checking for: 0110	Removed: 0110		Checking for: 1010	Removed: 1010	
+Reducing Node on Right: N76		Checking for: 0000		Checking for: 1100	Removed: 1100		Checking for: 0110		Checking for: 1010	Removed: 1010	
+Reducing Node on Left: N30		Checking for: 0000		Checking for: 0110	Removed: 0110		Checking for: 0101		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N31		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101		Checking for: 1010	Removed: 1010		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N74		Checking for: 0000		Checking for: 0110	Removed: 0110	
+Reducing Node on Right: N75		Checking for: 0000		Checking for: 1100	Removed: 1100	
+Reducing Node on Left: N33		Checking for: 0000		Checking for: 0011	Removed: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010	Removed: 1010		Checking for: 1001	
+Reducing Node on Right: N34		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101		Checking for: 1010	Removed: 1010		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N76		Checking for: 0000		Checking for: 0110	Removed: 0110	
+Reducing Node on Right: N77		Checking for: 0000		Checking for: 1100	Removed: 1100	
+Reducing Node on Left: N36		Checking for: 0000		Checking for: 0011	Removed: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010	Removed: 1010		Checking for: 1001	
+Reducing Node on Right: N37		Checking for: 0000		Checking for: 0110		Checking for: 0101		Checking for: 0011	
+Reducing Node on Left: N31		Checking for: 0000		Checking for: 0011	Removed: 0011		Checking for: 0110		Checking for: 0101	Removed: 0101	
+Reducing Node on Right: N41		Checking for: 0000		Checking for: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101	Removed: 0101		Checking for: 1010		Checking for: 1001	
+Reducing Node on Left: N30		Checking for: 0000		Checking for: 0101	Removed: 0101	
+Reducing Node on Right: N40		Checking for: 0000		Checking for: 0110	Removed: 0110		Checking for: 0101	Removed: 0101		Checking for: 0011	
+Reducing Node on Left: N33		Checking for: 0000		Checking for: 1100		Checking for: 0101	Removed: 0101		Checking for: 1001	Removed: 1001	
+Reducing Node on Right: N43		Checking for: 0000		Checking for: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101	Removed: 0101		Checking for: 1010		Checking for: 1001	
+Reducing Node on Left: N34		Checking for: 0000		Checking for: 0011	Removed: 0011		Checking for: 0110		Checking for: 0101	Removed: 0101	
+Reducing Node on Right: N44		Checking for: 0000		Checking for: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101	Removed: 0101		Checking for: 1010		Checking for: 1001	
+Reducing Node on Left: N37		Checking for: 0000		Checking for: 0110		Checking for: 0101	Removed: 0101		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N47		Checking for: 0000		Checking for: 0110	Removed: 0110		Checking for: 0101	Removed: 0101		Checking for: 0011	
+Reducing Node on Left: N36		Checking for: 0000		Checking for: 1100		Checking for: 0101	Removed: 0101		Checking for: 1001	Removed: 1001	
+Reducing Node on Right: N46		Checking for: 0000		Checking for: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101	Removed: 0101		Checking for: 1010		Checking for: 1001	
+Reducing Node on Left: N40		Checking for: 0000		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N41		Checking for: 0000		Checking for: 0011		Checking for: 1010	Removed: 1010		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N00		Checking for: 0000		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N01		Checking for: 0000		Checking for: 1010	Removed: 1010		Checking for: 1001	Removed: 1001		Checking for: 0011	
+Reducing Node on Left: N43		Checking for: 0000		Checking for: 0011	Removed: 0011		Checking for: 1010	Removed: 1010		Checking for: 1001	
+Reducing Node on Right: N44		Checking for: 0000		Checking for: 0011		Checking for: 1010	Removed: 1010		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N02		Checking for: 0000		Checking for: 1010	Removed: 1010		Checking for: 1001		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N03		Checking for: 0000		Checking for: 1010	Removed: 1010		Checking for: 1001	Removed: 1001		Checking for: 0011	
+Reducing Node on Left: N46		Checking for: 0000		Checking for: 0011	Removed: 0011		Checking for: 1010	Removed: 1010		Checking for: 1001	
+Reducing Node on Right: N47		Checking for: 0000		Checking for: 0011	
+Reducing Node on Left: N01		Checking for: 0000		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N02		Checking for: 0000		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N04		Checking for: 0000		Checking for: 1010	Removed: 1010		Checking for: 1001		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N05		Checking for: 0000		Checking for: 1010	Removed: 1010		Checking for: 1001	Removed: 1001		Checking for: 0011	
+Reducing Node on Left: N03		Checking for: 0000		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N04		Checking for: 0000		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N06		Checking for: 0000		Checking for: 1010	Removed: 1010		Checking for: 1001		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N07		Checking for: 0000		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N05		Checking for: 0000		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N06		Checking for: 0000		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N40		Checking for: 0000	
+Reducing Node on Right: N50		Checking for: 0000		Checking for: 0110	Removed: 0110		Checking for: 0101	Removed: 0101		Checking for: 0011	
+Reducing Node on Left: N41		Checking for: 0000		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N51		Checking for: 0000		Checking for: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101	Removed: 0101		Checking for: 1010		Checking for: 1001	
+Reducing Node on Left: N00		Checking for: 0000	
+Reducing Node on Right: N10		Checking for: 0000		Checking for: 0110	Removed: 0110		Checking for: 0101	Removed: 0101		Checking for: 0011	
+Reducing Node on Left: N02		Checking for: 0000	
+Reducing Node on Right: N12		Checking for: 0000		Checking for: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101	Removed: 0101		Checking for: 1010		Checking for: 1001	
+Reducing Node on Left: N46		Checking for: 0000		Checking for: 1001	Removed: 1001	
+Reducing Node on Right: N56		Checking for: 0000		Checking for: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101	Removed: 0101		Checking for: 1010		Checking for: 1001	
+Reducing Node on Left: N01		Checking for: 0000	
+Reducing Node on Right: N11		Checking for: 0000		Checking for: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101	Removed: 0101		Checking for: 1010		Checking for: 1001	
+Reducing Node on Left: N04		Checking for: 0000	
+Reducing Node on Right: N14		Checking for: 0000		Checking for: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101	Removed: 0101		Checking for: 1010		Checking for: 1001	
+Reducing Node on Left: N03		Checking for: 0000	
+Reducing Node on Right: N13		Checking for: 0000		Checking for: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101	Removed: 0101		Checking for: 1010		Checking for: 1001	
+Reducing Node on Left: N47		Checking for: 0000		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N57		Checking for: 0000		Checking for: 0110	Removed: 0110		Checking for: 0101	Removed: 0101		Checking for: 0011	
+Reducing Node on Left: N06		Checking for: 0000	
+Reducing Node on Right: N16		Checking for: 0000		Checking for: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101	Removed: 0101		Checking for: 1010		Checking for: 1001	
+Reducing Node on Left: N05		Checking for: 0000	
+Reducing Node on Right: N15		Checking for: 0000		Checking for: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101	Removed: 0101		Checking for: 1010		Checking for: 1001	
+Reducing Node on Left: N07		Checking for: 0000	
+Reducing Node on Right: N17		Checking for: 0000		Checking for: 0110	Removed: 0110		Checking for: 0101	Removed: 0101		Checking for: 0011	
+Reducing Node on Left: N51		Checking for: 0000		Checking for: 0011	Removed: 0011		Checking for: 1010	Removed: 1010		Checking for: 1001	
+Reducing Node on Right: N52		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101		Checking for: 1010	Removed: 1010		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N50		Checking for: 0000		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N51		Checking for: 0000		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N11		Checking for: 0000		Checking for: 0011	Removed: 0011		Checking for: 1010	Removed: 1010		Checking for: 1001	
+Reducing Node on Right: N12		Checking for: 0000		Checking for: 0011		Checking for: 1010	Removed: 1010		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N55		Checking for: 0000		Checking for: 0011	Removed: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010	Removed: 1010		Checking for: 1001	
+Reducing Node on Right: N56		Checking for: 0000		Checking for: 0011		Checking for: 1010	Removed: 1010		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N10		Checking for: 0000		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N11		Checking for: 0000		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N13		Checking for: 0000		Checking for: 0011	Removed: 0011		Checking for: 1010	Removed: 1010		Checking for: 1001	
+Reducing Node on Right: N14		Checking for: 0000		Checking for: 0011		Checking for: 1010	Removed: 1010		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N12		Checking for: 0000		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N13		Checking for: 0000		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N56		Checking for: 0000		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N57		Checking for: 0000		Checking for: 0011	
+Reducing Node on Left: N15		Checking for: 0000		Checking for: 0011	Removed: 0011		Checking for: 1010	Removed: 1010		Checking for: 1001	
+Reducing Node on Right: N16		Checking for: 0000		Checking for: 0011		Checking for: 1010	Removed: 1010		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N14		Checking for: 0000		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N15		Checking for: 0000		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N16		Checking for: 0000		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N17		Checking for: 0000		Checking for: 0011	
+Reducing Node on Left: N51		Checking for: 0000	
+Reducing Node on Right: N61		Checking for: 0000		Checking for: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101	Removed: 0101		Checking for: 1010		Checking for: 1001	
+Reducing Node on Left: N50		Checking for: 0000	
+Reducing Node on Right: N60		Checking for: 0000		Checking for: 0110	Removed: 0110		Checking for: 0101	Removed: 0101		Checking for: 0011	
+Reducing Node on Left: N52		Checking for: 0000		Checking for: 0011	Removed: 0011		Checking for: 0110		Checking for: 0101	Removed: 0101	
+Reducing Node on Right: N62		Checking for: 0000		Checking for: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101	Removed: 0101		Checking for: 1010		Checking for: 1001	
+Reducing Node on Left: N11		Checking for: 0000	
+Reducing Node on Right: N21		Checking for: 0000		Checking for: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101	Removed: 0101		Checking for: 1010		Checking for: 1001	
+Reducing Node on Left: N55		Checking for: 0000		Checking for: 1100		Checking for: 0101	Removed: 0101		Checking for: 1001	Removed: 1001	
+Reducing Node on Right: N65		Checking for: 0000		Checking for: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101	Removed: 0101		Checking for: 1010		Checking for: 1001	
+Reducing Node on Left: N10		Checking for: 0000	
+Reducing Node on Right: N20		Checking for: 0000		Checking for: 0110	Removed: 0110		Checking for: 0101	Removed: 0101		Checking for: 0011	
+Reducing Node on Left: N57		Checking for: 0000		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N67		Checking for: 0000		Checking for: 0110	Removed: 0110		Checking for: 0101	Removed: 0101		Checking for: 0011	
+Reducing Node on Left: N12		Checking for: 0000	
+Reducing Node on Right: N22		Checking for: 0000		Checking for: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101	Removed: 0101		Checking for: 1010		Checking for: 1001	
+Reducing Node on Left: N56		Checking for: 0000	
+Reducing Node on Right: N66		Checking for: 0000		Checking for: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101	Removed: 0101		Checking for: 1010		Checking for: 1001	
+Reducing Node on Left: N15		Checking for: 0000	
+Reducing Node on Right: N25		Checking for: 0000		Checking for: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101	Removed: 0101		Checking for: 1010		Checking for: 1001	
+Reducing Node on Left: N17		Checking for: 0000		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N27		Checking for: 0000		Checking for: 0110	Removed: 0110		Checking for: 0101	Removed: 0101		Checking for: 0011	
+Reducing Node on Left: N16		Checking for: 0000	
+Reducing Node on Right: N26		Checking for: 0000		Checking for: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101	Removed: 0101		Checking for: 1010		Checking for: 1001	
+Reducing Node on Left: N60		Checking for: 0000		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N61		Checking for: 0000		Checking for: 0011		Checking for: 1010	Removed: 1010		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N62		Checking for: 0000		Checking for: 0011	Removed: 0011		Checking for: 1010	Removed: 1010		Checking for: 1001	
+Reducing Node on Right: N63		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100	Removed: 1100		Checking for: 0101		Checking for: 1010	Removed: 1010		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N61		Checking for: 0000		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N62		Checking for: 0000		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N20		Checking for: 0000		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N21		Checking for: 0000		Checking for: 0011		Checking for: 1010	Removed: 1010		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N64		Checking for: 0000		Checking for: 0011	Removed: 0011		Checking for: 0110	Removed: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010	Removed: 1010		Checking for: 1001	
+Reducing Node on Right: N65		Checking for: 0000		Checking for: 0011		Checking for: 1010	Removed: 1010		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N63		Checking for: 0000		Checking for: 0011	Removed: 0011		Checking for: 0110	Removed: 0110		Checking for: 0101	
+Reducing Node on Right: N64		Checking for: 0000		Checking for: 1100	Removed: 1100		Checking for: 0101		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N66		Checking for: 0000		Checking for: 0011	Removed: 0011		Checking for: 1010	Removed: 1010		Checking for: 1001	
+Reducing Node on Right: N67		Checking for: 0000		Checking for: 0011	
+Reducing Node on Left: N21		Checking for: 0000		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N22		Checking for: 0000		Checking for: 0011		Checking for: 1010	Removed: 1010		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N65		Checking for: 0000		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N66		Checking for: 0000		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N26		Checking for: 0000		Checking for: 0011	Removed: 0011		Checking for: 1010	Removed: 1010		Checking for: 1001	
+Reducing Node on Right: N27		Checking for: 0000		Checking for: 0011	
+Reducing Node on Left: N25		Checking for: 0000		Checking for: 0011	Removed: 0011		Checking for: 1010	Removed: 1010		Checking for: 1001	
+Reducing Node on Right: N26		Checking for: 0000		Checking for: 1001	Removed: 1001	
+Reducing Node on Left: N60		Checking for: 0000	
+Reducing Node on Right: N70		Checking for: 0000	
+Reducing Node on Left: N62		Checking for: 0000	
+Reducing Node on Right: N72		Checking for: 0000	
+Reducing Node on Left: N61		Checking for: 0000	
+Reducing Node on Right: N71		Checking for: 0000	
+Reducing Node on Left: N20		Checking for: 0000	
+Reducing Node on Right: N30		Checking for: 0000	
+Reducing Node on Left: N64		Checking for: 0000		Checking for: 0101	Removed: 0101	
+Reducing Node on Right: N74		Checking for: 0000	
+Reducing Node on Left: N63		Checking for: 0000		Checking for: 0101	Removed: 0101	
+Reducing Node on Right: N73		Checking for: 0000	
+Reducing Node on Left: N66		Checking for: 0000	
+Reducing Node on Right: N76		Checking for: 0000	
+Reducing Node on Left: N21		Checking for: 0000	
+Reducing Node on Right: N31		Checking for: 0000		Checking for: 0110	Removed: 0110	
+Reducing Node on Left: N65		Checking for: 0000	
+Reducing Node on Right: N75		Checking for: 0000	
+Reducing Node on Left: N67		Checking for: 0000		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N77		Checking for: 0000	
+Reducing Node on Left: N26		Checking for: 0000	
+Reducing Node on Right: N36		Checking for: 0000		Checking for: 1100	Removed: 1100	
+Reducing Node on Left: N27		Checking for: 0000		Checking for: 0011	Removed: 0011	
+Reducing Node on Right: N37		Checking for: 0000		Checking for: 0110	Removed: 0110	1:	N00		0000
 2:	N01		0000
 3:	N02		0000
 4:	N03		0000
@@ -1204,57 +498,57 @@ Checking for: 0101	Removed: 0101
 8:	N07		0000
 9:	N10		0000
 10:	N11		0000
-11:	N12		0000	1001
-12:	N13		0000	0101
-13:	N14		0000	0110	0101	1001
-14:	N15		0000	0110
-15:	N16		0000	1001
-16:	N17		0000	0011
+11:	N12		0000
+12:	N13		0000
+13:	N14		0000
+14:	N15		0000
+15:	N16		0000
+16:	N17		0000
 17:	N20		0000
-18:	N21		0000	1001
-19:	N22		0000	0011	0101	1001
+18:	N21		0000
+19:	N22		0000	0011
 20:	N23		0000	0011	0110	1100	0101	1010	1001
 21:	N24		0000	0011	0110	1100	0101	1010	1001
-22:	N25		0000	0110	1100	0101	1001
-23:	N26		0000	0110
-24:	N27		0000	0011
+22:	N25		0000	1001
+23:	N26		0000
+24:	N27		0000
 25:	N30		0000
-26:	N31		0000	1001
-27:	N32		0000	0011	1100	1010	1001
-28:	N33		0000	0110	1100	1001
-29:	N34		0000	0101
-30:	N35		0000	0011	1100	1010	1001
-31:	N36		0000	0110	1100	1001
-32:	N37		0000	0011
+26:	N31		0000
+27:	N32		0000	0011	0110	1100	0101	1010	1001
+28:	N33		0000	1100
+29:	N34		0000	0110
+30:	N35		0000	0011	0110	1100	0101	1010	1001
+31:	N36		0000
+32:	N37		0000
 33:	N40		0000
-34:	N41		0000	0101
-35:	N42		0000	0011	1100	1010	1001
-36:	N43		0000	0110	1100	0101	1001
-37:	N44		0000	0011	0110	0101	1001
+34:	N41		0000
+35:	N42		0000	0011	0110	1100	0101	1010	1001
+36:	N43		0000	1001
+37:	N44		0000	0011
 38:	N45		0000	0011	0110	1100	0101	1010	1001
-39:	N46		0000	0110	1100	1001
-40:	N47		0000	0011
+39:	N46		0000
+40:	N47		0000
 41:	N50		0000
 42:	N51		0000
-43:	N52		0000	0101
-44:	N53		0000	0011	1100	1010	1001
+43:	N52		0000	0110
+44:	N53		0000	0011	0110	1100	0101	1010	1001
 45:	N54		0000	0011	0110	1100	0101	1010	1001
-46:	N55		0000	0110	1100	1001
-47:	N56		0000	1001
-48:	N57		0000	0011
+46:	N55		0000	1100
+47:	N56		0000
+48:	N57		0000
 49:	N60		0000
-50:	N61		0000	1001
+50:	N61		0000
 51:	N62		0000
-52:	N63		0000	1001
+52:	N63		0000
 53:	N64		0000
-54:	N65		0000	1001
+54:	N65		0000
 55:	N66		0000
-56:	N67		0000	0011
+56:	N67		0000
 57:	N70		0000
-58:	N71		0000	1010
+58:	N71		0000
 59:	N72		0000
-60:	N73		0000	1010
+60:	N73		0000
 61:	N74		0000
-62:	N75		0000	1010
+62:	N75		0000
 63:	N76		0000
 64:	N77		0000
