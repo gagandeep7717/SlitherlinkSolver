@@ -6,7 +6,7 @@ import java.security.*;
 /**
  * Created by Gagandeep.Randhawa on 10/31/2016.
  */
-public class edge {
+public class edge implements Comparable<edge>{
     String edgeType;
     int i;
     int j;
@@ -42,5 +42,18 @@ public class edge {
     }
 
 
+    @Override
+    public int compareTo(edge o) {
+        if (this == o){
+            return 1;
+        }
+
+        if(!(o instanceof edge)){
+            return 0;
+        }
+
+        edge edge = o;
+        return (i==edge.i && j==edge.j && Objects.equals(edgeType, edge.edgeType)) ? 1:0;
+    }
 }
 
