@@ -23,6 +23,15 @@ public class SlitherlinkSolver {
     static HashMap<edge, ArrayList<String>> edgeHM = new HashMap<edge, ArrayList<String>>();    //Hashmap storing Key: Edges and Value: Domain
     static HashMap<node, ArrayList<String>> nodeHM = new HashMap<node, ArrayList<String>>();    //Hashmap for Key: Nodes and Value: Satisfying Assignments (Node Degree either 0 or 2)
 
+    static ArrayList<cell> allCells = new ArrayList<cell>();
+    static ArrayList<cell> zeroCells = new ArrayList<cell>();
+    static ArrayList<cell> oneCells = new ArrayList<cell>();
+    static ArrayList<cell> twoCells = new ArrayList<cell>();
+    static ArrayList<cell> threeCells = new ArrayList<cell>();
+
+    Queue<cell> cellQueue = new PriorityQueue<>();
+
+
 
     public static void main(String args[]) throws IOException {
         SlitherlinkSolver solver = new SlitherlinkSolver();
@@ -47,7 +56,10 @@ public class SlitherlinkSolver {
 
 
         //Applying Domain Reduction on where cell value is zero.
-        solver.applyZeroAC(readMatrix);
+        solver.applyZeroAC(zeroCells);
+        solver.reduceNonEssEdgeDomain(edgeHM);
+        solver.applyOneAC(oneCells);
+        solver.applyTwoAC(twoCells);
         solver.reduceNonEssEdgeDomain(edgeHM);
         //solver.printEdgeArraylist(nonEssEdges);
         solver.printEdgeHM(edgeHM);
@@ -94,6 +106,24 @@ public class SlitherlinkSolver {
             for(int j=0; j<colCount; j++){
                 String s = ""+everything[c];
                 matrix[i][j] = Integer.parseInt(s);
+                allCells.add(new cell(i,j,matrix[i][j]));
+                switch (matrix[i][j]){
+                    case 0:
+                        zeroCells.add(new cell(i,j,matrix[i][j]));
+                        break;
+                    case 1:
+                        oneCells.add(new cell(i,j,matrix[i][j]));
+                        break;
+                    case 2:
+                        twoCells.add(new cell(i,j,matrix[i][j]));
+                        break;
+                    case 3:
+                        threeCells.add(new cell(i,j,matrix[i][j]));
+                        break;
+                    default:
+                        break;
+
+                }
                 c++;
             }
         }
@@ -377,15 +407,71 @@ public class SlitherlinkSolver {
     }
 
     //Apply arc consistency on Cell with Values equal to zero (0)
-    public void applyZeroAC(int [][] matrix){
-        for(int i=0; i<rowCount; i++){
-            for(int j=0; j<colCount; j++){
-                if(matrix[i][j] == 0){
-                    nonEssEdgeQueue.add(new edge("H", i, j));   // H[i][j]
-                    nonEssEdgeQueue.add(new edge("V", i, j));   // V[i][j]
-                    nonEssEdgeQueue.add(new edge("H", i+1, j)); // H[i+1][j]
-                    nonEssEdgeQueue.add(new edge("V", i, j+1)); // H[i][j+1]
+    public void applyZeroAC(ArrayList<cell> zeroCells){
+        cellQueue.addAll(zeroCells);
+        while(!cellQueue.isEmpty()){
+            cell cell = cellQueue.poll();
+                if(cell.value == 0){
+                    if(!nonEssEdgeQueue.contains(new edge("H", cell.i, cell.j)))
+                        nonEssEdgeQueue.add(new edge("H", cell.i, cell.j));   // H[i][j]
+                    if(!nonEssEdgeQueue.contains(new edge("V", cell.i, cell.j)))
+                        nonEssEdgeQueue.add(new edge("V", cell.i, cell.j));   // V[i][j]
+                    if(!nonEssEdgeQueue.contains(new edge("H", cell.i+1, cell.j)))
+                        nonEssEdgeQueue.add(new edge("H", cell.i+1, cell.j)); // H[i+1][j]
+                    if(!nonEssEdgeQueue.contains(new edge("V", cell.i, cell.j+1)))
+                        nonEssEdgeQueue.add(new edge("V", cell.i, cell.j+1)); // H[i][j+1]
                 }
+        }
+        System.out.println("");
+        System.out.println("");
+    }
+    public void applyOneAC(ArrayList<cell> oneCells){
+        Queue<edge> essEdgeQueue = new PriorityQueue<edge>();
+        cellQueue.clear();
+        cellQueue.addAll(oneCells);
+        while(!cellQueue.isEmpty()){
+            cell cell = cellQueue.poll();
+            if(cell.value == 1){
+                if(!nonEssEdges.contains(new edge("H", cell.i, cell.j)))
+                    essEdgeQueue.add(new edge("H", cell.i, cell.j));   // H[i][j]
+                if(!nonEssEdges.contains(new edge("V", cell.i, cell.j)))
+                    essEdgeQueue.add(new edge("V", cell.i, cell.j));   // V[i][j]
+                if(!nonEssEdges.contains(new edge("H", cell.i+1, cell.j)))
+                    essEdgeQueue.add(new edge("H", cell.i+1, cell.j)); // H[i+1][j]
+                if(!nonEssEdges.contains(new edge("V", cell.i, cell.j+1)))
+                    essEdgeQueue.add(new edge("V", cell.i, cell.j+1)); // H[i][j+1]
+            }
+
+            if(essEdgeQueue.size()==1){
+                edge edge = essEdgeQueue.poll();
+                edgeHM.get(edge).remove("0");
+                reduceNodeAssignments(nodeHM, edge, 1);
+            }
+        }
+        System.out.println("");
+        System.out.println("");
+    }
+    public void applyTwoAC(ArrayList<cell> oneCells){
+        Queue<edge> essEdgeQueue = new PriorityQueue<edge>();
+        cellQueue.clear();
+        cellQueue.addAll(twoCells);
+        while(!cellQueue.isEmpty()){
+            cell cell = cellQueue.poll();
+            if(cell.value == 2){
+                if(!nonEssEdges.contains(new edge("H", cell.i, cell.j)))
+                    essEdgeQueue.add(new edge("H", cell.i, cell.j));   // H[i][j]
+                if(!nonEssEdges.contains(new edge("V", cell.i, cell.j)))
+                    essEdgeQueue.add(new edge("V", cell.i, cell.j));   // V[i][j]
+                if(!nonEssEdges.contains(new edge("H", cell.i+1, cell.j)))
+                    essEdgeQueue.add(new edge("H", cell.i+1, cell.j)); // H[i+1][j]
+                if(!nonEssEdges.contains(new edge("V", cell.i, cell.j+1)))
+                    essEdgeQueue.add(new edge("V", cell.i, cell.j+1)); // H[i][j+1]
+            }
+
+            if(essEdgeQueue.size()==2){
+                edge edge = essEdgeQueue.poll();
+                edgeHM.get(edge).remove("0");
+                reduceNodeAssignments(nodeHM, edge, 1);
             }
         }
         System.out.println("");
@@ -396,28 +482,24 @@ public class SlitherlinkSolver {
         //System.out.println("Printing Non Essential Edges - removal of Cell Value CV=0 Size: " + nonEssEdges.size());
         //printEdgeArraylist(nonEssEdges);
 
-
-        /*for (Iterator<edge> it = nonEssEdges.iterator(); it.hasNext(); ) {
-            edge edge = it.next();
-            if(edgeHM.containsKey(edge)){
-                edgeHM.put(edge, new ArrayList<String>(Arrays.asList("0")));
-                reduceNodeAssignments(nodeHM, edge);
-            }
-        }*/
-
         while(!nonEssEdgeQueue.isEmpty()){
             edge edge = nonEssEdgeQueue.poll();
             nonEssEdges.add(edge);
             if(edge!= null && edgeHM.containsKey(edge)){
-                edgeHM.put(edge, new ArrayList<String>(Arrays.asList("0")));
-                reduceNodeAssignments(nodeHM, edge);
+                //edgeHM.put(edge, new ArrayList<String>(Arrays.asList("0")));
+                edgeHM.get(edge).remove("1");
+                reduceNodeAssignments(nodeHM, edge, 0);
             }
         }
 
     }
 
-    public void reduceNodeAssignments(HashMap<node, ArrayList<String>> nodeHashMap, edge nonEss){
+    public void reduceNodeAssignments(HashMap<node, ArrayList<String>> nodeHashMap, edge nonEss, int removeDV){
         try{
+                //use varable x=0,1 to be replaced in following algos (x = (passed value) ? 0: 1)
+                //use str1.concat(str2) for regex
+                String x = (removeDV == 0)? String.valueOf(1):String.valueOf(0);
+
                 edge edge = nonEss;
                 //if Horizontal edge - reduce satisfying assignment for nodes on left and right of the edge
                 if(edge.edgeType.equals("H")){
@@ -432,7 +514,7 @@ public class SlitherlinkSolver {
                         for (Iterator<String> it = al.iterator(); it.hasNext(); ) {
                             String str = it.next();
                             System.out.print("\tChecking for: " + str + "\t");
-                            if(str.matches("..1.")){
+                            if(str.matches(("..").concat(x).concat("."))){
                                 removedAssignments.add(str);
                                 it.remove();
                             }
@@ -452,7 +534,7 @@ public class SlitherlinkSolver {
                         for (Iterator<String> it = al.iterator(); it.hasNext(); ) {
                             String str = it.next();
                             System.out.print("\tChecking for: " + str + "\t");
-                            if(str.matches("1...")){
+                            if(str.matches(x.concat("..."))){
                                 removedAssignments.add(str);
                                 it.remove();
                             }
@@ -478,7 +560,7 @@ public class SlitherlinkSolver {
                         for (Iterator<String> it = al.iterator(); it.hasNext(); ) {
                             String str = it.next();
                             System.out.print("\tChecking for: " + str + "\t");
-                            if(str.matches("...1")){
+                            if(str.matches(("...").concat(x))){
                                 removedAssignments.add(str);
                                 it.remove();
                             }
@@ -498,7 +580,7 @@ public class SlitherlinkSolver {
                         for (Iterator<String> it = al.iterator(); it.hasNext(); ) {
                             String str = it.next();
                             System.out.print("\tChecking for: " + str + "\t");
-                            if(str.matches(".1..")){
+                            if(str.matches((".").concat(x).concat(".."))){
                                 removedAssignments.add(str);
                                 it.remove();
                             }
@@ -560,4 +642,5 @@ public class SlitherlinkSolver {
                 nonEssEdgeQueue.add(edge);
         }
     }
+
 }
