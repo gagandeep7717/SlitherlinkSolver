@@ -56,21 +56,13 @@ public class SlitherlinkSolver {
 
 
         //Applying Domain Reduction on where cell value is zero.
-        solver.applyZeroAC(zeroCells);
+        solver.applyAC(zeroCells);
         System.out.println("Printing Non Essential Edges - removal of Cell Value CV=0 Size: " + nonEssEdges.size());
         solver.printEdgeArraylist(nonEssEdges);
         //solver.printEdgeArraylist(nonEssEdges);
         solver.printEdgeHM(edgeHM);
         System.out.println();
-        solver.printNodeHM(nodeHM);
-
-
-        System.out.println("Printing Non Essential Edges - reducing for Cell Value CV=1 Size: " + nonEssEdges.size());
-        solver.applyOneAC(oneCells);
-        System.out.println();
-        solver.printEdgeHM(edgeHM);
-        System.out.println();
-        solver.printNodeHM(nodeHM);
+        solver.printNodeHMexclude0(nodeHM);
 
     }
 
@@ -178,7 +170,7 @@ public class SlitherlinkSolver {
         LinkedHashMap<node, ArrayList<String>> orderedNodeHM = new LinkedHashMap<node, ArrayList<String>>();
         for(int i=0; i<rowCount+1; i++){
             for(int j=0; j<colCount+1; j++){
-                String[] assignments = new String[] {"0000", "0011", "0110", "1100", "0101", "1010", "1001"};
+                String[] assignments = new String[] { "0000","0011", "0110", "1100", "0101", "1010", "1001"};
                 orderedNodeHM.put(new node("N", i, j), new ArrayList<String>(Arrays.asList("0000", "0011", "0110", "1100", "0101", "1010", "1001")));
 
                 nodeHM = orderedNodeHM;
@@ -203,6 +195,15 @@ public class SlitherlinkSolver {
     public void printStringArraylist(ArrayList<String> al){
         for(String str:al){
             System.out.print("\t" + str);
+        }
+    }
+
+    public void printStringArraylistexclude0(ArrayList<String> al){
+        for(String str:al){
+            if(str.equals("0000"))
+                System.out.print("null");
+            else
+                System.out.print("\t" + str);
         }
     }
 
@@ -316,6 +317,43 @@ public class SlitherlinkSolver {
         }
     }
 
+    public void printNodeHMexclude0(HashMap<node, ArrayList<String>> hashMap){
+        List<Map.Entry<node, ArrayList<String>>> entries =
+                new ArrayList<Map.Entry<node, ArrayList<String>>>(hashMap.entrySet());
+
+        Collections.sort(entries, new Comparator<Map.Entry<node, ArrayList<String>>>() {
+            public int compare(Map.Entry<node, ArrayList<String>> a, Map.Entry<node, ArrayList<String>> b){
+                node nodeA = a.getKey();
+                node nodeB = b.getKey();
+                int asciiA = (int) nodeA.nodeType.charAt(0);
+                int asciiB = (int) nodeB.nodeType.charAt(0);
+                int sortbyI = (asciiA - asciiB) + nodeA.i - nodeB.i;
+                return sortbyI;
+            }
+        });
+
+        HashMap<node, ArrayList<String>> sortedMap = new LinkedHashMap<node, ArrayList<String>>();
+
+        for (Map.Entry<node, ArrayList<String>> entry : entries) {
+            sortedMap.put(entry.getKey(), entry.getValue());
+        }
+
+        Set set = sortedMap.entrySet();
+        int nodeCount=0;
+        Iterator i = set.iterator();
+        System.out.println("");
+        while(i.hasNext()){
+            nodeCount++;
+            Map.Entry me = (Map.Entry) i.next();
+            node printNode = (node) me.getKey();
+            System.out.print(nodeCount + ":" + "\t" );
+            printNode.printNode();
+            ArrayList<String> alDomain= (ArrayList<String>) me.getValue();
+            printStringArraylistexclude0(alDomain);
+            System.out.println("");
+        }
+    }
+
     public void findNodeonWallsandCorners(int[][] matrix){
         System.out.println("Reducing satisfying assignments for Nodes on corners and walls");
         ArrayList<node> TopWall = new ArrayList<node>();
@@ -366,50 +404,42 @@ public class SlitherlinkSolver {
         System.out.print("\nLeft Wall: "); printNodeArraylist(LeftWall);
         System.out.println("\n");
 
-        String[] assignmentsTopLeftCorner = new String[]{"0000","0011"};
         for(node str: TopLeftCorner){
             nodeHM.put(str, new ArrayList<String>(Arrays.asList("0000","0011")));
         }
 
-        String[] assignmentsTopRightCorner = new String[]{"0000","1001"};
         for(node str: TopRightCorner){
             nodeHM.put(str, new ArrayList<String>(Arrays.asList("0000","1001")));
         }
 
-        String[] assignmentsBottomRightCorner = new String[]{"0000","1100"};
         for(node str: BottomRightCorner){
             nodeHM.put(str, new ArrayList<String>(Arrays.asList("0000","1100")));
         }
 
-        String[] assignmentsBottomLeftCorner = new String[]{"0000","0110"};
         for(node str: BottomLeftCorner){
             nodeHM.put(str, new ArrayList<String>(Arrays.asList("0000","0110")));
         }
 
 
-        String[] assignmentsTopWall = new String[]{"0000","1010","1001","0011"};
         for(node str: TopWall){
             nodeHM.put(str, new ArrayList<String>(Arrays.asList("0000","1010","1001","0011")));
         }
 
-        String[] assignmentsRightWall = new String[]{"0000","0110","0101","0011"};
         for(node str: RightWall){
             nodeHM.put(str, new ArrayList<String>(Arrays.asList("0000","0110","0101","0011")));
         }
 
-        String[] assignmentsBottomWall = new String[]{"0000","1100","0110","1010"};
         for(node str: BottomWall){
             nodeHM.put(str, new ArrayList<String>(Arrays.asList("0000","1100","0110","1010")));
         }
 
-        String[] assignmentsLeftWall = new String[]{"0000","0110","0101","0011"};
         for(node str: LeftWall){
             nodeHM.put(str, new ArrayList<String>(Arrays.asList("0000","0110","0101","0011")));
         }
     }
 
     //Apply arc consistency on Cell with Values equal to zero (0)
-    public void applyZeroAC(ArrayList<cell> zeroCells){
+    public void applyAC(ArrayList<cell> zeroCells){
         cellQueue.addAll(zeroCells);
         while(!cellQueue.isEmpty()){
             cell cell = cellQueue.poll();
@@ -426,13 +456,14 @@ public class SlitherlinkSolver {
         }
 
         reduceNonEssEdgeDomain(edgeHM);
-    }
 
+        applyOneAC(oneCells);
+        applyTwoAC(twoCells);
+        applyThreeAC(threeCells);
+    }
 
     public void applyOneAC(ArrayList<cell> oneCells){
         Queue<edge> essEdgeQueue = new PriorityQueue<edge>();
-        //cellQueue.clear();
-        //cellQueue.addAll(oneCells);
 
         ArrayList<cell> oneCellsLocal = new ArrayList<>();
         oneCellsLocal.addAll(oneCells);
@@ -447,34 +478,22 @@ public class SlitherlinkSolver {
 
             int count =0;
 
-            if((edgeHM.get(Hij).size()==1) && (edgeHM.get(Hij).get(0).equals("0"))){
-
-            }
-            else {
+            if(!(edgeHM.get(Hij).size()==1) || !(edgeHM.get(Hij).get(0).equals("0"))){
                 count++;
                 essEdgeQueue.add(Hij);
             }
 
-            if((edgeHM.get(Vij).size()==1) && (edgeHM.get(Vij).get(0).equals("0"))){
-
-            }
-            else {
+            if(!(edgeHM.get(Vij).size()==1) || !(edgeHM.get(Vij).get(0).equals("0"))){
                 count++;
                 essEdgeQueue.add(Vij);
             }
 
-            if((edgeHM.get(Hi1j).size()==1) && (edgeHM.get(Hi1j).get(0).equals("0"))){
-
-            }
-            else {
+            if(!(edgeHM.get(Hi1j).size()==1) || !(edgeHM.get(Hi1j).get(0).equals("0"))){
                 count++;
                 essEdgeQueue.add(Hi1j);
             }
 
-            if((edgeHM.get(Vij1).size()==1) && (edgeHM.get(Vij1).get(0).equals("0"))){
-
-            }
-            else {
+            if(!(edgeHM.get(Vij1).size()==1) || !(edgeHM.get(Vij1).get(0).equals("0"))){
                 count++;
                 essEdgeQueue.add(Vij1);
             }
@@ -489,13 +508,135 @@ public class SlitherlinkSolver {
         }
 
         if(!oneCells.isEmpty()){
-            System.out.println("\n Printing all remaining cells");
+            System.out.println("\n Printing all remaining cells for CV 1");
             for(cell remainingCell: oneCells){
                 System.out.print("\t" + "C" + remainingCell.i + remainingCell.j + "-" + remainingCell.value);
             }
         }
         else {
-            System.out.println("\n No remaining cells");
+            System.out.println("\n No remaining cells for CV 1");
+        }
+
+        reduceNonEssEdgeDomain(edgeHM);
+        System.out.println("");
+        System.out.println("");
+    }
+
+    public void applyTwoAC(ArrayList<cell> twoCells){
+        Queue<edge> essEdgeQueue = new PriorityQueue<edge>();
+
+        ArrayList<cell> twoCellsLocal = new ArrayList<>();
+        twoCellsLocal.addAll(twoCells);
+
+        for (Iterator<cell> it = twoCellsLocal.iterator(); it.hasNext(); ) {
+            cell cell = it.next();
+
+            edge Hij = new edge("H", cell.i, cell.j);
+            edge Vij = new edge("V", cell.i, cell.j);
+            edge Hi1j = new edge("H", cell.i+1, cell.j);
+            edge Vij1 = new edge("V", cell.i, cell.j+1);
+
+            int count = 0;
+
+            if(!(edgeHM.get(Hij).size()==1) || !(edgeHM.get(Hij).get(0).equals("0"))){
+                count++;
+                essEdgeQueue.add(Hij);
+            }
+
+            if(!(edgeHM.get(Vij).size()==1) || !(edgeHM.get(Vij).get(0).equals("0"))){
+                count++;
+                essEdgeQueue.add(Vij);
+            }
+
+            if(!(edgeHM.get(Hi1j).size()==1) || !(edgeHM.get(Hi1j).get(0).equals("0"))){
+                count++;
+                essEdgeQueue.add(Hi1j);
+            }
+
+            if(!(edgeHM.get(Vij1).size()==1) || !(edgeHM.get(Vij1).get(0).equals("0"))){
+                count++;
+                essEdgeQueue.add(Vij1);
+            }
+
+            if(count == 2){
+                twoCells.remove(cell);
+                while (!essEdgeQueue.isEmpty()){
+                    edge edge = essEdgeQueue.poll();
+                    edgeHM.get(edge).remove("0");
+                    reduceNodeAssignments(nodeHM, edge, 1);
+                }
+            }
+        }
+
+        if(!twoCells.isEmpty()){
+            System.out.println("\n Printing all remaining cells for CV 2");
+            for(cell remainingCell: twoCells){
+                System.out.print("\t" + "C" + remainingCell.i + remainingCell.j + "-" + remainingCell.value);
+            }
+        }
+        else {
+            System.out.println("\n No remaining cells for CV 2");
+        }
+
+        reduceNonEssEdgeDomain(edgeHM);
+        System.out.println("");
+        System.out.println("");
+    }
+
+    public void applyThreeAC(ArrayList<cell> threeCells){
+        Queue<edge> essEdgeQueue = new PriorityQueue<edge>();
+
+        ArrayList<cell> threeCellsLocal = new ArrayList<>();
+        threeCellsLocal.addAll(threeCells);
+
+        for (Iterator<cell> it = threeCellsLocal.iterator(); it.hasNext(); ) {
+            cell cell = it.next();
+
+            edge Hij = new edge("H", cell.i, cell.j);
+            edge Vij = new edge("V", cell.i, cell.j);
+            edge Hi1j = new edge("H", cell.i+1, cell.j);
+            edge Vij1 = new edge("V", cell.i, cell.j+1);
+
+            int count = 0;
+
+            if(!(edgeHM.get(Hij).size()==1) || !(edgeHM.get(Hij).get(0).equals("0"))){
+                count++;
+                essEdgeQueue.add(Hij);
+            }
+
+            if(!(edgeHM.get(Vij).size()==1) || !(edgeHM.get(Vij).get(0).equals("0"))){
+                count++;
+                essEdgeQueue.add(Vij);
+            }
+
+            if(!(edgeHM.get(Hi1j).size()==1) || !(edgeHM.get(Hi1j).get(0).equals("0"))){
+                count++;
+                essEdgeQueue.add(Hi1j);
+            }
+
+            if(!(edgeHM.get(Vij1).size()==1) || !(edgeHM.get(Vij1).get(0).equals("0"))){
+                count++;
+                essEdgeQueue.add(Vij1);
+            }
+
+            if(count == 3){
+                threeCells.remove(cell);
+                while (!essEdgeQueue.isEmpty()){
+                    edge edge = essEdgeQueue.poll();
+                    edgeHM.get(edge).remove("0");
+                    reduceNodeAssignments(nodeHM, edge, 1);
+                }
+            }
+        }
+
+        if(!threeCells.isEmpty()){
+            System.out.println("\n Printing all remaining cells for CV 3");
+            for(cell remainingCell: threeCells){
+                System.out.print("\t" + "C" + remainingCell.i + remainingCell.j + "-" + remainingCell.value);
+            }
+        }
+        else {
+            System.out.println("\n No remaining cells for CV 3");
         }
 
         reduceNonEssEdgeDomain(edgeHM);
@@ -568,7 +709,6 @@ public class SlitherlinkSolver {
                     }
 
                     if(nodeHashMap.containsKey(nodeBottom)){
-                        ArrayList<String> removedAssignments = new ArrayList<>();
                         for (Iterator<String> it = nodeHashMap.get(nodeBottom).iterator(); it.hasNext(); ) {
                             String str = it.next();
                             if(str.matches((".").concat(x).concat(".."))){
@@ -576,7 +716,6 @@ public class SlitherlinkSolver {
                             }
                         }
                         forReducedAssignmentsReduceEdgeDomains(nodeBottom, nodeHashMap.get(nodeBottom));
-
                     }
                 }
         }
