@@ -58,8 +58,7 @@ public class SlitherlinkSolver {
         //Applying Domain Reduction on where cell value is zero.
         solver.applyZeroAC(zeroCells);
         solver.reduceNonEssEdgeDomain(edgeHM);
-        solver.applyOneAC(oneCells);
-        solver.applyTwoAC(twoCells);
+
         solver.reduceNonEssEdgeDomain(edgeHM);
         //solver.printEdgeArraylist(nonEssEdges);
         solver.printEdgeHM(edgeHM);
@@ -431,15 +430,19 @@ public class SlitherlinkSolver {
         cellQueue.addAll(oneCells);
         while(!cellQueue.isEmpty()){
             cell cell = cellQueue.poll();
+            edge Hij = new edge("H", cell.i, cell.j);
+            edge Vij = new edge("V", cell.i, cell.j);
+            edge Hi1j = new edge("H", cell.i+1, cell.j);
+            edge Vij1 = new edge("V", cell.i, cell.j+1);
             if(cell.value == 1){
-                if(!nonEssEdges.contains(new edge("H", cell.i, cell.j)))
-                    essEdgeQueue.add(new edge("H", cell.i, cell.j));   // H[i][j]
-                if(!nonEssEdges.contains(new edge("V", cell.i, cell.j)))
-                    essEdgeQueue.add(new edge("V", cell.i, cell.j));   // V[i][j]
-                if(!nonEssEdges.contains(new edge("H", cell.i+1, cell.j)))
-                    essEdgeQueue.add(new edge("H", cell.i+1, cell.j)); // H[i+1][j]
-                if(!nonEssEdges.contains(new edge("V", cell.i, cell.j+1)))
-                    essEdgeQueue.add(new edge("V", cell.i, cell.j+1)); // H[i][j+1]
+                if(!nonEssEdges.contains(Hij))
+                    essEdgeQueue.add(Hij);   // H[i][j]
+                if(!nonEssEdges.contains(Vij))
+                    essEdgeQueue.add(Vij);   // V[i][j]
+                if(!nonEssEdges.contains(Hi1j))
+                    essEdgeQueue.add(Hi1j); // H[i+1][j]
+                if(!nonEssEdges.contains(Vij1))
+                    essEdgeQueue.add(Vij1); // H[i][j+1]
             }
 
             if(essEdgeQueue.size()==1){
@@ -457,15 +460,19 @@ public class SlitherlinkSolver {
         cellQueue.addAll(twoCells);
         while(!cellQueue.isEmpty()){
             cell cell = cellQueue.poll();
+            edge Hij = new edge("H", cell.i, cell.j);
+            edge Vij = new edge("V", cell.i, cell.j);
+            edge Hi1j = new edge("H", cell.i+1, cell.j);
+            edge Vij1 = new edge("V", cell.i, cell.j+1);
             if(cell.value == 2){
-                if(!nonEssEdges.contains(new edge("H", cell.i, cell.j)))
-                    essEdgeQueue.add(new edge("H", cell.i, cell.j));   // H[i][j]
-                if(!nonEssEdges.contains(new edge("V", cell.i, cell.j)))
-                    essEdgeQueue.add(new edge("V", cell.i, cell.j));   // V[i][j]
-                if(!nonEssEdges.contains(new edge("H", cell.i+1, cell.j)))
-                    essEdgeQueue.add(new edge("H", cell.i+1, cell.j)); // H[i+1][j]
-                if(!nonEssEdges.contains(new edge("V", cell.i, cell.j+1)))
-                    essEdgeQueue.add(new edge("V", cell.i, cell.j+1)); // H[i][j+1]
+                if(!nonEssEdges.contains(Hij))
+                    essEdgeQueue.add(Hij);   // H[i][j]
+                if(!nonEssEdges.contains(Vij))
+                    essEdgeQueue.add(Vij);   // V[i][j]
+                if(!nonEssEdges.contains(Hi1j))
+                    essEdgeQueue.add(Hi1j); // H[i+1][j]
+                if(!nonEssEdges.contains(Vij1))
+                    essEdgeQueue.add(Vij1); // H[i][j+1]
             }
 
             if(essEdgeQueue.size()==2){
@@ -509,9 +516,9 @@ public class SlitherlinkSolver {
                     if(nodeHashMap.containsKey(nodeLeft)){
                         System.out.print("\nReducing Node on Left: ");
                         nodeLeft.printNode();
-                        ArrayList<String> al = nodeHashMap.get(nodeLeft);
+
                         ArrayList<String> removedAssignments = new ArrayList<>();
-                        for (Iterator<String> it = al.iterator(); it.hasNext(); ) {
+                        for (Iterator<String> it = nodeHashMap.get(nodeLeft).iterator(); it.hasNext(); ) {
                             String str = it.next();
                             System.out.print("\tChecking for: " + str + "\t");
                             if(str.matches(("..").concat(x).concat("."))){
@@ -522,16 +529,16 @@ public class SlitherlinkSolver {
                         System.out.print("\n--Removed assignments for: ");
                         nodeLeft.printNode();
                         printStringArraylist(removedAssignments);
-                        forReducedAssignmentsReduceEdgeDomains(nodeLeft, al);
-                        nodeHM.put(nodeLeft, al);
+                        forReducedAssignmentsReduceEdgeDomains(nodeLeft, nodeHashMap.get(nodeLeft));
+                        //nodeHM.put(nodeLeft, al);
                     }
 
                     if(nodeHashMap.containsKey(nodeRight)){
                         System.out.print("\nReducing Node on Right: ");
                         nodeRight.printNode();
-                        ArrayList<String> al = nodeHashMap.get(nodeRight);
+
                         ArrayList<String> removedAssignments = new ArrayList<>();
-                        for (Iterator<String> it = al.iterator(); it.hasNext(); ) {
+                        for (Iterator<String> it = nodeHashMap.get(nodeRight).iterator(); it.hasNext(); ) {
                             String str = it.next();
                             System.out.print("\tChecking for: " + str + "\t");
                             if(str.matches(x.concat("..."))){
@@ -542,8 +549,8 @@ public class SlitherlinkSolver {
                         System.out.print("\n--Removed assignments for: ");
                         nodeRight.printNode();
                         printStringArraylist(removedAssignments);
-                        forReducedAssignmentsReduceEdgeDomains(nodeRight, al);
-                        nodeHM.put(nodeRight, al);
+                        forReducedAssignmentsReduceEdgeDomains(nodeRight, nodeHashMap.get(nodeRight));
+                        //nodeHM.put(nodeRight, al);
                     }
                 }
 
@@ -555,9 +562,8 @@ public class SlitherlinkSolver {
                     if(nodeHashMap.containsKey(nodeTop)){
                         System.out.print("\nReducing Node on Left: ");
                         nodeTop.printNode();
-                        ArrayList<String> al = nodeHashMap.get(nodeTop);
                         ArrayList<String> removedAssignments = new ArrayList<>();
-                        for (Iterator<String> it = al.iterator(); it.hasNext(); ) {
+                        for (Iterator<String> it = nodeHashMap.get(nodeTop).iterator(); it.hasNext(); ) {
                             String str = it.next();
                             System.out.print("\tChecking for: " + str + "\t");
                             if(str.matches(("...").concat(x))){
@@ -568,16 +574,16 @@ public class SlitherlinkSolver {
                         System.out.print("\n--Removed assignments for: ");
                         nodeTop.printNode();
                         printStringArraylist(removedAssignments);
-                        forReducedAssignmentsReduceEdgeDomains(nodeTop, al);
-                        nodeHM.put(nodeTop, al);
+                        forReducedAssignmentsReduceEdgeDomains(nodeTop, nodeHashMap.get(nodeTop));
+                        //nodeHM.put(nodeTop, al);
                     }
 
                     if(nodeHashMap.containsKey(nodeBottom)){
                         System.out.print("\nReducing Node on Right: ");
                         nodeBottom.printNode();
-                        ArrayList<String> al = nodeHashMap.get(nodeBottom);
+
                         ArrayList<String> removedAssignments = new ArrayList<>();
-                        for (Iterator<String> it = al.iterator(); it.hasNext(); ) {
+                        for (Iterator<String> it = nodeHashMap.get(nodeBottom).iterator(); it.hasNext(); ) {
                             String str = it.next();
                             System.out.print("\tChecking for: " + str + "\t");
                             if(str.matches((".").concat(x).concat(".."))){
@@ -588,8 +594,8 @@ public class SlitherlinkSolver {
                         System.out.print("\n--Removed assignments for: ");
                         nodeBottom.printNode();
                         printStringArraylist(removedAssignments);
-                        forReducedAssignmentsReduceEdgeDomains(nodeBottom, al);
-                        nodeHM.put(nodeBottom, al);
+                        forReducedAssignmentsReduceEdgeDomains(nodeBottom, nodeHashMap.get(nodeBottom));
+                        //nodeHM.put(nodeBottom, al);
                     }
                 }
         }
