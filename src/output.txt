@@ -205,1765 +205,8 @@ Left Wall: N10	N20	N30	N40	N50	N60
 62:	N75		0000	1100	0110	1010
 63:	N76		0000	1100	0110	1010
 64:	N77		0000	1100
-
-
-
-Reducing Node on Left: N00		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N00		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N01		Checking for: 0000		Checking for: 1010		Checking for: 1001		Checking for: 0011	
---Removed assignments for: N01		1010	1001
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N01		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N01		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N02		Checking for: 0000		Checking for: 1010		Checking for: 1001		Checking for: 0011	
---Removed assignments for: N02		1010	1001
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N01		Checking for: 0000	
---Removed assignments for: N01	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N11		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N11		0110	1100	0101
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N00		Checking for: 0000	
---Removed assignments for: N00	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N10		Checking for: 0000		Checking for: 0110		Checking for: 0101		Checking for: 0011	
---Removed assignments for: N10		0110	0101
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N12		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N12		0011	0110	1010
- Hij-1: 	0	1
- Vi-1j: 	0	1
- Hij: 	0
- Vij: 	0	1
-Reducing Node on Right: N13		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N13		1100	1010	1001
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N02		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N02		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N12		Checking for: 0000		Checking for: 1100		Checking for: 0101		Checking for: 1001	
---Removed assignments for: N12		1100	0101
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0	1
-Reducing Node on Left: N02		Checking for: 0000	
---Removed assignments for: N02	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N03		Checking for: 0000		Checking for: 1010		Checking for: 1001		Checking for: 0011	
---Removed assignments for: N03		1010	1001
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N02		Checking for: 0000	
---Removed assignments for: N02	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N03		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N03	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N13		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 0101	
---Removed assignments for: N13		0011	0110
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0
- Vij: 	0	1
-Reducing Node on Right: N14		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N14		1100	1010	1001
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N03		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N03		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N13		Checking for: 0000		Checking for: 0101	
---Removed assignments for: N13		0101
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N03		Checking for: 0000	
---Removed assignments for: N03	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N04		Checking for: 0000		Checking for: 1010		Checking for: 1001		Checking for: 0011	
---Removed assignments for: N04		1010	1001
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N13		Checking for: 0000	
---Removed assignments for: N13	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N23		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N23		0110	1100	0101
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N03		Checking for: 0000	
---Removed assignments for: N03	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N04		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N04	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N14		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 0101	
---Removed assignments for: N14		0011	0110
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0
- Vij: 	0	1
-Reducing Node on Right: N15		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N15		1100	1010	1001
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N04		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N04		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N14		Checking for: 0000		Checking for: 0101	
---Removed assignments for: N14		0101
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N04		Checking for: 0000	
---Removed assignments for: N04	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N05		Checking for: 0000		Checking for: 1010		Checking for: 1001		Checking for: 0011	
---Removed assignments for: N05		1010	1001
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N14		Checking for: 0000	
---Removed assignments for: N14	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N24		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N24		0110	1100	0101
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N04		Checking for: 0000	
---Removed assignments for: N04	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N05		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N05	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N05		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N05		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N15		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 0101	
---Removed assignments for: N15		0110	0101
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N05		Checking for: 0000	
---Removed assignments for: N05	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N06		Checking for: 0000		Checking for: 1010		Checking for: 1001		Checking for: 0011	
---Removed assignments for: N06		1010	1001
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N05		Checking for: 0000	
---Removed assignments for: N05	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N06		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N06	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N07		Checking for: 0000		Checking for: 1001	
---Removed assignments for: N07		1001
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N17		Checking for: 0000		Checking for: 0110		Checking for: 0101		Checking for: 0011	
---Removed assignments for: N17		0110	0101
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N06		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N06		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N16		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N16		0110	1100	0101
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N16		Checking for: 0000		Checking for: 0011		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N16		0011	1010
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0	1
-Reducing Node on Right: N17		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N17	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N06		Checking for: 0000	
---Removed assignments for: N06	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N07		Checking for: 0000	
---Removed assignments for: N07	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N06		Checking for: 0000	
---Removed assignments for: N06	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N07		Checking for: 0000	
---Removed assignments for: N07	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N06		Checking for: 0000	
---Removed assignments for: N06	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N07		Checking for: 0000	
---Removed assignments for: N07	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N10		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N10		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N20		Checking for: 0000		Checking for: 0110		Checking for: 0101		Checking for: 0011	
---Removed assignments for: N20		0110	0101
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N12		Checking for: 0000		Checking for: 1001	
---Removed assignments for: N12		1001
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N22		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N22		0110	1100	0101
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N11		Checking for: 0000		Checking for: 0011		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N11		0011	1010
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0	1
-Reducing Node on Right: N12		Checking for: 0000	
---Removed assignments for: N12	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N10		Checking for: 0000	
---Removed assignments for: N10	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N11		Checking for: 0000		Checking for: 1001	
---Removed assignments for: N11		1001
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N21		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N21		0011	0110	1010
- Hij-1: 	0	1
- Vi-1j: 	0	1
- Hij: 	0
- Vij: 	0	1
-Reducing Node on Right: N22		Checking for: 0000		Checking for: 0011		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N22		1010	1001
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N11		Checking for: 0000	
---Removed assignments for: N11	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N21		Checking for: 0000		Checking for: 1100		Checking for: 0101		Checking for: 1001	
---Removed assignments for: N21		1100	0101
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0	1
-Reducing Node on Left: N11		Checking for: 0000	
---Removed assignments for: N11	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N21		Checking for: 0000		Checking for: 1001	
---Removed assignments for: N21	
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0	1
-Reducing Node on Left: N11		Checking for: 0000	
---Removed assignments for: N11	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N12		Checking for: 0000	
---Removed assignments for: N12	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N25		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N25		0011	0110	1010
- Hij-1: 	0	1
- Vi-1j: 	0	1
- Hij: 	0
- Vij: 	0	1
-Reducing Node on Right: N26		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N26		1100	1010	1001
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N15		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N15		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N25		Checking for: 0000		Checking for: 1100		Checking for: 0101		Checking for: 1001	
---Removed assignments for: N25		1100	0101
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0	1
-Reducing Node on Left: N15		Checking for: 0000	
---Removed assignments for: N15	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N16		Checking for: 0000		Checking for: 1001	
---Removed assignments for: N16		1001
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N15		Checking for: 0000	
---Removed assignments for: N15	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N16		Checking for: 0000	
---Removed assignments for: N16	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N16		Checking for: 0000	
---Removed assignments for: N16	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N26		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 0101	
---Removed assignments for: N26		0110	0101
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N16		Checking for: 0000	
---Removed assignments for: N16	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N26		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N26	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N17		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N17		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N27		Checking for: 0000		Checking for: 0110		Checking for: 0101		Checking for: 0011	
---Removed assignments for: N27		0110	0101
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N16		Checking for: 0000	
---Removed assignments for: N16	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N26		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N26	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N26		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N26		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N27		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N27	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N26		Checking for: 0000	
---Removed assignments for: N26	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N36		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N36		0110	1100	0101
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N16		Checking for: 0000	
---Removed assignments for: N16	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N17		Checking for: 0000	
---Removed assignments for: N17	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N21		Checking for: 0000		Checking for: 1001	
---Removed assignments for: N21		1001
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N31		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N31		0110	1100	0101
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N20		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N20		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N30		Checking for: 0000		Checking for: 0110		Checking for: 0101		Checking for: 0011	
---Removed assignments for: N30		0110	0101
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N20		Checking for: 0000	
---Removed assignments for: N20	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N21		Checking for: 0000	
---Removed assignments for: N21	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N20		Checking for: 0000	
---Removed assignments for: N20	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N21		Checking for: 0000	
---Removed assignments for: N21	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N20		Checking for: 0000	
---Removed assignments for: N20	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N21		Checking for: 0000	
---Removed assignments for: N21	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N27		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N27		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N37		Checking for: 0000		Checking for: 0110		Checking for: 0101		Checking for: 0011	
---Removed assignments for: N37		0110	0101
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N26		Checking for: 0000	
---Removed assignments for: N26	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N36		Checking for: 0000		Checking for: 0011		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N36	
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N36		Checking for: 0000		Checking for: 0011		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N36		0011	1010
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0	1
-Reducing Node on Right: N37		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N37	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N26		Checking for: 0000	
---Removed assignments for: N26	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N27		Checking for: 0000	
---Removed assignments for: N27	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N31		Checking for: 0000		Checking for: 0011		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N31		0011	1001
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0
-Reducing Node on Right: N41		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N41		0110	1100	0101
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N30		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N30		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N40		Checking for: 0000		Checking for: 0110		Checking for: 0101		Checking for: 0011	
---Removed assignments for: N40		0110	0101
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N30		Checking for: 0000	
---Removed assignments for: N30	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N31		Checking for: 0000		Checking for: 1010	
---Removed assignments for: N31		1010
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N31		Checking for: 0000	
---Removed assignments for: N31	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N32		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N32		1100	1010	1001
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N30		Checking for: 0000	
---Removed assignments for: N30	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N31		Checking for: 0000	
---Removed assignments for: N31	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N34		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N34		0011	0101	1001
- Hij-1: 	0	1
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0
-Reducing Node on Right: N44		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N44		0110	1100	0101
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N43		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N43		0011	0110	1010
- Hij-1: 	0	1
- Vi-1j: 	0	1
- Hij: 	0
- Vij: 	0	1
-Reducing Node on Right: N44		Checking for: 0000		Checking for: 0011		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N44		1010	1001
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N33		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N33		0011	0101	1001
- Hij-1: 	0	1
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0
-Reducing Node on Right: N43		Checking for: 0000		Checking for: 1100		Checking for: 0101		Checking for: 1001	
---Removed assignments for: N43		1100	0101
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0	1
-Reducing Node on Left: N33		Checking for: 0000		Checking for: 0110		Checking for: 1100		Checking for: 1010	
---Removed assignments for: N33		0110	1010
- Hij-1: 	0	1
- Vi-1j: 	0	1
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N34		Checking for: 0000		Checking for: 0110		Checking for: 1100		Checking for: 1010	
---Removed assignments for: N34		1100	1010
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0
-Reducing Node on Left: N37		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N37		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N47		Checking for: 0000		Checking for: 0110		Checking for: 0101		Checking for: 0011	
---Removed assignments for: N47		0110	0101
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N36		Checking for: 0000		Checking for: 1001	
---Removed assignments for: N36		1001
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N46		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N46		0110	1100	0101
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N46		Checking for: 0000		Checking for: 0011		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N46		0011	1010
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0	1
-Reducing Node on Right: N47		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N47	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N35		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N35		0011	0110	1010
- Hij-1: 	0	1
- Vi-1j: 	0	1
- Hij: 	0
- Vij: 	0	1
-Reducing Node on Right: N36		Checking for: 0000	
---Removed assignments for: N36	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N36		Checking for: 0000	
---Removed assignments for: N36	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N37		Checking for: 0000	
---Removed assignments for: N37	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N41		Checking for: 0000		Checking for: 0011		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N41		0011	1001
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0
-Reducing Node on Right: N51		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N51		0110	1100	0101
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N40		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N40		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N50		Checking for: 0000		Checking for: 0110		Checking for: 0101		Checking for: 0011	
---Removed assignments for: N50		0110	0101
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N40		Checking for: 0000	
---Removed assignments for: N40	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N41		Checking for: 0000		Checking for: 1010	
---Removed assignments for: N41		1010
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N41		Checking for: 0000	
---Removed assignments for: N41	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N42		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N42		1100	1010	1001
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N40		Checking for: 0000	
---Removed assignments for: N40	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N41		Checking for: 0000	
---Removed assignments for: N41	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N47		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N47		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N57		Checking for: 0000		Checking for: 0110		Checking for: 0101		Checking for: 0011	
---Removed assignments for: N57		0110	0101
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N46		Checking for: 0000		Checking for: 1001	
---Removed assignments for: N46		1001
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N56		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N56		0110	1100	0101
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N56		Checking for: 0000		Checking for: 0011		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N56		0011	1010
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0	1
-Reducing Node on Right: N57		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N57	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N45		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N45		0011	0110	1010
- Hij-1: 	0	1
- Vi-1j: 	0	1
- Hij: 	0
- Vij: 	0	1
-Reducing Node on Right: N46		Checking for: 0000	
---Removed assignments for: N46	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N46		Checking for: 0000	
---Removed assignments for: N46	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N47		Checking for: 0000	
---Removed assignments for: N47	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N50		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N50		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N60		Checking for: 0000		Checking for: 0110		Checking for: 0101		Checking for: 0011	
---Removed assignments for: N60		0110	0101
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N50		Checking for: 0000	
---Removed assignments for: N50	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N51		Checking for: 0000		Checking for: 0011		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N51		1010	1001
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N50		Checking for: 0000	
---Removed assignments for: N50	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N51		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N51	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N52		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N52		0011	0101	1001
- Hij-1: 	0	1
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0
-Reducing Node on Right: N62		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N62		0110	1100	0101
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N51		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N51		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N61		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N61		0110	1100	0101
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N51		Checking for: 0000	
---Removed assignments for: N51	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N52		Checking for: 0000		Checking for: 0110		Checking for: 1100		Checking for: 1010	
---Removed assignments for: N52		1100	1010
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0
-Reducing Node on Left: N51		Checking for: 0000	
---Removed assignments for: N51	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N52		Checking for: 0000		Checking for: 0110	
---Removed assignments for: N52	
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0
-Reducing Node on Left: N55		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N55		0011	0101	1001
- Hij-1: 	0	1
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0
-Reducing Node on Right: N65		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N65		0110	1100	0101
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N55		Checking for: 0000		Checking for: 0110		Checking for: 1100		Checking for: 1010	
---Removed assignments for: N55		0110	1010
- Hij-1: 	0	1
- Vi-1j: 	0	1
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N56		Checking for: 0000		Checking for: 1001	
---Removed assignments for: N56		1001
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N57		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N57		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N67		Checking for: 0000		Checking for: 0110		Checking for: 0101		Checking for: 0011	
---Removed assignments for: N67		0110	0101
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N56		Checking for: 0000	
---Removed assignments for: N56	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N66		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N66		0110	1100	0101
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N66		Checking for: 0000		Checking for: 0011		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N66		0011	1010
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0	1
-Reducing Node on Right: N67		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N67	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N56		Checking for: 0000	
---Removed assignments for: N56	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N66		Checking for: 0000		Checking for: 1001	
---Removed assignments for: N66	
- Hij-1: 	0	1
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0	1
-Reducing Node on Left: N56		Checking for: 0000	
---Removed assignments for: N56	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N57		Checking for: 0000	
---Removed assignments for: N57	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N70		Checking for: 0000		Checking for: 0110	
---Removed assignments for: N70		0110
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N71		Checking for: 0000		Checking for: 1100		Checking for: 0110		Checking for: 1010	
---Removed assignments for: N71		1100	1010
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0
-Reducing Node on Left: N60		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N60		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N70		Checking for: 0000	
---Removed assignments for: N70	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N60		Checking for: 0000	
---Removed assignments for: N60	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N61		Checking for: 0000		Checking for: 0011		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N61		1010	1001
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N60		Checking for: 0000	
---Removed assignments for: N60	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N70		Checking for: 0000	
---Removed assignments for: N70	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N60		Checking for: 0000	
---Removed assignments for: N60	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N61		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N61	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N71		Checking for: 0000		Checking for: 0110	
---Removed assignments for: N71		0110
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N72		Checking for: 0000		Checking for: 1100		Checking for: 0110		Checking for: 1010	
---Removed assignments for: N72		1100	1010
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0
-Reducing Node on Left: N61		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N61		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N71		Checking for: 0000	
---Removed assignments for: N71	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N61		Checking for: 0000	
---Removed assignments for: N61	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N62		Checking for: 0000		Checking for: 0011		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N62		1010	1001
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N61		Checking for: 0000	
---Removed assignments for: N61	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N71		Checking for: 0000	
---Removed assignments for: N71	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N61		Checking for: 0000	
---Removed assignments for: N61	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N62		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N62	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N72		Checking for: 0000		Checking for: 0110	
---Removed assignments for: N72		0110
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N73		Checking for: 0000		Checking for: 1100		Checking for: 0110		Checking for: 1010	
---Removed assignments for: N73		1100	1010
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0
-Reducing Node on Left: N62		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N62		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N72		Checking for: 0000	
---Removed assignments for: N72	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N62		Checking for: 0000	
---Removed assignments for: N62	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N63		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N63		1100	1010	1001
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N62		Checking for: 0000	
---Removed assignments for: N62	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N72		Checking for: 0000	
---Removed assignments for: N72	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N62		Checking for: 0000	
---Removed assignments for: N62	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N63		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 0101	
---Removed assignments for: N63	
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N73		Checking for: 0000		Checking for: 0110	
---Removed assignments for: N73		0110
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N74		Checking for: 0000		Checking for: 1100		Checking for: 0110		Checking for: 1010	
---Removed assignments for: N74		1100	1010
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0
-Reducing Node on Left: N63		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 0101	
---Removed assignments for: N63		0011	0101
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0
-Reducing Node on Right: N73		Checking for: 0000	
---Removed assignments for: N73	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N63		Checking for: 0000		Checking for: 0110	
---Removed assignments for: N63	
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0
-Reducing Node on Right: N73		Checking for: 0000	
---Removed assignments for: N73	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N63		Checking for: 0000		Checking for: 0110	
---Removed assignments for: N63		0110
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N64		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N64		1100	1010	1001
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N74		Checking for: 0000		Checking for: 0110	
---Removed assignments for: N74		0110
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N75		Checking for: 0000		Checking for: 1100		Checking for: 0110		Checking for: 1010	
---Removed assignments for: N75		1100	1010
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0
-Reducing Node on Left: N53		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N53		0011	0101	1001
- Hij-1: 	0	1
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0
-Reducing Node on Right: N63		Checking for: 0000	
---Removed assignments for: N63	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N64		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 0101	
---Removed assignments for: N64		0011	0101
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0
-Reducing Node on Right: N74		Checking for: 0000	
---Removed assignments for: N74	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N64		Checking for: 0000		Checking for: 0110	
---Removed assignments for: N64	
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0
-Reducing Node on Right: N74		Checking for: 0000	
---Removed assignments for: N74	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N64		Checking for: 0000		Checking for: 0110	
---Removed assignments for: N64		0110
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N65		Checking for: 0000		Checking for: 0011		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N65		1010	1001
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N75		Checking for: 0000		Checking for: 0110	
---Removed assignments for: N75		0110
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N76		Checking for: 0000		Checking for: 1100		Checking for: 0110		Checking for: 1010	
---Removed assignments for: N76		1100	1010
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0
-Reducing Node on Left: N54		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 1100		Checking for: 0101		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N54		0011	0101	1001
- Hij-1: 	0	1
- Vi-1j: 	0	1
- Hij: 	0	1
- Vij: 	0
-Reducing Node on Right: N64		Checking for: 0000	
---Removed assignments for: N64	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N65		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N65		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N75		Checking for: 0000	
---Removed assignments for: N75	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N65		Checking for: 0000	
---Removed assignments for: N65	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N75		Checking for: 0000	
---Removed assignments for: N75	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N65		Checking for: 0000	
---Removed assignments for: N65	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N66		Checking for: 0000		Checking for: 1001	
---Removed assignments for: N66		1001
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N65		Checking for: 0000	
---Removed assignments for: N65	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N66		Checking for: 0000	
---Removed assignments for: N66	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N66		Checking for: 0000	
---Removed assignments for: N66	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N76		Checking for: 0000		Checking for: 0110	
---Removed assignments for: N76		0110
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N66		Checking for: 0000	
---Removed assignments for: N66	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N76		Checking for: 0000	
---Removed assignments for: N76	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N76		Checking for: 0000	
---Removed assignments for: N76	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N77		Checking for: 0000		Checking for: 1100	
---Removed assignments for: N77		1100
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N76		Checking for: 0000	
---Removed assignments for: N76	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N77		Checking for: 0000	
---Removed assignments for: N77	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N67		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N67		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N77		Checking for: 0000	
---Removed assignments for: N77	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N67		Checking for: 0000	
---Removed assignments for: N67	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N77		Checking for: 0000	
---Removed assignments for: N77	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N65		Checking for: 0000	
---Removed assignments for: N65	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N66		Checking for: 0000	
---Removed assignments for: N66	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N67		Checking for: 0000	
---Removed assignments for: N67	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N77		Checking for: 0000	
---Removed assignments for: N77	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N76		Checking for: 0000	
---Removed assignments for: N76	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N77		Checking for: 0000	
---Removed assignments for: N77	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N66		Checking for: 0000	
---Removed assignments for: N66	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N76		Checking for: 0000	
---Removed assignments for: N76	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N66		Checking for: 0000	
---Removed assignments for: N66	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N67		Checking for: 0000	
---Removed assignments for: N67	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N01		Checking for: 0000	
---Removed assignments for: N01	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N11		Checking for: 0000	
---Removed assignments for: N11	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N10		Checking for: 0000	
---Removed assignments for: N10	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N11		Checking for: 0000	
---Removed assignments for: N11	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N00		Checking for: 0000	
---Removed assignments for: N00	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N10		Checking for: 0000	
---Removed assignments for: N10	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N22		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N22		0000
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	1
- Vij: 	1
-Reducing Node on Right: N23		Checking for: 0000		Checking for: 0011		Checking for: 1010		Checking for: 1001	
---Removed assignments for: N23		0000	0011
- Hij-1: 	1
- Vi-1j: 	0
- Hij: 	0	1
- Vij: 	0	1
-Reducing Node on Left: N54		Checking for: 0000		Checking for: 0110		Checking for: 1100		Checking for: 1010	
---Removed assignments for: N54		0000	1100
- Hij-1: 	0	1
- Vi-1j: 	0	1
- Hij: 	1
- Vij: 	0
-Reducing Node on Right: N55		Checking for: 0000		Checking for: 1100	
---Removed assignments for: N55		0000
- Hij-1: 	1
- Vi-1j: 	1
- Hij: 	0
- Vij: 	0
-Reducing Node on Left: N53		Checking for: 0000		Checking for: 0110		Checking for: 1100		Checking for: 1010	
---Removed assignments for: N53		0000	1100
- Hij-1: 	0	1
- Vi-1j: 	0	1
- Hij: 	1
- Vij: 	0
-Reducing Node on Right: N54		Checking for: 0110		Checking for: 1010	
---Removed assignments for: N54		0110
- Hij-1: 	1
- Vi-1j: 	0
- Hij: 	1
- Vij: 	0
-Reducing Node on Left: N52		Checking for: 0000		Checking for: 0110	
---Removed assignments for: N52		0000
- Hij-1: 	0
- Vi-1j: 	1
- Hij: 	1
- Vij: 	0
-Reducing Node on Right: N53		Checking for: 0110		Checking for: 1010	
---Removed assignments for: N53		0110
- Hij-1: 	1
- Vi-1j: 	0
- Hij: 	1
- Vij: 	0
-Reducing Node on Left: N45		Checking for: 0000		Checking for: 1100		Checking for: 0101		Checking for: 1001	
---Removed assignments for: N45		0000	1100
- Hij-1: 	0	1
- Vi-1j: 	0	1
- Hij: 	0
- Vij: 	1
-Reducing Node on Right: N55		Checking for: 1100	
---Removed assignments for: N55	
- Hij-1: 	1
- Vi-1j: 	1
- Hij: 	0
- Vij: 	0
-
-
-
-
-Reducing Node on Left: N44		Checking for: 0000		Checking for: 0011	
---Removed assignments for: N44		0011
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N54		Checking for: 1010	
---Removed assignments for: N54	
- Hij-1: 	1
- Vi-1j: 	0
- Hij: 	1
- Vij: 	0
-Reducing Node on Left: N43		Checking for: 0000		Checking for: 1001	
---Removed assignments for: N43		1001
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N53		Checking for: 1010	
---Removed assignments for: N53	
- Hij-1: 	1
- Vi-1j: 	0
- Hij: 	1
- Vij: 	0
-Reducing Node on Left: N44		Checking for: 0000	
---Removed assignments for: N44	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
-Reducing Node on Right: N45		Checking for: 0101		Checking for: 1001	
---Removed assignments for: N45		1001
- Hij-1: 	0
- Vi-1j: 	1
- Hij: 	0
- Vij: 	1
-Reducing Node on Left: N42		Checking for: 0000		Checking for: 0011		Checking for: 0110		Checking for: 0101	
---Removed assignments for: N42		0011	0110
- Hij-1: 	0
- Vi-1j: 	0	1
- Hij: 	0
- Vij: 	0	1
-Reducing Node on Right: N43		Checking for: 0000	
---Removed assignments for: N43	
- Hij-1: 	0
- Vi-1j: 	0
- Hij: 	0
- Vij: 	0
+Printing Non Essential Edges - removal of Cell Value CV=0 Size: 180
+H00	H01	V-11	V-12	V01	V-11	V00	V-10	H1-1	V-10	H0-1	H0-1	H12	V02	H02	H02	V-13	V-13	H13	V03	H03	V13	V-14	H03	H14	V04	H04	V14	V-15	H04	V05	H05	H05	V-16	V-16	V07	V06	H16	H06	H07	H07	V-17	V-17	H06	H06	V10	V12	H2-1	H11	H10	H21	V11	V11	H11	H25	V15	H15	H15	V16	V16	V17	V16	H26	H17	V26	H16	V21	V20	H20	H3-1	H20	H20	V27	V26	H36	H27	H26	V31	V30	H30	H4-1	H31	H30	V34	H43	V33	H33	V37	V36	H46	H35	H37	H36	V41	V40	H40	H5-1	H41	H40	V47	V46	H56	H45	H47	H46	V50	H50	H6-1	H50	V52	V51	H51	H51	V55	H55	V57	V56	H66	H57	V56	H56	H70	V60	V71	V70	H7-1	H60	V70	V60	H7-1	H60	H71	V61	V72	H61	V61	H61	H72	V62	V73	H62	V62	H62	H73	V63	V74	V63	H63	H74	V53	V75	V64	V64	H64	H75	V54	V76	V65	V65	H65	H65	V66	V66	H76	H76	V77	V77	H77	V67	H77	H67	V67	H65	V67	H76	V66	H66	V01	H10	V00	
 1:	H00		0
 2:	H01		0
 3:	H02		0
@@ -1980,7 +223,7 @@ Reducing Node on Right: N43		Checking for: 0000
 14:	H16		0
 15:	H20		0
 16:	H21		0
-17:	H22		1
+17:	H22		0	1
 18:	H23		0	1
 19:	H24		0	1
 20:	H25		0
@@ -1994,16 +237,16 @@ Reducing Node on Right: N43		Checking for: 0000
 28:	H36		0
 29:	H40		0
 30:	H41		0
-31:	H42		0
+31:	H42		0	1
 32:	H43		0
-33:	H44		0
+33:	H44		0	1
 34:	H45		0
 35:	H46		0
 36:	H50		0
 37:	H51		0
-38:	H52		1
-39:	H53		1
-40:	H54		1
+38:	H52		0	1
+39:	H53		0	1
+40:	H54		0	1
 41:	H55		0
 42:	H56		0
 43:	H60		0
@@ -2055,6 +298,191 @@ Reducing Node on Right: N43		Checking for: 0000
 89:	V40		0
 90:	V41		0
 91:	V42		0	1
+92:	V43		0	1
+93:	V44		0	1
+94:	V45		0	1
+95:	V46		0
+96:	V47		0
+97:	V50		0
+98:	V51		0
+99:	V52		0
+100:	V53		0
+101:	V54		0
+102:	V55		0
+103:	V56		0
+104:	V57		0
+105:	V60		0
+106:	V61		0
+107:	V62		0
+108:	V63		0
+109:	V64		0
+110:	V65		0
+111:	V66		0
+112:	V67		0
+
+
+1:	N00		0000
+2:	N01		0000
+3:	N02		0000
+4:	N03		0000
+5:	N04		0000
+6:	N05		0000
+7:	N06		0000
+8:	N07		0000
+9:	N10		0000
+10:	N11		0000
+11:	N12		0000
+12:	N13		0000
+13:	N14		0000
+14:	N15		0000
+15:	N16		0000
+16:	N17		0000
+17:	N20		0000
+18:	N21		0000
+19:	N22		0000	0011
+20:	N23		0000	0011	1010	1001
+21:	N24		0000	0011	1010	1001
+22:	N25		0000	1001
+23:	N26		0000
+24:	N27		0000
+25:	N30		0000
+26:	N31		0000
+27:	N32		0000	0011	0110	0101
+28:	N33		0000	1100
+29:	N34		0000	0110
+30:	N35		0000	1100	0101	1001
+31:	N36		0000
+32:	N37		0000
+33:	N40		0000
+34:	N41		0000
+35:	N42		0000	0011	0110	0101
+36:	N43		0000	1001
+37:	N44		0000	0011
+38:	N45		0000	1100	0101	1001
+39:	N46		0000
+40:	N47		0000
+41:	N50		0000
+42:	N51		0000
+43:	N52		0000	0110
+44:	N53		0000	0110	1100	1010
+45:	N54		0000	0110	1100	1010
+46:	N55		0000	1100
+47:	N56		0000
+48:	N57		0000
+49:	N60		0000
+50:	N61		0000
+51:	N62		0000
+52:	N63		0000
+53:	N64		0000
+54:	N65		0000
+55:	N66		0000
+56:	N67		0000
+57:	N70		0000
+58:	N71		0000
+59:	N72		0000
+60:	N73		0000
+61:	N74		0000
+62:	N75		0000
+63:	N76		0000
+64:	N77		0000
+Printing Non Essential Edges - reducing for Cell Value CV=1 Size: 180
+
+ Printing all remaining cells
+	C23-1	C32-1	C34-1	C43-1
+
+
+
+1:	H00		0
+2:	H01		0
+3:	H02		0
+4:	H03		0
+5:	H04		0
+6:	H05		0
+7:	H06		0
+8:	H10		0
+9:	H11		0
+10:	H12		0
+11:	H13		0
+12:	H14		0
+13:	H15		0
+14:	H16		0
+15:	H20		0
+16:	H21		0
+17:	H22		1
+18:	H23		1
+19:	H24		1
+20:	H25		0
+21:	H26		0
+22:	H30		0
+23:	H31		0
+24:	H32		0
+25:	H33		0
+26:	H34		0
+27:	H35		0
+28:	H36		0
+29:	H40		0
+30:	H41		0
+31:	H42		0
+32:	H43		0
+33:	H44		0
+34:	H45		0
+35:	H46		0
+36:	H50		0
+37:	H51		0
+38:	H52		1
+39:	H53		1
+40:	H54		0	1
+41:	H55		0
+42:	H56		0
+43:	H60		0
+44:	H61		0
+45:	H62		0
+46:	H63		0
+47:	H64		0
+48:	H65		0
+49:	H66		0
+50:	H70		0
+51:	H71		0
+52:	H72		0
+53:	H73		0
+54:	H74		0
+55:	H75		0
+56:	H76		0
+57:	V00		0
+58:	V01		0
+59:	V02		0
+60:	V03		0
+61:	V04		0
+62:	V05		0
+63:	V06		0
+64:	V07		0
+65:	V10		0
+66:	V11		0
+67:	V12		0
+68:	V13		0
+69:	V14		0
+70:	V15		0
+71:	V16		0
+72:	V17		0
+73:	V20		0
+74:	V21		0
+75:	V22		1
+76:	V23		0
+77:	V24		0
+78:	V25		1
+79:	V26		0
+80:	V27		0
+81:	V30		0
+82:	V31		0
+83:	V32		1
+84:	V33		0
+85:	V34		0
+86:	V35		1
+87:	V36		0
+88:	V37		0
+89:	V40		0
+90:	V41		0
+91:	V42		1
 92:	V43		0
 93:	V44		0
 94:	V45		1
@@ -2076,8 +504,7 @@ Reducing Node on Right: N43		Checking for: 0000
 110:	V65		0
 111:	V66		0
 112:	V67		0
-Printing Non Essential Edges - removal of Cell Value CV=0 Size: 184
-H00	H01	V-11	V-12	V01	V-11	V00	V-10	H1-1	V-10	H0-1	H0-1	H12	V02	H02	H02	V-13	V-13	H13	V03	H03	V13	V-14	H03	H14	V04	H04	V14	V-15	H04	V05	H05	H05	V-16	V-16	V07	V06	H16	H06	H07	H07	V-17	V-17	H06	H06	V10	V12	H2-1	H11	H10	H21	V11	V11	H11	H25	V15	H15	H15	V16	V16	V17	V16	H26	H17	V26	H16	V21	V20	H20	H3-1	H20	H20	V27	V26	H36	H27	H26	V31	V30	H30	H4-1	H31	H30	V34	H43	V33	H33	V37	V36	H46	H35	H37	H36	V41	V40	H40	H5-1	H41	H40	V47	V46	H56	H45	H47	H46	V50	H50	H6-1	H50	V52	V51	H51	H51	V55	H55	V57	V56	H66	H57	V56	H56	H70	V60	V71	V70	H7-1	H60	V70	V60	H7-1	H60	H71	V61	V72	H61	V61	H61	H72	V62	V73	H62	V62	H62	H73	V63	V74	V63	H63	H74	V53	V75	V64	V64	H64	H75	V54	V76	V65	V65	H65	H65	V66	V66	H76	H76	V77	V77	H77	V67	H77	H67	V67	H65	V67	H76	V66	H66	V01	H10	V00	V44	V43	H44	H42	
+
 
 1:	N00		0000
 2:	N01		0000
@@ -2098,22 +525,22 @@ H00	H01	V-11	V-12	V01	V-11	V00	V-10	H1-1	V-10	H0-1	H0-1	H12	V02	H02	H02	V-13	V-1
 17:	N20		0000
 18:	N21		0000
 19:	N22		0011
-20:	N23		1010	1001
-21:	N24		0000	0011	1010	1001
-22:	N25		0000	1001
+20:	N23		1010
+21:	N24		1010
+22:	N25		1001
 23:	N26		0000
 24:	N27		0000
 25:	N30		0000
 26:	N31		0000
-27:	N32		0000	0011	0110	0101
-28:	N33		0000	1100
-29:	N34		0000	0110
-30:	N35		0000	1100	0101	1001
+27:	N32		0101
+28:	N33		0000
+29:	N34		0000
+30:	N35		0101
 31:	N36		0000
 32:	N37		0000
 33:	N40		0000
 34:	N41		0000
-35:	N42		0000	0101
+35:	N42		0101
 36:	N43		0000
 37:	N44		0000
 38:	N45		0101
