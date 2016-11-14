@@ -20,6 +20,7 @@ public class SlitherlinkSolver {
 
     static ArrayList<edge> nonEssEdges = new ArrayList<edge>();    //Arraylist for NonEssential Edges wit reduced domain to be used for reduction
     static Queue<edge> nonEssEdgeQueue = new PriorityQueue<edge>();
+
     static HashMap<edge, ArrayList<String>> edgeHM = new HashMap<edge, ArrayList<String>>();    //Hashmap storing Key: Edges and Value: Domain
     static HashMap<node, ArrayList<String>> nodeHM = new HashMap<node, ArrayList<String>>();    //Hashmap for Key: Nodes and Value: Satisfying Assignments (Node Degree either 0 or 2)
 
@@ -201,7 +202,7 @@ public class SlitherlinkSolver {
     public void printStringArraylistexclude0(ArrayList<String> al){
         for(String str:al){
             if(str.equals("0000"))
-                System.out.print("null");
+                System.out.print("");
             else
                 System.out.print("\t" + str);
         }
@@ -519,7 +520,6 @@ public class SlitherlinkSolver {
 
         reduceNonEssEdgeDomain(edgeHM);
         System.out.println("");
-        System.out.println("");
     }
 
     public void applyTwoAC(ArrayList<cell> twoCells){
@@ -579,7 +579,6 @@ public class SlitherlinkSolver {
         }
 
         reduceNonEssEdgeDomain(edgeHM);
-        System.out.println("");
         System.out.println("");
     }
 
@@ -641,7 +640,6 @@ public class SlitherlinkSolver {
 
         reduceNonEssEdgeDomain(edgeHM);
         System.out.println("");
-        System.out.println("");
     }
 
     public void reduceNonEssEdgeDomain(HashMap<edge, ArrayList<String>> edgeHM){
@@ -651,10 +649,12 @@ public class SlitherlinkSolver {
         while(!nonEssEdgeQueue.isEmpty()){
             edge edge = nonEssEdgeQueue.poll();
             nonEssEdges.add(edge);
-            if(edge!= null && edgeHM.containsKey(edge)){
-                //edgeHM.put(edge, new ArrayList<String>(Arrays.asList("0")));
-                edgeHM.get(edge).remove("1");
-                reduceNodeAssignments(nodeHM, edge, 0);
+            if(edge != null && edge.i >=0 && edge.j>=0){
+                if(edgeHM.containsKey(edge) ){
+                    //edgeHM.put(edge, new ArrayList<String>(Arrays.asList("0")));
+                    edgeHM.get(edge).remove("1");
+                    reduceNodeAssignments(nodeHM, edge, 0);
+                }
             }
         }
 
