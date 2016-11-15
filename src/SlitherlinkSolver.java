@@ -15,20 +15,21 @@ import java.util.*;
 public class SlitherlinkSolver {
 
     //row and col count static to allow dynamic size of puzzle
-    static int rowCount = 0;
-    static int colCount = 0;
+    public static int rowCount = 0;
+    public static int colCount = 0;
 
-    static ArrayList<edge> nonEssEdges = new ArrayList<edge>();    //Arraylist for NonEssential Edges wit reduced domain to be used for reduction
-    static Queue<edge> nonEssEdgeQueue = new PriorityQueue<edge>();
+    public static ArrayList<edge> nonEssEdges = new ArrayList<edge>();    //Arraylist for NonEssential Edges wit reduced domain to be used for reduction
+    public static Queue<edge> nonEssEdgeQueue = new PriorityQueue<edge>();
 
-    static HashMap<edge, ArrayList<String>> edgeHM = new HashMap<edge, ArrayList<String>>();    //Hashmap storing Key: Edges and Value: Domain
-    static HashMap<node, ArrayList<String>> nodeHM = new HashMap<node, ArrayList<String>>();    //Hashmap for Key: Nodes and Value: Satisfying Assignments (Node Degree either 0 or 2)
+    public static HashMap<edge, ArrayList<String>> edgeHM = new HashMap<edge, ArrayList<String>>();    //Hashmap storing Key: Edges and Value: Domain
+    public static HashMap<node, ArrayList<String>> nodeHM = new HashMap<node, ArrayList<String>>();    //Hashmap for Key: Nodes and Value: Satisfying Assignments (Node Degree either 0 or 2)
 
-    static ArrayList<cell> allCells = new ArrayList<cell>();
-    static ArrayList<cell> zeroCells = new ArrayList<cell>();
-    static ArrayList<cell> oneCells = new ArrayList<cell>();
-    static ArrayList<cell> twoCells = new ArrayList<cell>();
-    static ArrayList<cell> threeCells = new ArrayList<cell>();
+    public static ArrayList<cell> allCells = new ArrayList<cell>();
+    public static ArrayList<cell> zeroCells = new ArrayList<cell>();
+    public static ArrayList<cell> oneCells = new ArrayList<cell>();
+    public static ArrayList<cell> twoCells = new ArrayList<cell>();
+    public static ArrayList<cell> threeCells = new ArrayList<cell>();
+    public static ArrayList<cell> emptyCells = new ArrayList<cell>();
 
     Queue<cell> cellQueue = new PriorityQueue<>();
 
@@ -56,22 +57,15 @@ public class SlitherlinkSolver {
         solver.printNodeHM(nodeHM);
 
 
-        int acExhaustCount = 0;
-        solver.applyAC(zeroCells);
-        while(acExhaustCount<10) {
-            System.out.print("\n************Exhaust Loop: " + acExhaustCount);
-            acExhaustCount++;
-            if (!oneCells.isEmpty())
-                solver.applyOneAC(oneCells);
-            if (!twoCells.isEmpty())
-                solver.applyTwoAC(twoCells);
-            if (!threeCells.isEmpty())
-                solver.applyThreeAC(threeCells);
-        }
+        solver.applyArcConsistency(zeroCells);
+
 
         solver.printEdgeHM(edgeHM);
         System.out.println();
         solver.printNodeHMexclude0(nodeHM);
+
+        Backtracking backtracking = new Backtracking(oneCells, twoCells, threeCells, emptyCells, nonEssEdges, edgeHM, nodeHM);
+        backtracking.printData();
 
 
     }
@@ -124,6 +118,9 @@ public class SlitherlinkSolver {
                     case 3:
                         threeCells.add(new cell(i,j,matrix[i][j]));
                         break;
+                    case 7:
+                        emptyCells.add(new cell(i,j,matrix[i][j]));
+                        break;
                     default:
                         break;
 
@@ -163,6 +160,7 @@ public class SlitherlinkSolver {
     }
 
     public void generateInitialEdgeHashMap(int [][] matrix){
+        //Linked HashMap to store edges in order of cells
         LinkedHashMap<edge, ArrayList<String>> orderedEdgeHM = new LinkedHashMap<edge, ArrayList<String>>();
         for(int i=0; i<rowCount; i++){
             for(int j=0; j<colCount; j++){
@@ -231,7 +229,7 @@ public class SlitherlinkSolver {
                     return sortbyI;
                 }
             });
-
+            System.out.println("\nNon Essential Edges (Size: " + al.size() + ")");
             for (edge str : al) {
                 str.printEdge();
             }
@@ -241,22 +239,6 @@ public class SlitherlinkSolver {
     public void printNodeArraylist(ArrayList<node> al){
         for(node str:al){
             str.printNode();
-        }
-    }
-
-    public void printSortedHM(HashMap<edge, ArrayList<String>> edgeHM){
-        Set set = edgeHM.entrySet();
-        int edgeCount=0;
-        Iterator i = set.iterator();
-        while(i.hasNext()){
-            edgeCount++;
-            Map.Entry me = (Map.Entry) i.next();
-            System.out.print(edgeCount + "\t" + ":");
-            edge edge = (edge) me.getKey();
-            edge.printEdge();
-            ArrayList<String> alDomain= (ArrayList<String>) me.getValue();
-            printStringArraylist(alDomain);
-            System.out.println("");
         }
     }
 
@@ -475,7 +457,7 @@ public class SlitherlinkSolver {
     }
 
     //Apply arc consistency on Cell with Values equal to zero (0)
-    public void applyAC(ArrayList<cell> zeroCells){
+    public void applyArcConsistency(ArrayList<cell> zeroCells){
         ArrayList<cell> local = new ArrayList<>();
         local.addAll(zeroCells);
 
@@ -501,10 +483,17 @@ public class SlitherlinkSolver {
 
         reduceNonEssEdgeDomain(edgeHM);
 
-
-        //applyOneAC(oneCells);
-        //applyTwoAC(twoCells);
-        //applyThreeAC(threeCells);
+        int acExhaustCount = 0;
+        while(acExhaustCount<5) {
+            System.out.print("\n************Exhaust Loop: " + acExhaustCount);
+            acExhaustCount++;
+            if (!oneCells.isEmpty())
+                checkCellValueConstraintAndReduce(oneCells, 1);
+            if (!twoCells.isEmpty())
+                checkCellValueConstraintAndReduce(twoCells, 2);
+            if (!threeCells.isEmpty())
+                checkCellValueConstraintAndReduce(threeCells, 3);
+        }
 
     }
 
@@ -525,70 +514,23 @@ public class SlitherlinkSolver {
         return false;
     }
 
-    public void applyOneAC(ArrayList<cell> oneCells){
-
-        ArrayList<cell> oneCellsLocal = new ArrayList<>();
-        oneCellsLocal.addAll(oneCells);
-
-        for (Iterator<cell> it = oneCellsLocal.iterator(); it.hasNext(); ) {
-            Queue<edge> essEdgeQueue = new PriorityQueue<edge>();
-
-            cell cell = it.next();
-
-            edge Hij = new edge("H", cell.i, cell.j);
-            edge Vij = new edge("V", cell.i, cell.j);
-            edge Hi1j = new edge("H", cell.i+1, cell.j);
-            edge Vij1 = new edge("V", cell.i, cell.j+1);
-
-            int count =0;
-            //!(edgeHM.get(Hij).size()==1) || !(edgeHM.get(Hij).get(0).equals("0"))
-
-            if (addEssEdgetoQueue(Hij)){
-                count++;
-                essEdgeQueue.add(Hij);
-            }
-            if (addEssEdgetoQueue(Vij)){
-                count++;
-                essEdgeQueue.add(Vij);
-            }
-            if (addEssEdgetoQueue(Hi1j)){
-                count++;
-                essEdgeQueue.add(Hi1j);
-            }
-            if (addEssEdgetoQueue(Vij1)){
-                count++;
-                essEdgeQueue.add(Vij1);
-            }
-
-
-            if(count == 1){
-                oneCells.remove(cell);
-                edge edge = essEdgeQueue.poll();
-                edgeHM.get(edge).remove("0");
-                reduceNodeAssignments(nodeHM, edge, 1);
-            }
-
-        }
-
-        if(!oneCells.isEmpty()){
-            System.out.println("\n Printing all remaining cells for CV 1");
-            for(cell remainingCell: oneCells){
+    public void printCells(ArrayList<cell> cellList, int value){
+        if(!cellList.isEmpty()){
+            System.out.println("\n Printing all remaining cells for CV " + value);
+            for(cell remainingCell: cellList){
                 System.out.print("\t" + "C" + remainingCell.i + remainingCell.j + "-" + remainingCell.value);
             }
         }
         else {
-            System.out.println("\n No remaining cells for CV 1");
+            System.out.println("\n No remaining cells for CV " + value);
         }
-
-        reduceNonEssEdgeDomain(edgeHM);
-        System.out.println("");
     }
 
-    public void applyTwoAC(ArrayList<cell> twoCells){
-        ArrayList<cell> twoCellsLocal = new ArrayList<>();
-        twoCellsLocal.addAll(twoCells);
+    public void checkCellValueConstraintAndReduce(ArrayList<cell> cellArrayList, int value){
+        ArrayList<cell> local = new ArrayList<>();
+        local.addAll(cellArrayList);
 
-        for (Iterator<cell> it = twoCellsLocal.iterator(); it.hasNext(); ) {
+        for (Iterator<cell> it = local.iterator(); it.hasNext(); ) {
             Queue<edge> essEdgeQueue = new PriorityQueue<edge>();
             cell cell = it.next();
 
@@ -616,8 +558,8 @@ public class SlitherlinkSolver {
                 essEdgeQueue.add(Vij1);
             }
 
-            if(count == 2){
-                twoCells.remove(cell);
+            if(count == value){
+                cellArrayList.remove(cell);
                 while (!essEdgeQueue.isEmpty()){
                     edge edge = essEdgeQueue.poll();
                     edgeHM.get(edge).remove("0");
@@ -626,73 +568,7 @@ public class SlitherlinkSolver {
             }
         }
 
-        if(!twoCells.isEmpty()){
-            System.out.println("\n Printing all remaining cells for CV 2");
-            for(cell remainingCell: twoCells){
-                System.out.print("\t" + "C" + remainingCell.i + remainingCell.j + "-" + remainingCell.value);
-            }
-        }
-        else {
-            System.out.println("\n No remaining cells for CV 2");
-        }
-
-        reduceNonEssEdgeDomain(edgeHM);
-        System.out.println("");
-    }
-
-    public void applyThreeAC(ArrayList<cell> threeCells){
-
-
-        ArrayList<cell> threeCellsLocal = new ArrayList<>();
-        threeCellsLocal.addAll(threeCells);
-
-        for (Iterator<cell> it = threeCellsLocal.iterator(); it.hasNext(); ) {
-            Queue<edge> essEdgeQueue = new PriorityQueue<edge>();
-            cell cell = it.next();
-
-            edge Hij = new edge("H", cell.i, cell.j);
-            edge Vij = new edge("V", cell.i, cell.j);
-            edge Hi1j = new edge("H", cell.i+1, cell.j);
-            edge Vij1 = new edge("V", cell.i, cell.j+1);
-
-            int count = 0;
-
-            if (addEssEdgetoQueue(Hij)){
-                count++;
-                essEdgeQueue.add(Hij);
-            }
-            if (addEssEdgetoQueue(Vij)){
-                count++;
-                essEdgeQueue.add(Vij);
-            }
-            if (addEssEdgetoQueue(Hi1j)){
-                count++;
-                essEdgeQueue.add(Hi1j);
-            }
-            if (addEssEdgetoQueue(Vij1)){
-                count++;
-                essEdgeQueue.add(Vij1);
-            }
-
-            if(count == 3){
-                threeCells.remove(cell);
-                while (!essEdgeQueue.isEmpty()){
-                    edge edge = essEdgeQueue.poll();
-                    edgeHM.get(edge).remove("0");
-                    reduceNodeAssignments(nodeHM, edge, 1);
-                }
-            }
-        }
-
-        if(!threeCells.isEmpty()){
-            System.out.println("\n Printing all remaining cells for CV 3");
-            for(cell remainingCell: threeCells){
-                System.out.print("\t" + "C" + remainingCell.i + remainingCell.j + "-" + remainingCell.value);
-            }
-        }
-        else {
-            System.out.println("\n No remaining cells for CV 3");
-        }
+        printCells(cellArrayList, value);
 
         reduceNonEssEdgeDomain(edgeHM);
         System.out.println("");
