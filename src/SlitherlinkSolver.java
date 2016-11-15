@@ -768,13 +768,4 @@ public class SlitherlinkSolver {
                 nonEssEdgeQueue.add(edge);
         }
     }
-<<<<<<< HEAD
-
-
-
-
-||||||| merged common ancestors
-=======
-
->>>>>>> 6c80bb05282f443ccc8a4cfcae8dccef80f86bb1
 }
